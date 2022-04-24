@@ -1,0 +1,122 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+OrionLib:MakeNotification({
+	Name = "Welcome to Deem!",
+	Content = "UI powered by Orion UI Libary, Some scripts are not made by me Credit to the Developer's of them",
+	Time = 5
+})
+
+local Window = OrionLib:MakeWindow({Name = "Deem Hub"})
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://9445147702",
+	PremiumOnly = false
+})
+
+local LocalPlayerTab = Window:MakeTab({
+	Name = "Local Player",
+	Icon = "rbxassetid://9445147702",
+	PremiumOnly = false
+})
+
+local FETab = Window:MakeTab({
+	Name = "FE",
+	Icon = "rbxassetid://9445147702",
+	PremiumOnly = false
+})
+
+local SettingsTab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://9445147702",
+	PremiumOnly = false
+})
+
+MainTab:AddLabel("Main Scripts")
+LocalPlayerTab:AddLabel("Local Player Scripts")
+FETab:AddLabel("FE Scripts")
+SettingsTab:AddLabel("Settings Tab")
+
+LocalPlayerTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 300,
+	Default = 16,
+	Increment = 1,
+	ValueName = "walkspeed",
+	Callback = function(Value)
+		getgenv().WalkSpeedValue = Value; --set your desired walkspeed here
+local Player = game:service'Players'.LocalPlayer;
+Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+end)
+Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+	end    
+})
+
+LocalPlayerTab:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 300,
+	Default = 50,
+	Increment = 1,
+	ValueName = "JP",
+	Callback = function(Value)
+		local plr = game.Players.LocalPlayer
+
+		plr.Character.Humanoid.JumpPower = Value --Change to JumpPower number
+	end    
+})
+
+LocalPlayerTab:AddButton({
+	Name = "Noclip, Press X to toggle",
+	Callback = function()
+		local nckey = "x";
+		local nclip = false;
+		local lp = game.Players.LocalPlayer
+		local ms = lp:GetMouse()
+		local rm = getrawmetatable(game)
+		local index = rm.__index
+		local bv = Instance.new("BoolValue");
+		bv.Value = false;
+		setreadonly(rm,false)
+		
+		rm.__index = function(self,j)
+		   if tostring(self) == "Part" and tostring(j) == "Anchored" then
+			   return index(bv,"Value")
+		end
+		   return index(self,j)
+		end
+		
+		
+		game:GetService("RunService").Stepped:Connect(function()
+		   if nclip == true then
+			   lp.Character.Head.CanCollide = false
+			   lp.Character.Torso.CanCollide = false
+		   end
+		end);
+		
+		ms.KeyDown:Connect(function(k)
+		   if k == nckey then
+			   nclip = not nclip
+			   if nclip == true then
+				   print("Noclip is on.")
+			   else
+				   print("Noclip if off.")
+			   end
+		   end
+		end)
+		
+		print("Noclip key is X");
+		print("Press X to turn noclip on and off");
+		print("This noclip should bypass most anti-cheats");
+  	end    
+})
+
+SettingsTab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
