@@ -28,6 +28,7 @@ WhitelistFrame.SliceCenter = Rect.new(100, 100, 100, 100)
 WhitelistFrame.SliceScale = 0.120
 WhitelistFrame.Active = true
 WhitelistFrame.Draggable = true
+WhitelistFrame.Visible = true
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 70, 70)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 144, 144))}
 UIGradient.Parent = WhitelistFrame
