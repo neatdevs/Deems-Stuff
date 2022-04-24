@@ -102,7 +102,7 @@ EnterButton.MouseButton1Click:Connect(function()
 		WhitelistFrame.Visible = false
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Teemsploit/Deem/main/Loading.lua')))()
 		wait(17.53)
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring?token=GHSAT0AAAAAABTY35CO4N5OYWWW7DB6ZN56YTE677Q')))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 	elseif WhitelistBox.Text ~= "Test" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
