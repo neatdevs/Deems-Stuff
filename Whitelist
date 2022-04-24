@@ -1,0 +1,130 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local WhitelistFrame = Instance.new("ImageLabel")
+local UIGradient = Instance.new("UIGradient")
+local WLTitle = Instance.new("TextLabel")
+local WhitelistBox = Instance.new("TextBox")
+local WhitelistBox_Roundify_12px = Instance.new("ImageLabel")
+local EnterButton = Instance.new("TextButton")
+local EnterButton_Roundify_12px = Instance.new("ImageLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+WhitelistFrame.Name = "Whitelist Frame"
+WhitelistFrame.Parent = ScreenGui
+WhitelistFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WhitelistFrame.BackgroundTransparency = 1.000
+WhitelistFrame.Position = UDim2.new(0.400161684, 0, 0.43824026, 0)
+WhitelistFrame.Size = UDim2.new(0, 226, 0, 138)
+WhitelistFrame.Visible = false
+WhitelistFrame.Image = "rbxassetid://3570695787"
+WhitelistFrame.ScaleType = Enum.ScaleType.Slice
+WhitelistFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+WhitelistFrame.SliceScale = 0.120
+WhitelistFrame.Active = true
+WhitelistFrame.Draggable = true
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 70, 70)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 144, 144))}
+UIGradient.Parent = WhitelistFrame
+
+WLTitle.Name = "WL Title"
+WLTitle.Parent = WhitelistFrame
+WLTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WLTitle.BackgroundTransparency = 1.000
+WLTitle.Position = UDim2.new(0.0575221255, 0, 0.0507246368, 0)
+WLTitle.Size = UDim2.new(0, 198, 0, 31)
+WLTitle.Font = Enum.Font.Merriweather
+WLTitle.Text = "Deem Whitelist"
+WLTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
+WLTitle.TextScaled = true
+WLTitle.TextSize = 14.000
+WLTitle.TextWrapped = true
+
+WhitelistBox.Name = "Whitelist Box"
+WhitelistBox.Parent = WhitelistFrame
+WhitelistBox.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+WhitelistBox.BackgroundTransparency = 1.000
+WhitelistBox.BorderSizePixel = 0
+WhitelistBox.Position = UDim2.new(0.185840696, 0, 0.355072469, 0)
+WhitelistBox.Size = UDim2.new(0, 140, 0, 39)
+WhitelistBox.ZIndex = 2
+WhitelistBox.Font = Enum.Font.Merriweather
+WhitelistBox.PlaceholderText = "Whitelist key here"
+WhitelistBox.Text = ""
+WhitelistBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+WhitelistBox.TextSize = 14.000
+
+WhitelistBox_Roundify_12px.Name = "Whitelist Box_Roundify_12px"
+WhitelistBox_Roundify_12px.Parent = WhitelistBox
+WhitelistBox_Roundify_12px.Active = true
+WhitelistBox_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+WhitelistBox_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WhitelistBox_Roundify_12px.BackgroundTransparency = 1.000
+WhitelistBox_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
+WhitelistBox_Roundify_12px.Selectable = true
+WhitelistBox_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
+WhitelistBox_Roundify_12px.Image = "rbxassetid://3570695787"
+WhitelistBox_Roundify_12px.ImageColor3 = Color3.fromRGB(52, 52, 52)
+WhitelistBox_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+WhitelistBox_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+WhitelistBox_Roundify_12px.SliceScale = 0.120
+
+EnterButton.Name = "Enter Button"
+EnterButton.Parent = WhitelistFrame
+EnterButton.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+EnterButton.BackgroundTransparency = 1.000
+EnterButton.BorderSizePixel = 0
+EnterButton.Position = UDim2.new(0.340707958, 0, 0.717391312, 0)
+EnterButton.Size = UDim2.new(0, 70, 0, 28)
+EnterButton.ZIndex = 2
+EnterButton.Font = Enum.Font.SourceSans
+EnterButton.Text = "Enter"
+EnterButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+EnterButton.TextSize = 14.000
+EnterButton.MouseButton1Click:Connect(function()
+	if WhitelistBox.Text == "Test" then
+		WhitelistBox.Text = "Checking Whitelist"
+		wait(1)
+		WhitelistBox.Text = "Checking Whitelist."
+		wait(1)
+		WhitelistBox.Text = "Checking Whitelist.."
+		wait(1)
+		WhitelistBox.Text = "Checking Whitelist..."
+		wait(1)
+		WhitelistBox.Text = "Authentication Success."
+		wait(1)
+		WhitelistFrame.Visible = false
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring?token=GHSAT0AAAAAABTY35CO4N5OYWWW7DB6ZN56YTE677Q')))()
+	elseif WhitelistBox.Text ~= "Test" then
+		WhitelistBox.Text = "Checking Whitelist"
+		wait(1)
+		WhitelistBox.Text = "Checking Whitelist."
+		wait(1)
+		WhitelistBox.Text = "Checking Whitelist.."
+		wait(1)
+		WhitelistBox.Text = "Checking Whitelist..."
+		wait(1)
+		WhitelistBox.Text = "Authentication Failed."
+	end
+end)
+
+EnterButton_Roundify_12px.Name = "Enter Button_Roundify_12px"
+EnterButton_Roundify_12px.Parent = EnterButton
+EnterButton_Roundify_12px.Active = true
+EnterButton_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+EnterButton_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EnterButton_Roundify_12px.BackgroundTransparency = 1.000
+EnterButton_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
+EnterButton_Roundify_12px.Selectable = true
+EnterButton_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
+EnterButton_Roundify_12px.Image = "rbxassetid://3570695787"
+EnterButton_Roundify_12px.ImageColor3 = Color3.fromRGB(52, 52, 52)
+EnterButton_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+EnterButton_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+EnterButton_Roundify_12px.SliceScale = 0.120
