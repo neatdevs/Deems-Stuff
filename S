@@ -1,0 +1,125 @@
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
