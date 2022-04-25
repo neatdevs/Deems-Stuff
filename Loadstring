@@ -14,13 +14,6 @@ local MainTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-MainTab:AddButton({
-	Name = "Teleport to Giant Dancing Simulator (reexecute)",
-	Callback = function()
-      	game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
-  	end    
-})
-
 local LocalPlayerTab = Window:MakeTab({
 	Name = "Local Player",
 	Icon = "rbxassetid://9445147702",
@@ -43,6 +36,13 @@ MainTab:AddLabel("Main Scripts")
 LocalPlayerTab:AddLabel("Local Player Scripts")
 FETab:AddLabel("FE Scripts")
 SettingsTab:AddLabel("Settings Tab")
+
+MainTab:AddButton({
+	Name = "Teleport to Giant Dancing Simulator (reexecute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
+  	end    
+})
 
 LocalPlayerTab:AddSlider({
 	Name = "Walkspeed",
