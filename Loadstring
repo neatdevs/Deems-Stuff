@@ -119,6 +119,17 @@ LocalPlayerTab:AddButton({
 		print("This noclip should bypass most anti-cheats");
   	end    
 })
+LocalPlayerTab:AddSlider({
+	Name = "Hip Height Changer",
+	Min = 0,
+	Max = 200,
+	Default = 3,
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
+	end    
+})
 
 SettingsTab:AddColorpicker({
 	Name = "Colorpicker",
