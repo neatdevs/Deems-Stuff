@@ -102,7 +102,11 @@ EnterButton.MouseButton1Click:Connect(function()
 		WhitelistFrame.Visible = false
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Teemsploit/Deem/main/Loading.lua')))()
 		wait(17.53)
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+    if game.PlaceId == 7371240697 then
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/1')))()
+elseif game.PlaceId ~= 7371240697 then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+end
 	elseif WhitelistBox.Text ~= "Test" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
