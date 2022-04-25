@@ -1,0 +1,5 @@
+if game.PlaceId == 7371240697 then
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/1')))()
+elseif game.PlaceId ~= 7371240697 then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+end
