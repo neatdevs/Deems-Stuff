@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 OrionLib:MakeNotification({
-	Name = "Welcome to Deem!",
+	Name = "Welcome to Deem! ver b0.1",
 	Content = "UI powered by Orion UI Libary, Some scripts are not made by me Credit to the Developer's of them",
 	Time = 5
 })
