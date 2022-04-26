@@ -55,6 +55,18 @@ MainTab:AddButton({
       	game:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
   	end    
 })
+MainTab:AddButton({
+	Name = "Teleport to The Roblox Plague (re-execute/Script made by Teem)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(168851637, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Hotel Elephant (re-execute/Script made by Teem)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(23578803, LocalPlayer)
+  	end    
+})
 
 LocalPlayerTab:AddSlider({
 	Name = "Walkspeed",
