@@ -38,9 +38,21 @@ FETab:AddLabel("FE Scripts")
 SettingsTab:AddLabel("Settings Tab")
 
 MainTab:AddButton({
-	Name = "Teleport to Giant Dancing Simulator (reexecute)",
+	Name = "Teleport to Giant Dancing Simulator (re-execute)",
 	Callback = function()
       	game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Clicker Sim X (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8070952780, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Magnet Sim (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
   	end    
 })
 
