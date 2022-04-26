@@ -1,4 +1,6 @@
 --loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/L%26S')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
 local LocalPlayerTab = Window:MakeTab({
 	Name = "Local Player",
 	Icon = "rbxassetid://9445147702",
