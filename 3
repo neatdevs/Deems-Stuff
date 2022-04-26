@@ -6,7 +6,31 @@ if game.PlaceId == 8592863835 then
         Image = "rbxassetid://4483345998",
         Time = 5
     })
-    local Window = OrionLib:MakeWindow({Name = "Deem b0.1"})
+    local Window = OrionLib:MakeWindow({Name = "Deem! ver b0.1"})
+    
+      local MainTab = Window:MakeTab({
+        Name = "Main",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    MainTab:AddButton({
+	Name = "Teleport to Giant Dancing Simulator (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Clicker Sim X (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8070952780, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Magnet Sim (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
+  	end    
+})
     
 local BuyTab = Window:MakeTab({
 	Name = "Buy Stuff",
