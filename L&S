@@ -106,7 +106,11 @@ SettingsTab:AddColorpicker({
 		print(Value)
 	end	  
 })
-
+local SoundTab = Window:MakeTab({
+    Name = "Audio Player",
+    Icon = "rbxassetid://4370345169",
+    PremiumOnly = false
+})
 local Songs
 SoundTab:AddTextbox({
     Name = "Imput sound",
