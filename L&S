@@ -107,3 +107,27 @@ SettingsTab:AddColorpicker({
 		print(Value)
 	end	  
 })
+
+local Songs
+SoundTab:AddTextbox({
+    Name = "Imput sound",
+    Default = "default box song",
+    TextDisappear = true,
+    Callback = function(sounf)
+        print(sounf)
+        Songs = sounf
+    end      
+})
+
+SoundTab:AddButton({
+    Name = "Play Song",
+    Callback = function()
+          print("sounf played")
+          local sounfer = Instance.new("Sound")
+        sounfer.Name = "Sound"
+        sounfer.SoundId = "rbxassetid://"..Songs
+        sounfer.Parent = game.Workspace
+        
+        sounfer:Play()
+      end    
+})
