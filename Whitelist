@@ -104,9 +104,9 @@ EnterButton.MouseButton1Click:Connect(function()
 		wait(17.53)
     if game.PlaceId == 7371240697 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/1')))()
-    if game.PlaceId == 8592863835 then
+    elseif game.PlaceId == 8592863835 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/3')))()
-    if game.PlaceId == 8070952780 then
+    elseif game.PlaceId == 8070952780 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/2')))()
 elseif game.PlaceId ~= 7371240697 then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
@@ -114,8 +114,6 @@ elseif game.PlaceId ~= 8592863835 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 elseif game.PlaceId ~= 8070952780 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
-end
-end
 end
 	elseif WhitelistBox.Text ~= "Test" then
 		WhitelistBox.Text = "Checking Whitelist"
