@@ -10,6 +10,30 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 local Window = OrionLib:MakeWindow({Name = "Deem Hub! ver b0.1"})
 
+  local MainTab = Window:MakeTab({
+        Name = "Main",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    MainTab:AddButton({
+	Name = "Teleport to Giant Dancing Simulator (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Clicker Sim X (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8070952780, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Magnet Sim (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
+  	end    
+})
+
 local AutoFarmTab = Window:MakeTab({
 	Name = "AutoFarm",
 	Icon = "rbxassetid://9445147702",
