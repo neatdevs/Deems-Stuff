@@ -147,7 +147,7 @@ LocalPlayerTab:AddSlider({
 	Name = "Hip Height Changer",
 	Min = 0,
 	Max = 200,
-	Default = 3,
+	Default = 0,
 	Increment = 1,
 	ValueName = "",
 	Callback = function(Value)
