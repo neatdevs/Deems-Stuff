@@ -6,7 +6,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "Deem Hub"})
+local Window = OrionLib:MakeWindow({Name = "Deem! ver b0.1"})
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
