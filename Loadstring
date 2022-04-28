@@ -67,6 +67,19 @@ MainTab:AddButton({
       	game:GetService("TeleportService"):Teleport(23578803, LocalPlayer)
   	end    
 })
+MainTab:AddButton({
+	Name = "Teleport to Chaos (re-exe Found by Liam)",
+	Callback = function()
+        game:GetService("TeleportService"):Teleport(6441847031, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Arsenal (re-exe Found by Liam)",
+	Callback = function()
+        game:GetService("TeleportService"):Teleport(286090429, LocalPlayer)
+  	end    
+})
+
 
 LocalPlayerTab:AddSlider({
 	Name = "Walkspeed",
