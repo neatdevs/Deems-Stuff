@@ -86,6 +86,7 @@ LocalPlayerTab:AddSlider({
 	Min = 16,
 	Max = 300,
 	Default = 16,
+	Color = Color3.fromRGB(255,70,70),
 	Increment = 1,
 	ValueName = "walkspeed",
 	Callback = function(Value)
@@ -103,6 +104,7 @@ LocalPlayerTab:AddSlider({
 	Min = 50,
 	Max = 300,
 	Default = 50,
+	Color = Color3.fromRGB(255,70,70),
 	Increment = 1,
 	ValueName = "JP",
 	Callback = function(Value)
@@ -161,6 +163,7 @@ LocalPlayerTab:AddSlider({
 	Min = 0,
 	Max = 200,
 	Default = 0,
+	Color = Color3.fromRGB(255,70,70),
 	Increment = 1,
 	ValueName = "",
 	Callback = function(Value)
