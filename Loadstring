@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({Name = "Deem! ver b0.1"})
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
-	Icon = "rbxassetid://9445147666",
+	Icon = "rbxassetid://9555772014",
 	PremiumOnly = false
 })
 
