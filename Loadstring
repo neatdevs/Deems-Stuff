@@ -226,6 +226,19 @@ SoundTab:AddButton({
       end    
 })
 
+SoundTab:AddSlider({
+	Name = "Volume Slider",
+	Min = 0,
+	Max = 100,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "sounfer",
+	Callback = function(Value)
+		sounfer.Volume = Value
+	end    
+})
+
 SettingsTab:AddColorpicker({
 	Name = "Colorpicker",
 	Default = Color3.fromRGB(255, 0, 0),
