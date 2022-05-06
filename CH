@@ -64,7 +64,7 @@ local ChaosTab = Window:MakeTab({
 })
 
 ChaosTab:AddButton({
-	Name = "Bloos Dagger",
+	Name = "Blood Dagger",
 	Callback = function()
         local args = {
 
