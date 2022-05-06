@@ -225,7 +225,6 @@ SoundTab:AddButton({
         sounfer:Play()
       end    
 })
-local volume = Value
 SoundTab:AddSlider({
 	Name = "Volume Slider",
 	Min = 1,
@@ -235,6 +234,7 @@ SoundTab:AddSlider({
 	Increment = 1,
 	ValueName = "",
 	Callback = function(Value)
+	local Volume = Value
 		sounfer.Volume = Value
 	end    
 })
