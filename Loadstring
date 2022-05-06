@@ -235,7 +235,7 @@ SoundTab:AddSlider({
 	Increment = 1,
 	ValueName = "",
 	Callback = function(Value)
-		Songs.Volume = Value
+		sounf.Volume = Value
 	end    
 })
 
