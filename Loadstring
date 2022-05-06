@@ -16,19 +16,19 @@ local MainTab = Window:MakeTab({
 
 local LocalPlayerTab = Window:MakeTab({
 	Name = "Local Player",
-	Icon = "rbxassetid://9445147702",
+	Icon = "rbxassetid://9555779328",
 	PremiumOnly = false
 })
 
 local FETab = Window:MakeTab({
 	Name = "FE",
-	Icon = "rbxassetid://9445147702",
+	Icon = "rbxassetid://9555769281",
 	PremiumOnly = false
 })
 
 local SettingsTab = Window:MakeTab({
 	Name = "Settings",
-	Icon = "rbxassetid://9445147702",
+	Icon = "rbxassetid://9555766093",
 	PremiumOnly = false
 })
 
