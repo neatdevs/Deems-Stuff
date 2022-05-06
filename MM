@@ -16,6 +16,60 @@ local cumTab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+ local MainTab = Window:MakeTab({
+        Name = "Main",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    MainTab:AddButton({
+	Name = "Teleport to Giant Dancing Simulator (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Clicker Sim X (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8070952780, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Magnet Sim (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to The Roblox Plague (re-execute/Script by Teem)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(168851637, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Hotel Elephant (re-execute/Script by Teem)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(23578803, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Chaos (re-exe Found by Liam)",
+	Callback = function()
+        game:GetService("TeleportService"):Teleport(6441847031, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Arsenal (re-exe Found by Liam)",
+	Callback = function()
+        game:GetService("TeleportService"):Teleport(286090429, LocalPlayer)
+  	end    
+})
+MainTab:AddButton({
+	Name = "Teleport to Mortem Metallum (re-exe Found by Liam)",
+	Callback = function()
+        game:GetService("TeleportService"):Teleport(4169490976, LocalPlayer)
+  	end    
+})
+
 
 cumTab:AddButton({
 	Name = "No Stun and Run",
@@ -227,5 +281,163 @@ cumTab:AddButton({
   	end    
 })
 
+local LocalPlayerTab = Window:MakeTab({
+	Name = "Local Player",
+	Icon = "rbxassetid://9445147702",
+	PremiumOnly = false
+})
+local SettingsTab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://9445147702",
+	PremiumOnly = false
+})
+
+LocalPlayerTab:AddLabel("Local Player Scripts")
+SettingsTab:AddLabel("Settings Tab")
+
+LocalPlayerTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 300,
+	Default = 16,
+	Increment = 1,
+	ValueName = "walkspeed",
+	Callback = function(Value)
+		getgenv().WalkSpeedValue = Value; --set your desired walkspeed here
+local Player = game:service'Players'.LocalPlayer;
+Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+end)
+Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+	end    
+})
+
+LocalPlayerTab:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 300,
+	Default = 50,
+	Increment = 1,
+	ValueName = "JP",
+	Callback = function(Value)
+		local plr = game.Players.LocalPlayer
+
+		plr.Character.Humanoid.JumpPower = Value --Change to JumpPower number
+	end    
+})
+
+LocalPlayerTab:AddButton({
+	Name = "Noclip, Press X to toggle",
+	Callback = function()
+		local nckey = "x";
+		local nclip = false;
+		local lp = game.Players.LocalPlayer
+		local ms = lp:GetMouse()
+		local rm = getrawmetatable(game)
+		local index = rm.__index
+		local bv = Instance.new("BoolValue");
+		bv.Value = false;
+		setreadonly(rm,false)
+		
+		rm.__index = function(self,j)
+		   if tostring(self) == "Part" and tostring(j) == "Anchored" then
+			   return index(bv,"Value")
+		end
+		   return index(self,j)
+		end
+		
+		
+		game:GetService("RunService").Stepped:Connect(function()
+		   if nclip == true then
+			   lp.Character.Head.CanCollide = false
+			   lp.Character.Torso.CanCollide = false
+		   end
+		end);
+		
+		ms.KeyDown:Connect(function(k)
+		   if k == nckey then
+			   nclip = not nclip
+			   if nclip == true then
+				   print("Noclip is on.")
+			   else
+				   print("Noclip if off.")
+			   end
+		   end
+		end)
+		
+		print("Noclip key is X");
+		print("Press X to turn noclip on and off");
+		print("This noclip should bypass most anti-cheats");
+  	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Hip Height Changer",
+	Min = 0,
+	Max = 200,
+	Default = 3,
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
+	end    
+})
+LocalPlayerTab:AddButton({
+	Name = "Rejoin (Made by IY)",
+	Callback = function()
+      		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+  	end    
+})
+
+LocalPlayerTab:AddButton({
+	Name = "ServerHop (Made by IY)",
+	Callback = function()
+      		local x = {}
+	for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+		if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+			x[#x + 1] = v.id
+		end
+	end
+	if #x > 0 then
+		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+		end
+  	end    
+})
+
+
+SettingsTab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+local SoundTab = Window:MakeTab({
+    Name = "Audio Player",
+    Icon = "rbxassetid://4370345169",
+    PremiumOnly = false
+})
+local Songs
+SoundTab:AddTextbox({
+    Name = "Imput sound",
+    Default = "default box song",
+    TextDisappear = true,
+    Callback = function(sounf)
+        print(sounf)
+        Songs = sounf
+    end      
+})
+
+SoundTab:AddButton({
+    Name = "Play Song",
+    Callback = function()
+          print("sounf played")
+          local sounfer = Instance.new("Sound")
+        sounfer.Name = "Sound"
+        sounfer.SoundId = "rbxassetid://"..Songs
+        sounfer.Parent = game.Workspace
+        
+        sounfer:Play()
+      end    
+})
 
 end
