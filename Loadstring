@@ -225,17 +225,17 @@ SoundTab:AddButton({
         sounfer:Play()
       end    
 })
-
+local volume = Value
 SoundTab:AddSlider({
 	Name = "Volume Slider",
-	Min = 0,
+	Min = 1,
 	Max = 100,
-	Default = 5,
+	Default = 1,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "",
 	Callback = function(Value)
-		sounf.Volume = Value
+		sounfer.Volume = Value
 	end    
 })
 
