@@ -10,7 +10,7 @@ if game.PlaceId == 6441847031 then
 
     local MainTab = Window:MakeTab({
         Name = "Main",
-        Icon = "rbxassetid://4483345998",
+        Icon = "rbxassetid://9555772014",
         PremiumOnly = false
     })
     MainTab:AddButton({
@@ -64,7 +64,7 @@ MainTab:AddButton({
 
 local ChaosTab = Window:MakeTab({
 	Name = "Chaos Scripts",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://9555774520",
 	PremiumOnly = false
 })
 
@@ -174,12 +174,12 @@ ChaosTab:AddButton({
 
 local LocalPlayerTab = Window:MakeTab({
 	Name = "Local Player",
-	Icon = "rbxassetid://9445147702",
+	Icon = "rbxassetid://9555779328",
 	PremiumOnly = false
 })
 local SettingsTab = Window:MakeTab({
 	Name = "Settings",
-	Icon = "rbxassetid://9445147702",
+	Icon = "rbxassetid://9555766093",
 	PremiumOnly = false
 })
 
@@ -304,13 +304,13 @@ SettingsTab:AddColorpicker({
 })
 local SoundTab = Window:MakeTab({
     Name = "Audio Player",
-    Icon = "rbxassetid://4370345169",
+    Icon = "rbxassetid://9555767321",
     PremiumOnly = false
 })
 local Songs
 SoundTab:AddTextbox({
     Name = "Imput sound",
-    Default = "default box song",
+    Default = "",
     TextDisappear = true,
     Callback = function(sounf)
         print(sounf)
