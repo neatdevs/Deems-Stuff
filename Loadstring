@@ -205,7 +205,7 @@ local SoundTab = Window:MakeTab({
 local Songs
 SoundTab:AddTextbox({
     Name = "Imput sound",
-    Default = "default box song",
+    Default = "",
     TextDisappear = true,
     Callback = function(sounf)
         print(sounf)
@@ -225,19 +225,7 @@ SoundTab:AddButton({
         sounfer:Play()
       end    
 })
-SoundTab:AddSlider({
-	Name = "Volume Slider",
-	Min = 0.1,
-	Max = 10,
-	Default = 1,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 0.1,
-	ValueName = "",
-	Callback = function(Value)
-	local Volume = Value
-		sounfer.Volume = Value
-	end    
-})
+
 
 SettingsTab:AddColorpicker({
 	Name = "Colorpicker",
