@@ -202,7 +202,6 @@ local SoundTab = Window:MakeTab({
     Icon = "rbxassetid://9555767321",
     PremiumOnly = false
 })
-local Songs
 SoundTab:AddTextbox({
     Name = "Imput sound",
     Default = "default box song",
