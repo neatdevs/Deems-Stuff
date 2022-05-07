@@ -5,7 +5,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 OrionLib:MakeNotification({
 	Name = "Game Found!",
 	Content = "Loading scripts for this game!",
-	Image = "rbxassetid://4483345998",
+	Image = "rbxassetid://9555769281",
 	Time = 5
 })
 
