@@ -116,7 +116,7 @@ EnterButton.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/CH')))()
     elseif game.PlaceId == 286090429 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/ASS')))()
-    else if game.PlaceId == 4169490976 then
+    elseif game.PlaceId == 4169490976 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/MM')))()
 elseif game.PlaceId ~= 7371240697 then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
