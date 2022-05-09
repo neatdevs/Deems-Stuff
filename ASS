@@ -1360,7 +1360,7 @@ SoundTab:AddButton({
       end    
 })
 SettingsTab:AddButton({
-	Name = "Discord (Must have the app open to join the server)",
+	Name = "Discord (Have app open) made by someone on synx dc server",
 	Callback = function()
       		local Settings = {
     InviteCode = "https://discord.gg/su7ycRRJyz"
