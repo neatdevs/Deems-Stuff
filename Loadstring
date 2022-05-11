@@ -2,6 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local sounfer = Instance.new("Sound")
 local loop = false
 
+
 OrionLib:MakeNotification({
 	Name = "Welcome to Deem! ver b0.1",
 	Content = "UI powered by Orion UI Libary, Some scripts are not made by me Credit to the Developer's of them",
@@ -244,9 +245,20 @@ SoundTab:AddToggle({
 	Name = "Loop song?",
 	Default = false,
 	Callback = function(Value)
-		sounfer.Looped = loop
+		loop = Value
 	end    
 })
+
+task.defer(function ()
+    while true do
+        task.wait(0.1)
+        
+        
+        if loop then
+	sounfer.Looped = true
+	end
+   end
+end)
 
 SettingsTab:AddColorpicker({
 	Name = "Colorpicker",
