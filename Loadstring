@@ -2,7 +2,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local sounfer = Instance.new("Sound")
 local loop = false
 
-
 OrionLib:MakeNotification({
 	Name = "Welcome to Deem! ver b0.1",
 	Content = "UI powered by Orion UI Libary, Some scripts are not made by me Credit to the Developer's of them",
@@ -96,14 +95,11 @@ LocalPlayerTab:AddSlider({
 	Default = 16,
 	Color = Color3.fromRGB(255,70,70),
 	Increment = 1,
-	ValueName = "walkspeed",
+	ValueName = "WS",
 	Callback = function(Value)
-		getgenv().WalkSpeedValue = Value; --set your desired walkspeed here
-local Player = game:service'Players'.LocalPlayer;
-Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
-Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
-end)
-Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+		local plr = game.Players.LocalPlayer
+
+		plr.Character.Humanoid.WalkSpeed = Value
 	end    
 })
 
@@ -229,11 +225,11 @@ SoundTab:AddButton({
 })
 SoundTab:AddSlider({
     Name = "Volume Slider",
-    Min = 1,
+    Min = 0.1,
     Max = 10,
     Default = 1,
     Color = Color3.fromRGB(255,255,255),
-    Increment = 1,
+    Increment = 0.1,
     ValueName = "",
     Callback = function(Value)
     local Volume = Value
@@ -259,6 +255,7 @@ task.defer(function ()
 	end
    end
 end)
+
 
 SettingsTab:AddColorpicker({
 	Name = "Colorpicker",
