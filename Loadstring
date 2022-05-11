@@ -1,4 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local sounfer = Instance.new("Sound")
+local loop = false
 
 OrionLib:MakeNotification({
 	Name = "Welcome to Deem! ver b0.1",
@@ -202,7 +204,7 @@ local SoundTab = Window:MakeTab({
     Icon = "rbxassetid://9555767321",
     PremiumOnly = false
 })
-Songs
+
 SoundTab:AddTextbox({
     Name = "Imput sound",
     Default = "",
@@ -217,7 +219,6 @@ SoundTab:AddButton({
     Name = "Play Song",
     Callback = function()
           print("sounf played")
-          local sounfer = Instance.new("Sound")
         sounfer.Name = "Sound"
         sounfer.SoundId = "rbxassetid://"..Songs
         sounfer.Parent = game.Workspace
@@ -228,7 +229,7 @@ SoundTab:AddButton({
 SoundTab:AddSlider({
     Name = "Volume Slider",
     Min = 1,
-    Max = 100,
+    Max = 10,
     Default = 1,
     Color = Color3.fromRGB(255,255,255),
     Increment = 1,
@@ -237,6 +238,14 @@ SoundTab:AddSlider({
     local Volume = Value
         sounfer.Volume = Value
     end    
+})
+
+SoundTab:AddToggle({
+	Name = "Loop song?",
+	Default = false,
+	Callback = function(Value)
+		sounfer.Looped = loop
+	end    
 })
 
 SettingsTab:AddColorpicker({
