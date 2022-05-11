@@ -27,6 +27,7 @@ local FETab = Window:MakeTab({
 	Icon = "rbxassetid://9555769281",
 	PremiumOnly = false
 })
+MainTab:AddParagraph("Comming soon! maybe")
 
 local SettingsTab = Window:MakeTab({
 	Name = "Settings",
