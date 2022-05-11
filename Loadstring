@@ -27,7 +27,6 @@ local FETab = Window:MakeTab({
 	Icon = "rbxassetid://9555769281",
 	PremiumOnly = false
 })
-MainTab:AddParagraph("Comming soon! maybe")
 
 local SettingsTab = Window:MakeTab({
 	Name = "Settings",
@@ -37,7 +36,7 @@ local SettingsTab = Window:MakeTab({
 
 MainTab:AddLabel("Main Scripts")
 LocalPlayerTab:AddLabel("Local Player Scripts")
-FETab:AddLabel("FE Scripts")
+FETab:AddLabel("FE Scripts, Comming Soon!    maybe")
 SettingsTab:AddLabel("Settings Tab")
 
 MainTab:AddButton({
