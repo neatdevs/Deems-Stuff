@@ -255,7 +255,7 @@ task.defer(function ()
         
         
         if loop then
-	sounfer.Looped = true
+	sounfer.Looped = loop
 	end
    end
 end)
