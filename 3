@@ -834,16 +834,15 @@ SettingsTab:AddColorpicker({
 	Callback = function(Value)
 		print(Value)
 	end	  
-})
-local SoundTab = Window:MakeTab({
+})local SoundTab = Window:MakeTab({
     Name = "Audio Player",
     Icon = "rbxassetid://9555767321",
     PremiumOnly = false
 })
-local Songs
+
 SoundTab:AddTextbox({
     Name = "Imput sound",
-    Default = "default box song",
+    Default = "",
     TextDisappear = true,
     Callback = function(sounf)
         print(sounf)
@@ -855,7 +854,6 @@ SoundTab:AddButton({
     Name = "Play Song",
     Callback = function()
           print("sounf played")
-          local sounfer = Instance.new("Sound")
         sounfer.Name = "Sound"
         sounfer.SoundId = "rbxassetid://"..Songs
         sounfer.Parent = game.Workspace
@@ -863,6 +861,39 @@ SoundTab:AddButton({
         sounfer:Play()
       end    
 })
+SoundTab:AddSlider({
+    Name = "Volume Slider",
+    Min = 0.1,
+    Max = 10,
+    Default = 1,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 0.1,
+    ValueName = "",
+    Callback = function(Value)
+    local Volume = Value
+        sounfer.Volume = Value
+    end    
+})
+
+SoundTab:AddToggle({
+	Name = "Loop song?",
+	Default = false,
+	Callback = function(Value)
+		loop = Value
+	end    
+})
+
+task.defer(function ()
+    while true do
+        task.wait(0.1)
+        
+        
+        if loop then
+	sounfer.Looped = loop
+	end
+   end
+end)
+
 SettingsTab:AddButton({
 	Name = "Discord (Have app open) uknown on who made it",
 	Callback = function()
