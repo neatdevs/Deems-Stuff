@@ -369,7 +369,7 @@ SettingsTab:AddButton({
 	Name = "Discord (Have app open) uknown on who made it",
 	Callback = function()
       		local Settings = {
-    InviteCode = "https://discord.gg/su7ycRRJyz"
+    InviteCode = "su7ycRRJyz"
   }
   
   local HttpService = game:GetService("HttpService")
