@@ -11,6 +11,33 @@ OrionLib:MakeNotification({
 
 local Window = OrionLib:MakeWindow({Name = "Deem! ver b0.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+v:Disable()
+end
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local OldNameCall 
+OldNameCall = hookmetamethod(game, "__namecall", function(...) 
+    local Self, Args = (...), ({select(2, ...)})
+
+    if getnamecallmethod() == "Kick" and Self == Player then 
+        return
+    end
+
+    return OldNameCall(...)
+end)
+
+local StartTab = Window:MakeTab({
+	Name = "Start Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+StartTab:AddParagraph("Welcome!","Anti-Afk is always on. Anti-Kick is always on")
+StartTab:AddParagraph("Credits","Thanks to Teem for being the Co-Owner, Thanks to Liamriley101 for letting me put in some scripts that he found/made")
+
 local cumTab = Window:MakeTab({
 	Name = "Mortem Scripts (Provided by Liam)",
 	Icon = "rbxassetid://9561839090",
