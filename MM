@@ -524,3 +524,4 @@ SettingsTab:AddButton({
   	end    
 })
 end
+OrionLib:Init()
