@@ -31,7 +31,7 @@ end)
 
 local StartTab = Window:MakeTab({
 	Name = "Start Tab",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://9555773131",
 	PremiumOnly = false
 })
 
