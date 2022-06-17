@@ -30,7 +30,7 @@ OldNameCall = hookmetamethod(game, "__namecall", function(...)
 end)
 
 local StartTab = Window:MakeTab({
-	Name = "Start Tab",
+	Name = "Information",
 	Icon = "rbxassetid://9555773131",
 	PremiumOnly = false
 })
