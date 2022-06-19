@@ -143,7 +143,7 @@ elseif game.PlaceId ~= 7799826347 then
 elseif game.PlaceId ~= 5100950559 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 end
-	elseif WhitelistBox.Text ~= "Test" then
+	elseif WhitelistBox.Text ~= "Ver b0.1" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
 		WhitelistBox.Text = "Checking Whitelist."
