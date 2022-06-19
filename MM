@@ -120,7 +120,19 @@ MainTab:AddButton({
         game:GetService("TeleportService"):Teleport(4169490976, LocalPlayer)
   	end    
 })
+MainTab:AddButton({
+	Name = "Teleport to Just Grass (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(5100950559, LocalPlayer)
+  	end    
+})
 
+MainTab:AddButton({
+	Name = "Teleport to Sandbox Tycoon (re-execute)",
+	Callback = function()
+      	game:GetService("TeleportService"):Teleport(7799826347, LocalPlayer)
+  	end    
+})
 
 cumTab:AddButton({
 	Name = "No Stun and Run",
