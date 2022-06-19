@@ -88,7 +88,7 @@ EnterButton.Text = "Enter"
 EnterButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 EnterButton.TextSize = 14.000
 EnterButton.MouseButton1Click:Connect(function()
-	if WhitelistBox.Text == "Test" then
+	if WhitelistBox.Text == "Ver b0.1" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
 		WhitelistBox.Text = "Checking Whitelist."
