@@ -118,6 +118,8 @@ EnterButton.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/ASS')))()
     elseif game.PlaceId == 4169490976 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/MM')))()
+    elseif game.PlaceId == 7799826347 then
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/SandBox')))()
 elseif game.PlaceId ~= 7371240697 then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 elseif game.PlaceId ~= 8592863835 then
@@ -133,6 +135,8 @@ elseif game.PlaceId ~= 6441847031 then
 elseif game.PlaceId ~= 286090429 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 elseif game.PlaceId ~= 4169490976 then
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+elseif game.PlaceId ~= 7799826347 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 end
 	elseif WhitelistBox.Text ~= "Test" then
