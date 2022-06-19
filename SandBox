@@ -66,6 +66,65 @@ SBTTab:AddButton({
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/Teemsploit/Epic-roblox-hack/main/Sandbox%20Tycoon%20Fucker')))()
   	end    
 })
+SBTTab:AddButton({
+	Name = "Advertise Deem!",
+	Callback = function()
+      		_G.loop = true
+while _G.loop do
+while wait(0.4) do
+local args = {
+    [1] = "This Game is pwned by Deem!"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(3)
+local args = {
+    [1] = "Get Deem now at this next one is the invite the caps are RRJ and the ? looking thing is a y"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(9)
+
+local args = { [[
+🔴🔴🔴🔴🔴   🔴⚪⚪⚪🔴 🔴🔴🔴🔴🔴   🔴⚪⚪⚪🔴 ⚪🔴🔴🔴🔴  🔴🔴🔴🔴🔴    🔴🔴🔴🔴🔴   🔴🔴🔴🔴🔴   🔴⚪⚪⚪🔴 🔴🔴🔴🔴🔴
+🔴⚪⚪⚪⚪ 🔴⚪⚪⚪🔴 ⚪⚪⚪⚪🔴 ⚪🔴⚪🔴⚪ 🔴⚪⚪⚪⚪ 🔴⚪⚪⚪🔴 🔴⚪⚪⚪🔴  ⚪⚪⚪🔴⚪ ⚪🔴⚪🔴⚪ ⚪⚪⚪🔴⚪
+🔴🔴🔴🔴🔴   🔴⚪⚪⚪🔴 ⚪⚪⚪🔴⚪ ⚪⚪🔴⚪⚪ 🔴⚪⚪⚪⚪ 🔴🔴🔴🔴🔴  🔴🔴🔴🔴🔴   ⚪⚪⚪🔴⚪  ⚪⚪🔴⚪⚪ ⚪⚪🔴⚪⚪
+⚪⚪⚪⚪🔴 🔴⚪⚪⚪🔴 ⚪⚪🔴⚪⚪ ⚪⚪🔴⚪⚪ 🔴⚪⚪⚪⚪ 🔴⚪⚪🔴⚪ 🔴⚪⚪🔴⚪ 🔴⚪⚪🔴⚪  ⚪⚪🔴⚪⚪ ⚪🔴⚪⚪⚪
+🔴🔴🔴🔴🔴   🔴🔴🔴🔴🔴   ⚪🔴⚪⚪⚪  ⚪⚪🔴⚪⚪⚪🔴🔴🔴🔴 🔴⚪⚪⚪🔴 🔴⚪⚪⚪🔴  🔴🔴🔴🔴⚪   ⚪⚪🔴⚪⚪ 🔴🔴🔴🔴🔴
+
+]]
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(20)
+local args = {
+    [1] = "Owner: neatdev 7275 Co Owner: Teem 1337"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(4)
+local args = {
+    [1] = "Teem is a Femmyboy"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(2)
+local args = {
+    [1] = "Deem on top!"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(6)
+local args = {
+    [1] = "We are going to become one of the most powerful script hub's!"
+}
+
+game:GetService("Players").LocalPlayer.PlayerGui.Gui.Stat.RemoteEvent:FireServer(unpack(args))
+wait(10)
+end
+end
+  	end    
+})
 
 local StartTab = Window:MakeTab({
 	Name = "Information",
