@@ -319,6 +319,13 @@ task.defer(function ()
 end)
 
 FETab:AddButton({
+	Name = "Netless",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
+  	end    
+})
+
+FETab:AddButton({
 	Name = "FE Rock",
 	Callback = function()
       		-- removing hats mesh
@@ -350,13 +357,6 @@ teemwashere1 = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
 -- walkspeed and jumphight
 teemwashere1.WalkSpeed = 0
 teemwashere1.JumpPower = 0
-  	end    
-})
-
-FETab:AddButton({
-	Name = "Netless",
-	Callback = function()
-      		loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
   	end    
 })
 
