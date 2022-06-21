@@ -125,6 +125,16 @@ end
 end
   	end    
 })
+SBTTab:AddButton({
+	Name = "A Better Anti-lag",
+	Callback = function()
+      		game.Workspace.FotTesting:Destroy()
+game.Workspace.BackModels:Destroy()
+game.Workspace.Map.Tree:Destroy()
+game.Workspace.GlobalLeaderboard:Destroy()
+game.Workspace.RankLand:Destroy()
+  	end    
+})
 
 local StartTab = Window:MakeTab({
 	Name = "Information",
