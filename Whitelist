@@ -88,7 +88,7 @@ EnterButton.Text = "Enter"
 EnterButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 EnterButton.TextSize = 14.000
 EnterButton.MouseButton1Click:Connect(function()
-	if WhitelistBox.Text == "Ver b0.1" then
+	if WhitelistBox.Text == "UWP9xH60A%CkQ!@LhcQLa@GbB9a" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
 		WhitelistBox.Text = "Checking Whitelist."
@@ -143,7 +143,7 @@ elseif game.PlaceId ~= 7799826347 then
 elseif game.PlaceId ~= 5100950559 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 end
-	elseif WhitelistBox.Text ~= "Ver b0.1" then
+	elseif WhitelistBox.Text ~= "UWP9xH60A%CkQ!@LhcQLa@GbB9a" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
 		WhitelistBox.Text = "Checking Whitelist."
