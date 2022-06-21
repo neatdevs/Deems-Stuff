@@ -85,7 +85,7 @@ local SettingsTab = Window:MakeTab({
 
 MainTab:AddLabel("Main Scripts")
 LocalPlayerTab:AddLabel("Local Player Scripts")
-FETab:AddLabel("FE Scripts, Comming Soon!    maybe")
+FETab:AddLabel("FE Scripts")
 SettingsTab:AddLabel("Settings Tab")
 
 MainTab:AddButton({
