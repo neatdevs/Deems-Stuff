@@ -55,10 +55,12 @@ WhitelistBox.Position = UDim2.new(0.185840696, 0, 0.355072469, 0)
 WhitelistBox.Size = UDim2.new(0, 140, 0, 39)
 WhitelistBox.ZIndex = 2
 WhitelistBox.Font = Enum.Font.Merriweather
-WhitelistBox.PlaceholderText = "Whitelist key here"
+WhitelistBox.PlaceholderText = "Key here. note key changes 24 hours! "
 WhitelistBox.Text = ""
 WhitelistBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 WhitelistBox.TextSize = 14.000
+WhitelistBox.TextScaled = true
+WhitelistBox.TextWrapped = true
 
 WhitelistBox_Roundify_12px.Name = "Whitelist Box_Roundify_12px"
 WhitelistBox_Roundify_12px.Parent = WhitelistBox
@@ -88,7 +90,7 @@ EnterButton.Text = "Enter"
 EnterButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 EnterButton.TextSize = 14.000
 EnterButton.MouseButton1Click:Connect(function()
-	if WhitelistBox.Text == "UWP9xH60A%CkQ!@LhcQLa@GbB9a" then
+	if WhitelistBox.Text == "2B29@#UXztF" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
 		WhitelistBox.Text = "Checking Whitelist."
@@ -141,7 +143,7 @@ elseif game.PlaceId ~= 7799826347 then
 elseif game.PlaceId ~= 5100950559 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
 end
-	elseif WhitelistBox.Text ~= "UWP9xH60A%CkQ!@LhcQLa@GbB9a" then
+	elseif WhitelistBox.Text ~= "2B29@#UXztF" then
 		WhitelistBox.Text = "Checking Whitelist"
 		wait(1)
 		WhitelistBox.Text = "Checking Whitelist."
