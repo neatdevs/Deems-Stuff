@@ -1,3 +1,6 @@
+if game.PlaceId == 23578803 then
+	repeat task.wait() until game:IsLoaded()
+
 if IY_LOADED and not _G.IY_DEBUG == true then
 	-- error("Infinite Yield is already running!",0)
 	return
@@ -4214,7 +4217,7 @@ function autoComplete(str,curText)
 end
 
 CMDs = {}
-CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infinite Yield support server.'}
+CMDs[#CMDs + 1] = {NAME = 'discord / help', DESC = 'Invite to the Deem server.'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads old Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX explorer'}
 CMDs[#CMDs + 1] = {NAME = 'remotespy / rspy', DESC = 'Opens FrostHook Spy'}
@@ -6195,10 +6198,10 @@ end)
 
 addcmd('discord', {'support', 'help'}, function(args, speaker)
 	if toClipboard then
-		toClipboard('https://discord.com/invite/dYHag43eeU')
-		notify('Discord Invite', 'Copied to clipboard!\ndiscord.gg/dYHag43eeU')
+		toClipboard('https://discord.gg/su7ycRRJyz')
+		notify('Discord Invite', 'Copied to clipboard!\nhttps://discord.gg/su7ycRRJyz')
 	else
-		notify('Discord Invite', 'discord.gg/dYHag43eeU')
+		notify('Discord Invite', 'https://discord.gg/su7ycRRJyz')
 	end
 	local req = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or getgenv().request or request
 	if req then
@@ -6212,7 +6215,7 @@ addcmd('discord', {'support', 'help'}, function(args, speaker)
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
+				args = {code = 'su7ycRRJyz'}
 			})
 		})
 	end
@@ -11968,7 +11971,7 @@ local args = {
 game:GetService("ReplicatedStorage").ChangeTeam:InvokeServer(unpack(args))
 
 end)
-addcmd('shop assistant',{'sa'},function(args, speaker)
+addcmd('shopassistant',{'sa'},function(args, speaker)
 local args = {
     [1] = "Bright Blue"
 }
@@ -12138,3 +12141,4 @@ Logo:Destroy()
 Credits:Destroy()
 IntroBackground:Destroy()
 minimizeHolder()
+end
