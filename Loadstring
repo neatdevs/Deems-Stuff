@@ -1,3 +1,5 @@
+local utils = {}
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local sounfer = Instance.new("Sound")
 local loop = false
