@@ -2,25 +2,25 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local sounfer = Instance.new("Sound")
 local loop = false
 --\\script\\
-local function getexploit()
-   local exploit =
-       (syn and not is_sirhurt_closure and not pebc_execute and "Synapse") or
-       (secure_load and "Sentinel") or
-       (is_sirhurt_closure and "Sirhurt") or
-       (pebc_execute and "ProtoSmasher") or
-       (KRNL_LOADED and "Krnl") or
-       (WrapGlobal and "WeAreDevs") or
-       (isvm and "Proxo") or
-       (shadow_env and "Shadow") or
-       (jit and "EasyExploits") or
-       (getreg()['CalamariLuaEnv'] and "Calamari") or
-       (unit and "") or
-       (IS_VIVA_LOADED and "VIVA") or
-       (IS_COCO_LOADED and "Coco") or
-       (Temple and "Temple") or
-       ("Undetectable")
-
-   return exploit
+function utils:GetExecutor()
+    local exploit =
+    (syn and syn.protect_gui and not getexecutorname and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+    (getexecutorname and identifyexecutor and gethui and "ScriptWare") or
+    (secure_load and "Sentinel") or
+    (is_sirhurt_closure and "Sirhurt") or
+    (pebc_execute and "ProtoSmasher") or
+    (KRNL_LOADED and "Krnl") or
+    (WrapGlobal and "WeAreDevs") or
+    (isvm and "Proxo") or
+    (shadow_env and "Shadow") or
+    (jit and "EasyExploits") or
+    (getreg()['CalamariLuaEnv'] and "Calamari") or
+    (unit and "Unit") or
+    (IS_VIVA_LOADED and "VIVA") or
+    (IS_COCO_LOADED and "Coco") or
+    (identifyexecutor and "Temple") or
+    ("Undetectable")
+    return exploit
 end
 
 OrionLib:MakeNotification({
@@ -57,7 +57,7 @@ local StartTab = Window:MakeTab({
 
 StartTab:AddParagraph("Welcome!","Anti-Afk is always on. Anti-Kick is always on")
 StartTab:AddParagraph("Credits","Thanks to Teem for being the Co-Owner, Thanks to Liamriley101 for letting me put in some scripts that he found/made")
-StartTab:AddParagraph("Current Executor:", getexploit())
+StartTab:AddParagraph("Current Executor:", utils:GetExecutor())
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
