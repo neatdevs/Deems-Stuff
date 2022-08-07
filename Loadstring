@@ -208,7 +208,7 @@ LocalPlayerTab:AddSlider({
 })
 
 LocalPlayerTab:AddButton({
-	Name = "Noclip, Press X to toggle",
+	Name = "Noclip, X Toggle (credit to xaxa420)",
 	Callback = function()
 		local nckey = "x";
 		local nclip = false;
@@ -248,7 +248,7 @@ LocalPlayerTab:AddButton({
 		
 		print("Noclip key is X");
 		print("Press X to turn noclip on and off");
-		print("This noclip should bypass most anti-cheats");
+		print("THIS SCRIPT IS NOT MINE CREDIT TO xaxa420 FOR MAKING THIS! note i just refound who made the noclip");
   	end    
 })
 LocalPlayerTab:AddSlider({
