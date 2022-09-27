@@ -87,7 +87,7 @@ StartTab:AddParagraph("Credits"," Thanks to Liamriley101 for being a admin for D
 StartTab:AddParagraph("Current Executor:", utils:GetExecutor())
 
 local MainTab = Window:MakeTab({
-	Name = "Main",
+	Name = "Games",
 	Icon = "rbxassetid://9555772014",
 	PremiumOnly = false
 })
@@ -104,9 +104,8 @@ local SettingsTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-MainTab:AddLabel("Main Scripts")
+MainTab:AddLabel("Supported Games")
 LocalPlayerTab:AddLabel("Local Player Scripts")
-FETab:AddLabel("FE Scripts")
 SettingsTab:AddLabel("Settings Tab")
 
 MainTab:AddButton({
