@@ -422,9 +422,9 @@ local CBC = 0
 BuyTab:AddButton({
 	Name = "Buy all Storage Upgrades",
 	Callback = function()
-      		while pm <= 63 do
+      		while CBC <= 63 do
       		   game:GetService("ReplicatedStorage").Events.GameEvents.UpgradeStorage:FireServer()
-      		   pm = pm + 1
+      		   CBC = CBC + 1
       		end
   	end    
 })
