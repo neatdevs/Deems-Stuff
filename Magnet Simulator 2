@@ -627,7 +627,7 @@ game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServ
 MiscTab:AddDropdown({
 	Name = "Teleports",
 	Default = "...",
-	Options = {"Enchantments", "Upgrade Storage", "Magnet Shop", "Upgrade Speed", "Desert", "Jungle", "Coral Reef", "Volcanic Field", "Coarry Mine", "Sell x2", "Sell x3", "Sell x4", "Sell x5", "Sell x6", "Sell x12", "Sell x15", "Sell x18", "Sell x22", "Sell x25", "Sell x30", "Sell x35", "Sell x40", "Sell x45"},
+	Options = {"Enchantments", "Upgrade Storage", "Magnet Shop", "Upgrade Speed", "Desert", "Jungle", "Coral Reef", "Volcanic Field", "Coarry Mine", "Sell x2", "Sell x3", "Sell x4", "Sell x5", "Sell x6", "Sell x12", "Sell x15", "Sell x18", "Sell x22", "Sell x25", "Sell x30", "Sell x35", "Sell x40", "Sell x45", "Sell x50", "Sell x55", "Sell x60", "Sell x65", "Sell x70"},
 	Callback = function(Value)
 		if Value == "Enchantments" then
 		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-878, 14, 419) --Enchantments
@@ -695,6 +695,21 @@ MiscTab:AddDropdown({
 
 		    elseif Value == "Sell x45" then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5642, 4, -62)--x45
+            elseif Value == "Sell x50" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2834, -68, -8602)--x50
+
+            elseif Value == "Sell x55" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3665, -68, -8769)--x55
+
+            elseif Value == "Sell x60" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3816, -68, -8112)--x60
+
+            elseif Value == "Sell x65" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3314, -68, -7936)--x65
+
+            elseif Value == "Sell x70" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3043, -68, -7978)--x70
+
 	    end
 	end    
 })
