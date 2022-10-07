@@ -1,9 +1,9 @@
     if game.PlaceId == 7371240697 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/1')))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Giant%20Dancing%20Simulator')))()
     elseif game.PlaceId == 8592863835 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/3')))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Magnet%20Simulator%202')))()
     elseif game.PlaceId == 8070952780 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/2')))()
+    loadstring(game:HttpGet(('hhttps://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Clicker%20Simulator%20X')))()
     elseif game.PlaceId == 5100950559 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/neatdevs/main/Hat%20Giver')))()
 elseif game.PlaceId ~= 7371240697 then
