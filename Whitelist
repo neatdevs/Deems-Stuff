@@ -7,11 +7,11 @@
     elseif game.PlaceId == 5100950559 then
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/neatdevs/main/Hat%20Giver')))()
 elseif game.PlaceId ~= 7371240697 then
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
 elseif game.PlaceId ~= 8592863835 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
 elseif game.PlaceId ~= 8070952780 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
     elseif game.PlaceId ~= 5100950559 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Loadstring')))()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
 end
