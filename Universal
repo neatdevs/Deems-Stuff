@@ -356,5 +356,12 @@ SettingsTab:AddButton({
     end
     spawn(DiscordInviteRequest)
   end
+  
+  SettingsTab:AddButton({
+	Name = "Destroy Deem",
+	Callback = function()
+        OrionLib:Destroy()
+  	end    
+})
   	end    
 })
