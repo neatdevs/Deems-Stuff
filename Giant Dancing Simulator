@@ -901,6 +901,13 @@ SettingsTab:AddColorpicker({
 	end	  
 })
 
+  SettingsTab:AddButton({
+	Name = "Destroy Deem",
+	Callback = function()
+        OrionLib:Destroy()
+  	end    
+})
+
 SettingsTab:AddButton({
 	Name = "Discord (Have app open) uknown on who made it",
 	Callback = function()
