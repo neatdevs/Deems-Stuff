@@ -1,6 +1,6 @@
 local utils = {}
 
-_G.Ray = false
+local _G.Ray = false
 
 if _G.Ray then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
