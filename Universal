@@ -1,13 +1,5 @@
 local utils = {}
 
-_G.Ray = false
-
-if _G.Ray = true then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
-elseif _.G = false then
-    print("hi")
-end
-
 -- // Verison
 utils.Version = '1.0.2'
 
