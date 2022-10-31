@@ -1,10 +1,10 @@
 local utils = {}
 
-local Orion = false
+local _G.Orion = false
 
-if Orion then
+if _G.Orion then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/LS%2B"))()
-elseif not Orion then
+elseif not _G.Orion then
     print("hi")
 end
 
