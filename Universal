@@ -1,10 +1,10 @@
 local utils = {}
 
-local _G.Ray = false
+_G.Ray = false
 
-if _G.Ray then
+if _G.Ray = true then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
-elseif not _G.Ray then
+elseif _.G = false then
     print("hi")
 end
 
