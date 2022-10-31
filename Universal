@@ -1,5 +1,13 @@
 local utils = {}
 
+local Ray = false
+
+if Orion then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
+elseif not Orion then
+    print("hi")
+end
+
 -- // Verison
 utils.Version = '1.0.2'
 
