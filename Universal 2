@@ -1,13 +1,5 @@
 local utils = {}
 
-local Orion = false
-if Orion == true then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
-Orion = false
-elseif Orion == false then
-Orion = true
-end
-
 -- // Verison
 utils.Version = '1.0.2'
 
@@ -314,5 +306,23 @@ local Destroy = SetTab:CreateButton({
 	Name = "Destroy Deem",
 	Callback = function()
 		Rayfield:Destroy()
+	end,
+})
+
+--themes
+
+local Label = SetTab:CreateLabel("Themes are below!")
+
+local OrionTheme = SetTab:CreateButton({
+	Name = "Orion",
+	Callback = function()
+        local Orion = false
+if Orion == true then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
+Orion = false
+elseif Orion == false then
+Orion = true
+end
+		Orion = true
 	end,
 })
