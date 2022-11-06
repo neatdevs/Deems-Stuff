@@ -1,10 +1,10 @@
 local utils = {}
 
-if Orion == true then
+if _G.Orion == true then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
-Orion = false
-elseif Orion == false then
-Orion = true
+    _G.Orion = false
+elseif _G.Orion == false then
+    _G.Orion = true
 end
 
 -- // Verison
