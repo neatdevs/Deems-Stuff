@@ -1,11 +1,11 @@
 local utils = {}
 
-_G.Orion = false
-
-if _G.Orion = true then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/LS%2B"))()
-elseif _G.Orion = false then
-    print("hi")
+local Orion = false
+if Orion == true then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
+Orion = false
+elseif Orion == false then
+Orion = true
 end
 
 -- // Verison
@@ -35,7 +35,73 @@ utils.Age = utils.Player.AccountAge
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
-Rayfield:Notify("Welcome to Deem","UI powered by RayField UI Libary, Some scripts are not made by me Credit to the Developer's of them!",9445147702) -- (t,c,image)
+Rayfield:Notify({
+    Title = "Welcome to Deem",
+    Content = "UI powered by RayField UI Libary, Some scripts are not made by me Credit to the Developer's of them!",
+    Duration = 6.5,
+    Image = 9445147702,
+})
+
+wait(6.5)
+
+Rayfield:Notify({
+    Title = "Join the Discord?",
+    Content = "By clicking on okay you will be sent a discord invite if you have the app open",
+    Duration = 6.5,
+    Image = 9445147702,
+    Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Okay!",
+            Callback = function()
+                local Settings = {
+                    InviteCode = "su7ycRRJyz"
+                  }
+                  
+                  local HttpService = game:GetService("HttpService")
+                  local RequestFunction
+                  
+                  if syn and syn.request then
+                    RequestFunction = syn.request
+                  elseif request then
+                    RequestFunction = request
+                  elseif http and http.request then
+                    RequestFunction = http.request
+                  elseif http_request then
+                    RequestFunction = http_request
+                  end
+                  
+                  local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
+                  
+                  if not RequestFunction then
+                    return print("Your executor does not support http requests.")
+                  end
+                  
+                  for i = 6453, 6464 do
+                    local DiscordInviteRequest = function()
+                        local Request = RequestFunction({
+                            Url = string.format(DiscordApiUrl, tostring(i)),
+                            Method = "POST",
+                            Body = HttpService:JSONEncode({
+                                nonce = HttpService:GenerateGUID(false),
+                                args = {
+                                    invite = {code = Settings.InviteCode},
+                                    code = Settings.InviteCode
+                                },
+                                cmd = "INVITE_BROWSER"
+                            }),
+                            Headers = {
+                                ["Origin"] = "https://discord.com",
+                                ["Content-Type"] = "application/json"
+                            }
+                        })
+                    end
+                    spawn(DiscordInviteRequest)
+                  end
+            end
+		},
+	},
+})
+
 
 local Window = Rayfield:CreateWindow({
 	Name = "Deem",
@@ -243,55 +309,6 @@ local SHButton = LPTab:CreateButton({
 })
 
 --Settings
-local Cord = SetTab:CreateButton({
-	Name = "Discord (Have the app open)",
-	Callback = function()
-		local Settings = {
-            InviteCode = "su7ycRRJyz"
-          }
-          
-          local HttpService = game:GetService("HttpService")
-          local RequestFunction
-          
-          if syn and syn.request then
-            RequestFunction = syn.request
-          elseif request then
-            RequestFunction = request
-          elseif http and http.request then
-            RequestFunction = http.request
-          elseif http_request then
-            RequestFunction = http_request
-          end
-          
-          local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
-          
-          if not RequestFunction then
-            return print("Your executor does not support http requests.")
-          end
-          
-          for i = 6453, 6464 do
-            local DiscordInviteRequest = function()
-                local Request = RequestFunction({
-                    Url = string.format(DiscordApiUrl, tostring(i)),
-                    Method = "POST",
-                    Body = HttpService:JSONEncode({
-                        nonce = HttpService:GenerateGUID(false),
-                        args = {
-                            invite = {code = Settings.InviteCode},
-                            code = Settings.InviteCode
-                        },
-                        cmd = "INVITE_BROWSER"
-                    }),
-                    Headers = {
-                        ["Origin"] = "https://discord.com",
-                        ["Content-Type"] = "application/json"
-                    }
-                })
-            end
-            spawn(DiscordInviteRequest)
-          end
-	end,
-})
 
 local Destroy = SetTab:CreateButton({
 	Name = "Destroy Deem",
