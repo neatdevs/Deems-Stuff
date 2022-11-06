@@ -4,7 +4,6 @@ _G.Ray = false
 
 if _G.Ray == true then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
-    OrionLib:Destroy()
     _G.Ray = false
 elseif _G.Ray == false then
     _G.Ray = true
