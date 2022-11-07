@@ -1,17 +1,23 @@
-    if game.PlaceId == 7371240697 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Giant%20Dancing%20Simulator')))()
-    elseif game.PlaceId == 8592863835 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Magnet%20Simulator%202')))()
-    elseif game.PlaceId == 8070952780 then
-    loadstring(game:HttpGet(('hhttps://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Clicker%20Simulator%20X')))()
-    elseif game.PlaceId == 5100950559 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/neatdevs/main/Hat%20Giver')))()
-elseif game.PlaceId ~= 7371240697 then
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
-elseif game.PlaceId ~= 8592863835 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
-elseif game.PlaceId ~= 8070952780 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
-    elseif game.PlaceId ~= 5100950559 then
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
+repeat wait() until game:IsLoaded()
+
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+
+local gh = "https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/"
+
+local games = {
+    [7371240697] = "Giant%20Dancing%20Simulator",
+    [8592863835] = "Magnet%20Simulator%202",
+	[8070952780] = "Clicker%20Simulator%20X",
+	[5100950559] = "Hat%20Giver"
+}
+
+for i, v in pairs(games) do
+    if i == game.PlaceId or i == game.GameId then
+        loadstring(game:HttpGet(gh .. v))()
+	elseif i ~= game.PlaceId or i ~= game.GameId then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
+		Break()
+    end
 end
