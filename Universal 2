@@ -3,6 +3,7 @@ local utils = {}
 if _G.Orion == true then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
     _G.Orion = false
+    script:destroy() 
 elseif _G.Orion == false then
     _G.Orion = true
 end
