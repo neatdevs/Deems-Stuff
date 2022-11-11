@@ -17,7 +17,7 @@ for i, v in pairs(games) do
     if i == game.PlaceId or i == game.GameId then
         loadstring(game:HttpGet(gh .. v))()
 	elseif i ~= game.PlaceId or i ~= game.GameId then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal"))()
 		Break()
     end
 end
