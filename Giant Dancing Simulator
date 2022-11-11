@@ -692,25 +692,77 @@ local BuyUpgradesTab = Window:MakeTab({
 BuyUpgradesTab:AddButton({
 	Name = "Buy Coins",
 	Callback = function()
-      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/C')))()
+      	local c = true
+
+        local counter = 0
+        while c == true do
+            local args = {
+                [1] = "Coin"
+            }
+            
+            game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))
+            counter = counter + 1
+            if counter == 25 then
+                Break()
+            end
+        end
   	end    
 })
 BuyUpgradesTab:AddButton({
 	Name = "Buy Speed",
 	Callback = function()
-      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/S')))()
+      	local s = true
+
+        local counter = 0
+        while s == true do
+            local args = {
+                [1] = "Speed"
+            }
+            
+            game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))            
+            counter = counter + 1
+            if counter == 25 then
+                Break()
+            end
+        end
   	end    
 })
 BuyUpgradesTab:AddButton({
 	Name = "Buy Gems",
 	Callback = function()
-      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/G')))()
+      	local g = true
+
+        local counter = 0
+        while g == true do
+            local args = {
+                [1] = "Gem"
+            }
+            
+            game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))            
+            counter = counter + 1
+            if counter == 25 then
+                Break()
+            end
+        end
   	end    
 })
 BuyUpgradesTab:AddButton({
 	Name = "Buy Luck",
 	Callback = function()
-      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/L')))()
+      	local l = true
+
+        local counter = 0
+        while l == true do
+            local args = {
+                [1] = "Luck"
+            }
+            
+            game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade:FireServer(unpack(args))            
+            counter = counter + 1
+            if counter == 25 then
+                Break()
+            end
+        end
   	end    
 })
 local LocalPlayerTab = Window:MakeTab({
