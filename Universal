@@ -1,3 +1,5 @@
+_G.Ray = false
+
 if _G.Ray == true then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
     _G.Ray = false
