@@ -100,7 +100,12 @@ MainTab:AddButton({
     OpenCrystalsTab:AddButton({
         Name = "Buy Beginner Crystal 150 Coins",
         Callback = function()
-            loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/a')))()
+            local args = {
+    [1] = "Beginner Crystal",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").DancerRemotes.Events.BuyCrystal:FireServer(unpack(args))
           end    
     })
     
