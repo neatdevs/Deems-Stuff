@@ -168,7 +168,7 @@ local Executor = InfoTab:CreateParagraph({Title = "Current Executor:", Content =
 local Credits = InfoTab:CreateParagraph({Title = "Credits", Content = "Thanks to Liamriley101 for being a admin for Deem!"})
 local Credits1 = InfoTab:CreateParagraph({Title = "Credits", Content = "Thanks to Troy Lucas for helping develop some themes for Deem!"})
 
---Games
+--// Games
 
 local GDSButton = GTab:CreateButton({
 	Name = "Teleport to Giant Dancing Sim (re-execute)",
@@ -195,7 +195,7 @@ local JGButton = GTab:CreateButton({
 	end,
 })
 
---LP
+--// LP
 local WS = LPTab:CreateSlider({
 	Name = "WalkSpeed",
 	Range = {16, 500},
@@ -307,22 +307,11 @@ local SHButton = LPTab:CreateButton({
 	end,
 })
 
---Settings
+--// Settings
 
 local Destroy = SetTab:CreateButton({
 	Name = "Destroy Deem",
 	Callback = function()
 		Rayfield:Destroy()
-	end,
-})
-
---themes
-
-local Label = SetTab:CreateLabel("Themes are below!")
-
-local OrionTheme = SetTab:CreateButton({
-	Name = "Orion",
-	Callback = function()
-		Orion = true
 	end,
 })
