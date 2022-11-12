@@ -124,6 +124,139 @@ end)
   	end    
 })
 
+local Eggs = Window:MakeTab({
+	Name = "Buy Eggs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Eggs:AddToggle({
+	Name = "Basic 1k",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+                _G.loop = true
+
+                while _G.loop do
+                    local args = {
+                        [1] = "Basic",
+                        [2] = "Single"
+                    }
+                    
+                    game:GetService("ReplicatedStorage").RemoteEvents.EggOpened:InvokeServer(unpack(args))
+                wait()
+                end
+            elseif Value == false then
+                _G.loop = false
+            end
+	end    
+})
+Eggs:AddToggle({
+	Name = "EA 1k Gems",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            _G.loop = true
+
+            while _G.loop do
+                local args = {
+                    [1] = "ea",
+                    [2] = "Single"
+                }
+                
+                game:GetService("ReplicatedStorage").RemoteEvents.EggOpened:InvokeServer(unpack(args))
+            wait()
+            end
+        elseif Value == false then
+            _G.loop = false
+        end
+	end    
+})
+Eggs:AddToggle({
+	Name = "Desert 25B",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            _G.loop = true
+
+            while _G.loop do
+                local args = {
+                    [1] = "DesertEgg",
+                    [2] = "Single"
+                }
+                
+                game:GetService("ReplicatedStorage").RemoteEvents.EggOpened:InvokeServer(unpack(args))
+            wait()
+            end
+        elseif Value == false then
+            _G.loop = false
+        end
+	end    
+})
+Eggs:AddToggle({
+	Name = "Snow 15T",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            _G.loop = true
+
+            while _G.loop do
+                local args = {
+                    [1] = "IceEgg",
+                    [2] = "Single"
+                }
+                
+                game:GetService("ReplicatedStorage").RemoteEvents.EggOpened:InvokeServer(unpack(args))
+            wait()
+            end
+        elseif Value == false then
+            _G.loop = false
+        end
+	end    
+})
+Eggs:AddToggle({
+	Name = "Forest 500Qd",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            _G.loop = true
+
+            while _G.loop do
+                local args = {
+                    [1] = "ForestEgg",
+                    [2] = "Single"
+                }
+                
+                game:GetService("ReplicatedStorage").RemoteEvents.EggOpened:InvokeServer(unpack(args))
+            wait()
+            end
+        elseif Value == false then
+            _G.loop = false
+        end
+	end    
+})
+Eggs:AddToggle({
+	Name = "Event 10M Gems",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            _G.loop = true
+
+            while _G.loop do
+                local args = {
+                    [1] = "EventEgg",
+                    [2] = "Single"
+                }
+                
+                game:GetService("ReplicatedStorage").RemoteEvents.EggOpened:InvokeServer(unpack(args))
+            wait()
+            end
+        elseif Value == false then
+            _G.loop = false
+        end
+	end    
+})
+
 local LocalPlayerTab = Window:MakeTab({
 	Name = "Local Player",
 	Icon = "rbxassetid://9555779328",
