@@ -33,8 +33,6 @@ local Null = main:tab("Nullware")
 
 local Tri = main:tab("Trigon")
 
-local Deem = main:tab("Deem")
-
 local HB = main:tab("HomeBrew")
 
 local SYP = main:tab("Syntax")
@@ -78,11 +76,6 @@ local Tsection = Tri:Section{
 local Trsection = Tri:Section{
     Name = "Trigon",
     Side = "right"
-}
-
-local Dsection = Deem:Section{
-    Name = "Deem",
-    Side = "Left"
 }
 
 local HBsection = HB:Section{
@@ -797,15 +790,6 @@ Trsection:Button{
         setclipboard("-gh 6380246734, 8156020847")
     end
 }
-
---Deem
-Dsection:Button{
-    Name = "GodCat/Rainbow King",
-    Callback  = function()
-        setclipboard("-gh 6154922496, 5100070995, 4087527067, 451220849, 48474294, 63690008, 62724852, 62234425, 48474313")
-    end
-}
-local label = Dsection:Label("FE Rock requires any hats but the more the better")
 
 --HomeBrew Admin
 HBsection:Button{
