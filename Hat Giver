@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 26/09/22",
-        Content = "Fixed Deem's loadstirng",
+        Name = "Updated! 23/11/22",
+        Content = "Added Hats for syntax: Neptunian V, Boss Fight, Uni Glitcher, Rock Throw Bot, War Hammer Bot, Red Mist, Venom V2",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -1139,43 +1139,43 @@ Ssection:Button{
         setclipboard("-gh 4623732543, 4996175399, 4684378932, 4735116238, 4878132899, 8274093002")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "Neptunian V",
     Callback  = function()
         setclipboard("-gh 4315489767")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "Boss Fight",
     Callback  = function()
         setclipboard("-gh 4611970333, 5063499736, 4602617115, 6202063049")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "Uni Glitcher",
     Callback  = function()
         setclipboard("-gh 4773883146,5268602207,5316479641,5316539421,5316549755,5268720002,5268555719")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "Rock Throw Bot",
     Callback  = function()
         setclipboard("-gh 4793958453")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "War Hammer Bot",
     Callback  = function()
         setclipboard("-gh 4739580137")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "Red Mist",
     Callback  = function()
         setclipboard("-gh 4966333091, 4739580137")
     end
 }
-Sssection:Button{
+Ssection:Button{
     Name = "Venom V2",
     Callback  = function()
         setclipboard("-gh 4878136110, 18015906, 1744235800, 1744219293, 1743941933, 4258963944, 7385623906, 6097718168, 5063499736")
