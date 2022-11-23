@@ -1008,6 +1008,7 @@ SPsection:Button{
         setclipboard("-gh 12548563, 6904899146, 20011897, 6211939438, 7097874494, 48474294, 451220849, 48474313, 63690008")
     end
 }
+
 SPsection:Button{
     Name = "Divinatori R15",
     Callback  = function()
@@ -1136,6 +1137,48 @@ Ssection:Button{
     Name = "Huge Hammer",
     Callback  = function()
         setclipboard("-gh 4623732543, 4996175399, 4684378932, 4735116238, 4878132899, 8274093002")
+    end
+}
+Sssection:Button{
+    Name = "Neptunian V",
+    Callback  = function()
+        setclipboard("-gh 4315489767")
+    end
+}
+Sssection:Button{
+    Name = "Boss Fight",
+    Callback  = function()
+        setclipboard("-gh 4611970333, 5063499736, 4602617115, 6202063049")
+    end
+}
+Sssection:Button{
+    Name = "Uni Glitcher",
+    Callback  = function()
+        setclipboard("-gh 4773883146,5268602207,5316479641,5316539421,5316549755,5268720002,5268555719")
+    end
+}
+Sssection:Button{
+    Name = "Rock Throw Bot",
+    Callback  = function()
+        setclipboard("-gh 4793958453")
+    end
+}
+Sssection:Button{
+    Name = "War Hammer Bot",
+    Callback  = function()
+        setclipboard("-gh 4739580137")
+    end
+}
+Sssection:Button{
+    Name = "Red Mist",
+    Callback  = function()
+        setclipboard("-gh 4966333091, 4739580137")
+    end
+}
+Sssection:Button{
+    Name = "Venom V2",
+    Callback  = function()
+        setclipboard("-gh 4878136110, 18015906, 1744235800, 1744219293, 1743941933, 4258963944, 7385623906, 6097718168, 5063499736")
     end
 }
 
