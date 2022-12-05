@@ -83,11 +83,7 @@ function utils:GetExecutor()
 	return exploit
 end
 
-OrionLib:MakeNotification({
-	Name = "Welcome to Deem!",
-	Content = "UI powered by Orion UI Libary, Some scripts are not made by me Credit to the Developer's of them",
-	Time = 5
-})
+loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Notification"))()
 
 local Window = OrionLib:MakeWindow({Name = "Deem"})
 
