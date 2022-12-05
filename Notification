@@ -1,0 +1,169 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ThemesandDeemsnoti = Instance.new("ScreenGui")
+local noti = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Frame_2 = Instance.new("Frame")
+local Close = Instance.new("ImageButton")
+local UIPadding = Instance.new("UIPadding")
+local Frame_3 = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local UIPadding_2 = Instance.new("UIPadding")
+local Shadow = Instance.new("ImageLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIPadding_3 = Instance.new("UIPadding")
+local Theme = Instance.new("ImageLabel")
+
+--Properties:
+
+ThemesandDeemsnoti.Name = "Themes and Deems noti"
+ThemesandDeemsnoti.Parent = game.CoreGui
+
+noti.Name = "noti"
+noti.Parent = ThemesandDeemsnoti
+noti.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+noti.Position = UDim2.new(1.02404571, 0, 0.726338804, 0)
+noti.Size = UDim2.new(0, 275, 0, 100)
+noti.ZIndex = 0
+
+UICorner.Parent = noti
+
+Frame.Parent = noti
+Frame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Frame.Size = UDim2.new(0, 275, 0, 22)
+
+UICorner_2.Parent = Frame
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0, 0, 0.636363626, 0)
+Frame_2.Size = UDim2.new(0, 275, 0, 8)
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.927231848, 0, 0.124579117, 0)
+Close.Size = UDim2.new(0, 15, 0, 15)
+Close.ZIndex = 2
+Close.Image = "rbxassetid://11714877099"
+Close.MouseButton1Click:Connect(function()
+    noti:TweenPosition(
+		UDim2.new(2, 0, 0.833, 0),
+		"In",
+		"Quad",
+		0.5,
+		false
+	)
+	wait(.5)
+	ThemesandDeemsnoti.Enabled = false
+end)
+
+UIPadding.Parent = Close
+UIPadding.PaddingTop = UDim.new(0, 4)
+
+Frame_3.Parent = Frame
+Frame_3.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0, 0, 0.9545452, 0)
+Frame_3.Size = UDim2.new(0, 275, 0, 1)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0112427007, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 267, 0, 22)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "Welcome to Deem!"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 11.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+UIPadding_2.Parent = TextLabel
+UIPadding_2.PaddingLeft = UDim.new(0, 2)
+
+Shadow.Name = "Shadow"
+Shadow.Parent = noti
+Shadow.Active = true
+Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Shadow.BackgroundTransparency = 1.000
+Shadow.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Shadow.Position = UDim2.new(0.502960742, 0, 0.521532893, 0)
+Shadow.Size = UDim2.new(1.08435202, 48, 1.31693435, 48)
+Shadow.ZIndex = -2
+Shadow.Image = "rbxassetid://6049668989"
+Shadow.ImageColor3 = Color3.fromRGB(27, 27, 27)
+Shadow.ScaleType = Enum.ScaleType.Slice
+Shadow.SliceCenter = Rect.new(128, 128, 128, 128)
+Shadow.SliceScale = 0.350
+
+TextLabel_2.Parent = noti
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.0112428972, 0, 0.234999999, 0)
+TextLabel_2.Size = UDim2.new(0, 275, 0, 78)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "UI powered by Orion UI Libary, Some scripts are not made by me Credit to the Developer's of them"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 9.000
+TextLabel_2.TextWrapped = true
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_2.TextYAlignment = Enum.TextYAlignment.Top
+
+UIPadding_3.Parent = TextLabel_2
+UIPadding_3.PaddingLeft = UDim.new(0, 2)
+UIPadding_3.PaddingTop = UDim.new(0, 4)
+
+Theme.Name = "Theme"
+Theme.Parent = noti
+Theme.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Theme.BackgroundTransparency = 1.000
+Theme.Position = UDim2.new(0, 0, 0.241500244, 0)
+Theme.Size = UDim2.new(0, 275, 0, 75)
+Theme.ZIndex = 0
+Theme.Image = "rbxassetid://10624319225"
+Theme.ImageColor3 = Color3.fromRGB(77, 77, 77)
+Theme.ImageTransparency = 0.800
+
+-- Scripts:
+
+local function SRMKZZ_fake_script() -- ThemesandDeemsnoti.LocalScript 
+	local script = Instance.new('LocalScript', ThemesandDeemsnoti)
+
+	local noti = script.Parent.noti
+	local off = script.Parent
+
+
+	noti:TweenPosition(
+		UDim2.new(0.801, 0,0.833, 0),
+		"Out",
+		"Quad",
+		0.5,
+		false
+	)
+
+	wait(5)
+
+	noti:TweenPosition(
+		UDim2.new(2, 0, 0.833, 0),
+		"In",
+		"Quad",
+		0.5,
+		false
+	)
+
+	wait(.5)
+
+	noti.Visible = false
+	wait(.1)
+	off.Enabled = false
+	
+end
+coroutine.wrap(SRMKZZ_fake_script)()
