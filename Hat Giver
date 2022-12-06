@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 23/11/22",
-        Content = "Added Hats for syntax: Neptunian V, Boss Fight, Uni Glitcher, Rock Throw Bot, War Hammer Bot, Red Mist, Venom V2",
+        Name = "Updated! 06/12/22",
+        Content = "Added support for Sukma hub and soon it'll support Synth hub",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -36,6 +36,10 @@ local Tri = main:tab("Trigon")
 local HB = main:tab("HomeBrew")
 
 local SYP = main:tab("Syntax")
+
+local Sukma = main:tab("Sukma")
+
+local synth = main:tab("Synth")
 
 local Localp = main:tab("Localp")
 
@@ -94,6 +98,16 @@ local Ssection = SYP:Section{
 
 local LPsection = Localp:Section{
     Name = "Local Player",
+    Side = "Left"
+}
+
+local Susection = Sukma:Section{
+    Name = "Sukma",
+    Side = "Left"
+}
+
+local Sysection = synth:Section{
+    Name = "Synth (Coming Soon!)",
     Side = "Left"
 }
 
@@ -1166,6 +1180,84 @@ Ssection:Button{
     end
 }
 
+--Sukma Hub
+Susection:Button{
+    Name = "Ban Hammer",
+    Callback  = function()
+        setclipboard("-gh 3398308134,3443038622,3656493304,3940375351,4047554959,4622081834,10075484921")
+    end
+}
+Susection:Button{
+    Name = "Angel",
+    Callback  = function()
+        setclipboard("-gh 5136154487,5136159662,5136165463,5136212345,5870508493,5870530069,5870540219,5870560075,6596096317,11263254795")
+    end
+}
+Susection:Button{
+    Name = "Stand",
+    Callback  = function()
+        setclipboard("-gh 48474294,48474313,62234425,62724852,63690008,451220849,3398308134,3940375351,4622081834,11263254795")
+    end
+}
+Susection:Button{
+    Name = "S.W.A.T",
+    Callback  = function()
+        setclipboard("-gh 7962403279,4623905468,7541004408,8786319854,4504231783")
+    end
+}
+Susection:Button{
+    Name = "Combat Warriors",
+    Callback  = function()
+        setclipboard("-gh 9488333651,9923820851")
+    end
+}
+Susection:Button{
+    Name = "Balls",
+    Callback  = function()
+        setclipboard("-gh 6685365462")
+    end
+}
+
+local label = Susection:Label("R15 Scripts below!")
+
+Susection:Button{
+    Name = "Bike",
+    Callback  = function()
+        setclipboard("-gh 4504231783,8262955749,5063566353,191101707")
+    end
+}
+Susection:Button{
+    Name = "S.W.A.T",
+    Callback  = function()
+        setclipboard("-gh 5075188861")
+    end
+}
+Susection:Button{
+    Name = "Pink P-90",
+    Callback  = function()
+        setclipboard("-gh 5552777613,4504231783")
+    end
+}
+Susection:Button{
+    Name = "Laser Hero",
+    Callback  = function()
+        setclipboard("-gh 4504231783")
+    end
+}
+Susection:Button{
+    Name = "Balls",
+    Callback  = function()
+        setclipboard("-gh 6685365462")
+    end
+}
+Susection:Button{
+    Name = "Chainsaw Murder",
+    Callback  = function()
+        setclipboard("-gh 11132448487,8993850434")
+    end
+}
+
+
 --LocalPlayer
 LPsection:Button{
     Name = "GR",
@@ -1209,5 +1301,5 @@ keybindsection:Keybind{
 
 
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/LS%2B')))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal')))()
 end
