@@ -209,6 +209,19 @@ LocalPlayerTab:AddSlider({
 	end    
 })
 LocalPlayerTab:AddSlider({
+	Name = "FOV",
+	Min = 30,
+	Max = 190,
+	Default = 70,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		local cam = game.Workspace.Camera
+        cam.FieldOfView = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
 	Name = "Time Of Day",
 	Min = 0,
 	Max = 23,
