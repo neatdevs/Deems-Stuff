@@ -811,6 +811,54 @@ LocalPlayerTab:AddSlider({
 		plr.Character.Humanoid.JumpPower = Value --Change to JumpPower number
 	end    
 })
+LocalPlayerTab:AddSlider({
+	Name = "Hip Height Changer",
+	Min = 0,
+	Max = 200,
+	Default = 3,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Time Of Day",
+	Min = 0,
+	Max = 23,
+	Default = 14,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		light.TimeOfDay = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Brightness",
+	Min = 0,
+	Max = 100,
+	Default = 2,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		light.Brightness = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Exposure Compensation",
+	Min = 0,
+	Max = 10,
+	Default = 1,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		ExposureCompensation = Value
+	end    
+})
 
 LocalPlayerTab:AddButton({
 	Name = "Noclip, Press X to toggle",
@@ -856,18 +904,7 @@ LocalPlayerTab:AddButton({
 		print("THIS NOCLIP IS NOT MINE");
   	end    
 })
-LocalPlayerTab:AddSlider({
-	Name = "Hip Height Changer",
-	Min = 0,
-	Max = 200,
-	Default = 3,
-	Color = Color3.fromRGB(255,70,70),
-	Increment = 1,
-	ValueName = "",
-	Callback = function(Value)
-    game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
-	end    
-})
+
 LocalPlayerTab:AddButton({
 	Name = "Rejoin (Made by IY)",
 	Callback = function()
@@ -889,6 +926,19 @@ LocalPlayerTab:AddButton({
 		end
   	end    
 })
+LocalPlayerTab:AddToggle({
+	Name = "Load Default Chat",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            chat.LoadDefaultChat = true
+        elseif Value == false then
+            chat.LoadDefaultChat = false
+        end
+	end    
+})
+
+
 local SoundTab = Window:MakeTab({
     Name = "Audio Player",
     Icon = "rbxassetid://9555767321",
