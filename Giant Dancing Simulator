@@ -6,7 +6,7 @@ if game.PlaceId == 7371240697 then
         Image = "rbxassetid://9555769281",
         Time = 5
     })
-    local Window = OrionLib:MakeWindow({Name = "Deem b0.1"})
+    local Window = OrionLib:MakeWindow({Name = "Deem"})
     for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
 v:Disable()
 end
