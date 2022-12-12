@@ -8,7 +8,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
         Time = 5
     })
 
-local Window = OrionLib:MakeWindow({Name = "Deem Hub! ver b0.1"})
+local Window = OrionLib:MakeWindow({Name = "Deem"})
 
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
 v:Disable()
