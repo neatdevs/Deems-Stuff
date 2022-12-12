@@ -31,10 +31,12 @@ utils.Mouse = utils.Player:GetMouse()
 utils.Displayname = utils.Player.DisplayName
 utils.Name = utils.Player.Name
 utils.Age = utils.Player.AccountAge
-
+--\\Local Values\\--
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local sounfer = Instance.new("Sound")
 local loop = false
+local light = game.Lighting
+local chat = game.Chat
 --\\errorpocket by liamriley101
 syn = syn
 jit = jit
@@ -196,6 +198,54 @@ LocalPlayerTab:AddSlider({
 		plr.Character.Humanoid.JumpPower = Value --Change to JumpPower number
 	end    
 })
+LocalPlayerTab:AddSlider({
+	Name = "Hip Height Changer",
+	Min = 0,
+	Max = 200,
+	Default = 0,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Time Of Day",
+	Min = 0,
+	Max = 23,
+	Default = 14,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		light.TimeOfDay = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Brightness",
+	Min = 0,
+	Max = 100,
+	Default = 2,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		light.Brightness = Value
+	end    
+})
+LocalPlayerTab:AddSlider({
+	Name = "Exposure Compensation",
+	Min = 0,
+	Max = 10,
+	Default = 1,
+	Color = Color3.fromRGB(255,70,70),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+		ExposureCompensation = Value
+	end    
+})
 
 LocalPlayerTab:AddButton({
 	Name = "Noclip, X Toggle (credit to xaxa420)",
@@ -241,18 +291,6 @@ LocalPlayerTab:AddButton({
 		print("THIS SCRIPT IS NOT MINE CREDIT TO xaxa420 FOR MAKING THIS! note i just refound who made the noclip");
 	end    
 })
-LocalPlayerTab:AddSlider({
-	Name = "Hip Height Changer",
-	Min = 0,
-	Max = 200,
-	Default = 0,
-	Color = Color3.fromRGB(255,70,70),
-	Increment = 1,
-	ValueName = "",
-	Callback = function(Value)
-		game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
-	end    
-})
 LocalPlayerTab:AddButton({
 	Name = "Rejoin (Made by IY)",
 	Callback = function()
@@ -272,6 +310,17 @@ LocalPlayerTab:AddButton({
 		if #x > 0 then
 			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
 		end
+	end    
+})
+LocalPlayerTab:AddToggle({
+	Name = "Load Default Chat",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+            chat.LoadDefaultChat = true
+        elseif Value == false then
+            chat.LoadDefaultChat = false
+        end
 	end    
 })
 
