@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 06/12/22",
-        Content = "Added support for Sukma hub and soon it'll support Synth hub",
+        Name = "Updated! 17/12/22",
+        Content = "Added Reim Glitcher, Katana and Garry's Mod Crowbar to the Sukma tab. Synth hub will be added soon!",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -1217,6 +1217,18 @@ Susection:Button{
         setclipboard("-gh 6685365462")
     end
 }
+Susection:Button{
+    Name = "REIM Glitcher",
+    Callback  = function()
+        setclipboard("-gh 4773932088,11523359196,9730945610,9730942837")
+    end
+}
+Susection:Button{
+    Name = "Katana",
+    Callback  = function()
+        setclipboard("-gh 9666282662,191101707")
+    end
+}
 
 local label = Susection:Label("R15 Scripts below!")
 
@@ -1254,6 +1266,12 @@ Susection:Button{
     Name = "Chainsaw Murder",
     Callback  = function()
         setclipboard("-gh 11132448487,8993850434")
+    end
+}
+Susection:Button{
+    Name = "Garry's Mod Crowbar",
+    Callback  = function()
+        setclipboard("-gh 5075188861")
     end
 }
 
