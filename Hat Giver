@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 17/12/22",
-        Content = "Added Reim Glitcher, Katana and Garry's Mod Crowbar to the Sukma tab, removed trigon since it got discontinued. Synth hub will be added soon!",
+        Name = "Updated! 18/12/22",
+        Content = "Added Full Support for Synth Hub!",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -37,7 +37,7 @@ local SYP = main:tab("Syntax")
 
 local Sukma = main:tab("Sukma")
 
-local synth = main:tab("Synth")
+local syn = main:tab("Synth")
 
 local Localp = main:tab("Localp")
 
@@ -64,7 +64,6 @@ local qEsection = Fenix:Section{
     Name = "FEnix",
     Side = "right"
 }
-
 
 local NWsection = Null:Section{
     Name = "Nullware",
@@ -95,9 +94,13 @@ local Susection = Sukma:Section{
     Side = "Left"
 }
 
-local Sysection = synth:Section{
-    Name = "Synth (Coming Soon!)",
+local Sysection = syn:Section{
+    Name = "Synth",
     Side = "Left"
+}
+local Srsection = syn:Section{
+    Name = "Synth",
+    Side = "Right"
 }
 
 local SEsection = Set:Section{
@@ -996,6 +999,181 @@ Susection:Button{
     Name = "Garry's Mod Crowbar",
     Callback  = function()
         setclipboard("-gh 5075188861")
+    end
+}
+
+--Synth
+local label = Sysection:Label("Vr scripts below")
+
+Sysection:Button{
+    Name = "Cool",
+    Callback  = function()
+        setclipboard("-gh 617605556, 7806887000, 5064403372, 4504231783, 4962510729, 29532720, 5100070995, 63690008, 62724852, 191101707")
+    end
+}
+Sysection:Button{
+    Name = "Huge PP",
+    Callback  = function()
+        setclipboard("-gh 29532720,1743941933,1744235800,1744219293,5064651922,63690008,16630147,451220849,617605556")
+    end
+}
+Sysection:Button{
+    Name = "KillBot",
+    Callback  = function()
+        setclipboard("-gh 62724852, 3398308134, 5100070995, 6114849049, 6114844034, 6114870953, 6114875330, 4504231783, 29532720, 617605556")
+    end
+}
+Sysection:Button{
+    Name = "R15 and R6",
+    Callback  = function()
+        setclipboard("-gh 617605556, 5891633061, 5891632410")
+    end
+}
+Sysection:Button{
+    Name = "Neko / Femboy",
+    Callback  = function()
+        setclipboard("-gh 12548563, 20011897, 4641686175, 29532720, 6342613541, 5833307487, 63690008, 62724852, 48474294, 451220849")
+    end
+}
+Sysection:Button{
+    Name = "LC",
+    Callback  = function()
+        setclipboard("-gh 617605556, 4504231783, 4623059912, 29532720, 4773932088, 451220849, 63690008, 5593848751, 5505301521")
+    end
+}
+Sysection:Button{
+    Name = "Huge Hammer",
+    Callback  = function()
+        setclipboard("-gh 4753609886, 4753610119, 4793985219, 29532720, 1743941933, 1744235800, 63690008, 451220849, 1744219293, 617605556")
+    end
+}
+Sysection:Button{
+    Name = "VR Hands",
+    Callback  = function()
+        setclipboard("-gh 62234425, 8337370, 451220849, 48474294, 19400471, 4794315940, 4458601937, 62724852, 63690008, 48474313")
+    end
+}
+Sysection:Button{
+    Name = "Comically Large Katana",
+    Callback  = function()
+        setclipboard("-gh 5870530069, 5870540219, 5870508493, 5870560075, 29532720, 1744219293, 451220849, 63690008, 617605556")
+    end
+}
+Sysection:Button{
+    Name = "Penis",
+    Callback  = function()
+        setclipboard("-gh 12548563, 20011897, 29532720, 617605556, 17614451, 451220849, 62234425, 63690008, 62724852")
+    end
+}
+Sysection:Button{
+    Name = "Penis Man",
+    Callback  = function()
+        setclipboard("-gh 20721154, 13654333, 13416548, 12548563, 20011897, 10911958, 451220849, 48474294, 62724852, 63690008")
+    end
+}
+Sysection:Button{
+    Name = "BoomBox Man",
+    Callback  = function()
+        setclipboard("-gh 617605556, 29532720, 63690008, 451220849")
+    end
+}
+Sysection:Button{
+    Name = "Jumpscare",
+    Callback  = function()
+        setclipboard("-gh 5764073529, 5829857660, 8334308322, 9545154504, 9545156449, 9073923847")
+    end
+}
+Sysection:Button{
+    Name = "Jiggly Wiggly Boobas",
+    Callback  = function()
+        setclipboard("-gh 4708707860, 5132802731, 12548563, 20011897, 29532720, 6342613541, 5833307487, 451220849, 63690008")
+    end
+}
+Sysection:Button{
+    Name = "Doom Slayer",
+    Callback  = function()
+        setclipboard("-gh 617605556, 5164509129, 5197851188, 5197580057, 4504231783, 4962510729, 29532720, 63690008, 451220849, 191101707")
+    end
+}
+Sysection:Button{
+    Name = "R15 and R6 Flamethrower",
+    Callback  = function()
+        setclipboard("-gh 8156020847, 5064403372, 5891632410, 5891633061, 191101707, 617605556, ")
+    end
+}
+Sysection:Button{
+    Name = "Block Man",
+    Callback  = function()
+        setclipboard("-gh 4602623152, 4602533885, 4602619613, 4602617115, 5063499736")
+    end
+}
+
+local label = Srsection:Label("PC scripts below")
+
+Srsection:Button{
+    Name = "R6 Fling Reanimate",
+    Callback  = function()
+        setclipboard("-gh 63690008")
+    end
+}
+Srsection:Button{
+    Name = "R6 Hat Collision Reanimate",
+    Callback  = function()
+        setclipboard("-gh 29532720")
+    end
+}
+Srsection:Button{
+    Name = "R15 Hat Collision Reanimate",
+    Callback  = function()
+        setclipboard("-gh 8156020847")
+    end
+}
+Srsection:Button{
+    Name = "Skid Beater",
+    Callback  = function()
+        setclipboard("-gh 4776608503,63690008")
+    end
+}
+Srsection:Button{
+    Name = "Jiggly Wiggly Boobas",
+    Callback  = function()
+        setclipboard("-gh 4708707860,5132802731,12548563,20011897")
+    end
+}
+Srsection:Button{
+    Name = "Juggernaut",
+    Callback  = function()
+        setclipboard("-gh 6775268462,5197580057,5197583204,4504231783,191101707,451220849,63690008")
+    end
+}
+Srsection:Button{
+    Name = "Hunter",
+    Callback  = function()
+        setclipboard("-gh 4504231783,5063578607,63690008")
+    end
+}
+Srsection:Button{
+    Name = "Agent",
+    Callback  = function()
+        setclipboard("-gh 4504231783,63690008,5100070995")
+    end
+}
+Srsection:Button{
+    Name = "Sakura Blade",
+    Callback  = function()
+        setclipboard("-gh 4794315940, 63690008")
+    end
+}
+Srsection:Button{
+    Name = "Jiggly Wiggly Ass",
+    Callback  = function()
+        setclipboard("-gh 12548563,20011897")
+    end
+}
+Srsection:Button{
+    Name = "Kim Kardashian",
+    Callback  = function()
+        setclipboard("-gh 12548563,20011897,4708707860,5132802731,13654333,13416548")
     end
 }
 
