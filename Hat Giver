@@ -5,7 +5,7 @@ if game.PlaceId == 5100950559 then
 
     OrionLib:MakeNotification({
         Name = "Updated! 20/12/22",
-        Content = "Changed Set Clipboard to the readded :Chat",
+        Content = "Added Dirfting Jeep to Sukma",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
