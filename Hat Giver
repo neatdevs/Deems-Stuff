@@ -1002,7 +1002,7 @@ Susection:Button{
     end
 }
 Susection:Button{
-    Name = "Drifting Jeep,
+    Name = "Drifting Jeep",
     Callback  = function()
         game.Players:Chat("-gh 9666085843")
     end
