@@ -5,19 +5,24 @@ if game.PlaceId == 5100950559 then
 
     OrionLib:MakeNotification({
         Name = "Updated! 23/12/22",
-        Content = "Added three new hubs! Syntax v1.3, v2, and v3 free. UI lib changed due to the previous UI not allowing me to expand as much as i want",
+        Content = "Added three new hubs! Syntax v1.3, v2, and v3 free. PART 2 Added support to Gelatek, Added Commonly Used Hats Tab",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
 
 wait(5)
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+OrionLib:MakeNotification({
+	Name = "Looking for more hubs/scripts",
+	Content = "DM me on discord if you want me to add any hubs that isn't in here, this also goes for the commonly used tab. (neatdev#7275)",
+	Image = "rbxassetid://4483345998",
+	Time = 8
+})
 
 local Window = OrionLib:MakeWindow({Name = "Hat Giver", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
 
- local HatHub = Window:MakeTab({
-	Name = "Hat Hub",
+local Common = Window:MakeTab({
+	Name = "Commonly used",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -28,14 +33,37 @@ local Fenix = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Gel = Window:MakeTab({
+	Name = "Gelatek",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+ local HatHub = Window:MakeTab({
+	Name = "Hat Hub",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local HB = Window:MakeTab({
+	Name = "HomeBrew",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Localp = Window:MakeTab({
+	Name = "Local Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 local Null = Window:MakeTab({
 	Name = "Nullware",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local HB = Window:MakeTab({
-	Name = "HomeBrew",
+local Sukma = Window:MakeTab({
+	Name = "Sukma",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -64,25 +92,175 @@ local SYP4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Sukma = Window:MakeTab({
-	Name = "Sukma",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
 local syn = Window:MakeTab({
 	Name = "Synth",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local Localp = Window:MakeTab({
-	Name = "Local Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+--// Commonly Used Hats \\--
+
+Common:AddLabel("International Fedoras")
+
+Common:AddDropdown({
+	Name = "Dropdown of Fedoras",
+	Default = "",
+	Options = {"Argentina", "Brazil", "Russia", "Ukraine", "Mexico", "France", "USA", "Vietnam", "South Korea", "Philippines", "Turkey", "UK", "Japan", "Indonesia", "Germany", "Canada", "Peru", "Chile", "Thailand", "Spain", "Poland", "China", "Colombia", "Australia", "Netherlands"},
+	Callback = function(Value)
+		if Value == "Argentina" then
+            game.Players:Chat("-gh 3438342658")
+        elseif Value == "Brazil" then
+            game.Players:Chat("-gh 4047554959")
+        elseif Value == "Russia" then
+            game.Players:Chat("-gh 4391384843")
+        elseif Value == "Ukraine" then
+            game.Players:Chat("-gh 3822880197")
+        elseif Value == "Mexico" then
+            game.Players:Chat("-gh 4094878701")
+        elseif Value == "France" then
+            game.Players:Chat("-gh 3033908130")
+        elseif Value == "USA" then
+            game.Players:Chat("-gh 3409612660")
+        elseif Value == "Vietnam" then
+            game.Players:Chat("-gh 3992084515")
+        elseif Value == "South Korea" then
+            game.Players:Chat("-gh 3656493304")
+        elseif Value == "Philippines" then
+            game.Players:Chat("-gh 3940375351")
+        elseif Value == "Turkey" then
+            game.Players:Chat("-gh 4381707497")
+        elseif Value == "UK" then
+            game.Players:Chat("-gh 4489239608")
+        elseif Value == "Japan" then
+            game.Players:Chat("-gh 4324158403")
+        elseif Value == "Indonesia" then
+            game.Players:Chat("-gh 3662265036")
+        elseif Value == "Germany" then
+            game.Players:Chat("-gh 3033910400")
+        elseif Value == "Canada" then
+            game.Players:Chat("-gh 3398308134")
+        elseif Value == "Peru" then
+            game.Players:Chat("-gh 3443038622")
+        elseif Value == "Chile" then
+            game.Players:Chat("-gh 4154538250")
+        elseif Value == "Thailand" then
+            game.Players:Chat("-gh 4645404679")
+        elseif Value == "Spain" then
+            game.Players:Chat("-gh 4246228452")
+        elseif Value == "Poland" then
+            game.Players:Chat("-gh 4584029953")
+        elseif Value == "China" then
+            game.Players:Chat("-gh 4622081834")
+        elseif Value == "Colombia" then
+            game.Players:Chat("-gh 3499972183")
+        elseif Value == "Australia" then
+            game.Players:Chat("-gh 4645400486")
+        elseif Value == "Netherlands" then
+            game.Players:Chat("-gh 4584042059")
+	end 
+end   
 })
 
+Common:AddButton({
+	Name = "Give 10 Fedoras",
+	Callback = function()
+        game.Players:Chat("-gh 3438342658, 4047554959, 4391384843, 3822880197, 4094878701, 3033908130, 3409612660, 3992084515, 3656493304, 3940375351")
+  	end    
+})
 
+Common:AddLabel("Hairs")
+
+Common:AddDropdown({
+	Name = "Dropdown Of Hairs",
+	Default = "",
+	Options = {"Lavender Updo", "Chestnut Bun", "ROBLOX Girl - Hair", "Brown Hair", "Pal Hair", "Blonde Bangs w bun", "Brunette Bangs w bun", "Black Bangs w bun", "Young Yoshimi Hair"},
+	Callback = function(Value)
+		if Value == "Lavender Updo" then
+            game.Players:Chat("-gh 451220849")
+        elseif Value == "Chestnut Bun" then
+            game.Players:Chat("-gh 62724852")
+        elseif Value == "ROBLOX Girl - Hair" then
+            game.Players:Chat("-gh 48474294")
+        elseif Value == "Brown Hair" then
+            game.Players:Chat("-gh 301819845")
+        elseif Value == "Pal Hair" then
+            game.Players:Chat("-gh 63690008")
+        elseif Value == "Blonde Bangs w bun" then
+            game.Players:Chat("-gh 4584788319")
+        elseif Value == "Brunette Bangs w bun" then
+            game.Players:Chat("-gh 4584787037")
+        elseif Value == "Black Bangs w bun" then
+            game.Players:Chat("-gh 4584787812")
+        elseif Value == "Young Yoshimi Hair" then
+            game.Players:Chat("-gh 1744033107")
+	end  
+end  
+})
+
+Common:AddLabel("Back Accessories")
+
+Common:AddDropdown({
+	Name = "Dropdown Of Back",
+	Default = "",
+	Options = {"Shadow Blademaster's Blade", "Blademaster's Blade", "Starslayer Railgun", "Cyberpunk Sniper", "Frozen Demonic Greatsword", "Corrupt Demonic Greatsword", "Demonic Greatsword", "Golden Demonic Greatsword", "Slasher", "Nebula Blade", "Vector Arrow"},
+	Callback = function(Value)
+		if Value == "Shadow Blademaster's Blade" then
+            game.Players:Chat("-gh 4820152700")
+        elseif Value == "Blademaster's Blade" then
+            game.Players:Chat("-gh 4524991457")
+        elseif Value == "Starslayer Railgun" then
+            game.Players:Chat("-gh 4623059912")
+        elseif Value == "Cyberpunk Sniper" then
+            game.Players:Chat("-gh 5063578607")
+        elseif Value == "Frozen Demonic Greatsword" then
+            game.Players:Chat("-gh 4458601937")
+        elseif Value == "Corrupt Demonic Greatsword" then
+            game.Players:Chat("-gh 4506945409")
+        elseif Value == "Demonic Greatsword" then
+            game.Players:Chat("-gh 4315489767")
+        elseif Value == "Golden Demonic Greatsword" then
+            game.Players:Chat("-gh 4794315940")
+        elseif Value == "Slasher" then
+            game.Players:Chat("-gh 7548993875")
+        elseif Value == "Nebula Blade" then
+            game.Players:Chat("-gh 7583370812")
+        elseif Value == "Vector Arrow" then
+            game.Players:Chat("-gh 7583352167")
+        end
+	end    
+})
+
+Common:AddLabel("Shoulder Accessories")
+
+Common:AddDropdown({
+	Name = "Dropdown Of Shoulder",
+	Default = "",
+	Options = {"Left Sniper Shoulder", "Elemental Crystal Golem - Shoulder Rock"},
+	Callback = function(Value)
+		if Value == "Left Sniper Shoulder" then
+            game.Players:Chat("-gh 5973840187")
+        elseif Value == "Elemental Crystal Golem - Shoulder Rock" then
+            game.Players:Chat("-gh 4504231783")
+        end
+	end    
+})
+
+Common:AddLabel("Waist Accessories")
+
+Common:AddDropdown({
+	Name = "Dropdown Of Waist",
+	Default = "",
+	Options = {"Red Energy Saber", "Mk.73 Big Laser"},
+	Callback = function(Value)
+		if Value == "Red Energy Saber" then
+            game.Players:Chat("-gh 6055132810")
+        elseif Value == "Mk.73 Big Laser" then
+            game.Players:Chat("-gh 5100070995")
+        end
+	end    
+})
+
+--// Hat Hub \\--
 
 HatHub:AddButton({
     Name = "Small Rig",
@@ -247,7 +425,7 @@ HatHub:AddButton({
     end
 })
 
---FEnix
+--// FEnix \\--
 local Section = Fenix:AddSection({
 	Name = "Below are r6 only!"
 })
@@ -456,7 +634,7 @@ Fenix:AddButton({
     end
 })
 
---Nullware
+--// Nullware \\--
 Null:AddButton({
     Name = "Aiju Love Trap Rifle",
     Callback  = function()
@@ -513,7 +691,7 @@ Null:AddButton({
 })
 
 
---HomeBrew Admin
+--// HomeBrew Admin \\--
 HB:AddButton({
     Name = "r6 aka reanimation",
     Callback  = function()
@@ -611,7 +789,7 @@ HB:AddButton({
     end
 })
 
---Syntax Paid
+--// Syntax Paid \\--
 SYP:AddButton({
     Name = "War Hammer",
     Callback  = function()
@@ -888,7 +1066,7 @@ SYP:AddButton({
     end
 })
 
---Sukma Hub
+--// Sukma Hub \\--
 Sukma:AddButton({
     Name = "Ban Hammer",
     Callback  = function()
@@ -991,7 +1169,7 @@ Sukma:AddButton({
     end
 })
 
---Synth
+--// Synth \\--
 local Section = syn:AddSection({
 	Name = "VR Scripts Below!"
 })
@@ -1171,7 +1349,7 @@ syn:AddButton({
 })
 
 
---Syntax V1.3
+--// Syntax V1.3 \\--
 SYP2:AddButton({
     Name = "Plane",
     Callback  = function()
@@ -1227,7 +1405,7 @@ SYP2:AddButton({
     end
 })
 
---Syntax v2
+--// Syntax v2 \\--
 
 SYP3:AddButton({
     Name = "Jason Vorhees",
@@ -1320,7 +1498,7 @@ SYP3:AddButton({
     end
 })
 
---Syntax V3 Free
+--// Syntax V3 Free \\-- 
 
 SYP4:AddButton({
     Name = "Ink Monster",
@@ -1389,8 +1567,107 @@ SYP4:AddButton({
     end
 })
 
+--// Gelatek \\--
+Gel:AddButton({
+	Name = "R6 Bullet",
+	Callback = function()
+        game.Players:Chat("-gh 48474313")
+  	end    
+})
+Gel:AddButton({
+	Name = "R15 Bullet",
+	Callback = function()
+      		game.Players:Chat("-gh 5973840187")
+  	end    
+})
+Gel:AddButton({
+	Name = "Dual Ultima",
+	Callback = function()
+      		game.Players:Chat("-gh 4524991457,4820152700")
+  	end    
+})
+Gel:AddButton({
+	Name = "The Hotline",
+	Callback = function()
+      		game.Players:Chat("-gh 4962455546")
+  	end    
+})
+Gel:AddButton({
+	Name = "Attack Rifle",
+	Callback = function()
+      		game.Players:Chat("-gh 6202087882")
+  	end    
+})
+Gel:AddButton({
+	Name = "Carnage",
+	Callback = function()
+      		game.Players:Chat("-gh 5134896593,5410674378")
+  	end    
+})
+Gel:AddButton({
+	Name = "Neptunian V",
+	Callback = function()
+      		game.Players:Chat("-gh 4506945409")
+  	end    
+})
+Gel:AddButton({
+	Name = "Zenith Rifle",
+	Callback = function()
+      		game.Players:Chat("-gh 4962510729,4962455546")
+  	end    
+})
+Gel:AddButton({
+	Name = "Chips",
+	Callback = function()
+      		game.Players:Chat("-gh 4964938812")
+  	end    
+})
+Gel:AddButton({
+	Name = "Blue-Black Sniper",
+	Callback = function()
+      		game.Players:Chat("-gh 5063578607")
+  	end    
+})
+Gel:AddButton({
+	Name = "Banzai Bazooka",
+	Callback = function()
+      		game.Players:Chat("-gh 4466171123")
+  	end    
+})
+Gel:AddButton({
+	Name = "Void Scythe",
+	Callback = function()
+      		game.Players:Chat("-gh 5414429551")
+  	end    
+})
+Gel:AddButton({
+	Name = "Voodoo Doll",
+	Callback = function()
+      		game.Players:Chat("-gh 7218265043,7170689370")
+  	end    
+})
+Gel:AddButton({
+	Name = "Quenox",
+	Callback = function()
+      		game.Players:Chat("-gh 4820152700,4794315940,4524991457,4315489767,4458601937,4506945409")
+  	end    
+})
+Gel:AddButton({
+	Name = "Goner",
+	Callback = function()
+      		game.Players:Chat("-gh 6869866014")
+  	end    
+})
+Gel:AddButton({
+	Name = "Lightning Cannon V4",
+	Callback = function()
+      		game.Players:Chat("-gh 4623059912")
+  	end    
+})
 
---LocalPlayer
+
+
+--// Local Player \\-- 
 Localp:AddButton({
     Name = "GR",
     Callback  = function()
@@ -1413,6 +1690,12 @@ Localp:AddButton({
     Name = "Rejoin",
     Callback  = function()
         game.Players:Chat("-rj")
+    end
+})
+Localp:AddButton({
+    Name = "Remove Hats",
+    Callback  = function()
+        game.Players:Chat("-gh 3438342658, 4047554959, 4391384843, 3822880197, 4094878701, 3033908130, 3409612660, 3992084515, 3656493304, 3940375351, 1744033107, 4584787037, 4584788319, 4584787812, 4739580137, 5355426866, 4623723810, 4878136110, 4820152700,4794315940,4524991457,4315489767")
     end
 })
 
