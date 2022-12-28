@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 23/12/22",
-        Content = "Added three new hubs! Syntax v1.3, v2, and v3 free. PART 2 Added support to Gelatek, Added Commonly Used Hats Tab",
+        Name = "Updated! 29/12/22",
+        Content = "Added Sport Drifting Car and Katana to Sukma",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -1116,6 +1116,13 @@ Sukma:AddButton({
     end
 })
 
+Sukma:AddButton({
+	Name = "Sport Drifting Car!",
+	Callback = function()
+      		game.Players:Chat("-gh 6309381870")
+  	end    
+})
+
 local Section = Sukma:AddSection({
 	Name = "Below are R15 only!"
 })
@@ -1167,6 +1174,19 @@ Sukma:AddButton({
     Callback  = function()
         game.Players:Chat("-gh 9666085843, 8321637670, 4504231783")
     end
+})
+Sukma:AddButton({
+	Name = "Sport Drifting Car!",
+	Callback = function()
+      		game.Players:Chat("-gh 6309381870")
+  	end    
+})
+
+Sukma:AddButton({
+	Name = "Katana",
+	Callback = function()
+      		game.Players:Chat("-gh 7330498761, 7791150521, 7241435738, 5317750102, 6095129469")
+  	end    
 })
 
 --// Synth \\--
