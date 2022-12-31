@@ -1,12 +1,5 @@
 local utils = {}
 
-if _G.Orion == true then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
-    _G.Orion = false
-elseif _G.Orion == false then
-    _G.Orion = true
-end
-
 -- // Verison
 utils.Version = '1.0.2'
 
@@ -33,6 +26,12 @@ utils.Name = utils.Player.Name
 utils.Age = utils.Player.AccountAge
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+if shared.Orion then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
+wait()
+Rayfield:Destroy()
+end
 
 Rayfield:Notify({
     Title = "Welcome to Deem",
