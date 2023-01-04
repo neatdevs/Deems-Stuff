@@ -21,8 +21,16 @@ OrionLib:MakeNotification({
 
 local Window = OrionLib:MakeWindow({Name = "Hat Giver", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
 
+makefolder("Hat Giver")
+
 local Common = Window:MakeTab({
-	Name = "Commonly used",
+	Name = "Commonly Used",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Customise = Window:MakeTab({
+	Name = "Customise Hats",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -258,6 +266,32 @@ Common:AddDropdown({
             game.Players:Chat("-gh 5100070995")
         end
 	end    
+})
+
+--// Customise Hats \\--
+
+Customise:AddTextbox({
+	Name = "Custom Hat Giver",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(ID)
+		Mats = ID
+        game.Players:Chat("-gh "..Mats)
+	end	  
+})
+
+Customise:AddButton({
+	Name = "Save hats?",
+	Callback = function()
+        writefile("Hat Giver/Saved Hats.txt", Mats)
+  	end    
+})
+
+Customise:AddButton({
+	Name = "Load save hats?",
+	Callback = function()
+        game.Players:Chat("-gh "..readfile("Hat Giver/Saved Hats.txt"))
+  	end    
 })
 
 --// Hat Hub \\--
@@ -1713,7 +1747,7 @@ Localp:AddButton({
     end
 })
 Localp:AddButton({
-    Name = "Remove Hats",
+    Name = "Remove Hats (click multiple times)",
     Callback  = function()
         game.Players:Chat("-gh 3438342658, 4047554959, 4391384843, 3822880197, 4094878701, 3033908130, 3409612660, 3992084515, 3656493304, 3940375351, 1744033107, 4584787037, 4584788319, 4584787812, 4739580137, 5355426866, 4623723810, 4878136110, 4820152700,4794315940,4524991457,4315489767")
     end
