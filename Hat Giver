@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 29/12/22",
-        Content = "Added Sport Drifting Car and Katana to Sukma",
+        Name = "Updated! 14/01/23",
+        Content = "Added SMGS to Synth, added support to lunar",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -102,6 +102,12 @@ local SYP4 = Window:MakeTab({
 
 local syn = Window:MakeTab({
 	Name = "Synth",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Lunar = Window:MakeTab({
+	Name = "Lunar",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -1402,6 +1408,13 @@ syn:AddButton({
     end
 })
 
+syn:AddButton({
+	Name = "SMGS",
+	Callback = function()
+      		game.Players:Chat("-gh 4504231783,63690008,5410482351,5410630826")
+  	end    
+})
+
 
 --// Syntax V1.3 \\--
 SYP2:AddButton({
@@ -1719,6 +1732,13 @@ Gel:AddButton({
   	end    
 })
 
+--// Lunar \\--
+Lunar:AddButton({
+	Name = "phere's glitcher",
+	Callback = function()
+      		game.Players:Chat("-gh 4820152700, 4524991457, 4458601937, 4315489767, 4506945409")
+  	end    
+})
 
 
 --// Local Player \\-- 
