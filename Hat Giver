@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 14/01/23",
-        Content = "Added SMGS to Synth, added support to lunar",
+        Name = "Updated! 17/01/23",
+        Content = "Changed name for jiggly wiggley booty to thug shaker",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -1396,7 +1396,7 @@ syn:AddButton({
     end
 })
 syn:AddButton({
-    Name = "Jiggly Wiggly Ass",
+    Name = "Thug Shaker",
     Callback  = function()
         game.Players:Chat("-gh 12548563,20011897")
     end
