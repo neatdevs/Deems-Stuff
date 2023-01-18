@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 17/01/23",
-        Content = "Changed name for jiggly wiggley booty to thug shaker",
+        Name = "Updated! 19/01/23",
+        Content = "Added Arsenal Remake R15 and Minecraft R6/R15 to Sukma",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -1163,6 +1163,13 @@ Sukma:AddButton({
   	end    
 })
 
+Sukma:AddButton({
+	Name = "Minecraft",
+	Callback = function()
+      		game.Players:Chat("-gh 2620414161, 6115113981, 5732045936, 11459793799, 12077644376")
+  	end    
+})
+
 local Section = Sukma:AddSection({
 	Name = "Below are R15 only!"
 })
@@ -1226,6 +1233,20 @@ Sukma:AddButton({
 	Name = "Katana",
 	Callback = function()
       		game.Players:Chat("-gh 7330498761, 7791150521, 7241435738, 5317750102, 6095129469")
+  	end    
+})
+
+Sukma:AddButton({
+	Name = "Arsenal Remake",
+	Callback = function()
+      		game.Players:Chat("-gh 7962403279, 6344743713, 6095129469, 68259961, 32278814, 4504231783")
+  	end    
+})
+
+Sukma:AddButton({
+	Name = "Minecraft",
+	Callback = function()
+      		game.Players:Chat("-gh 2620414161, 6115113981, 5732045936, 11459793799, 12077644376")
   	end    
 })
 
