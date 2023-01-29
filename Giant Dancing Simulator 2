@@ -112,8 +112,8 @@ Rayfield:Notify({
 
 local Window = Rayfield:CreateWindow({
 	Name = "Deem",
-	LoadingTitle = "Themes & Deems",
-	LoadingSubtitle = "by Deem",
+	LoadingTitle = "Deem",
+	LoadingSubtitle = "by UI Vision Innovations",
 	ConfigurationSaving = {
 		Enabled = true,
 		FileName = "Deem Files"
