@@ -26,11 +26,6 @@ utils.Name = utils.Player.Name
 utils.Age = utils.Player.AccountAge
 --\\Local Values\\--
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-if shared.Ray then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
-wait()
-OrionLib:Destroy()
-end
 local sounfer = Instance.new("Sound")
 local loop = false
 local light = game.Lighting
