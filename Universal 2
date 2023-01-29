@@ -27,12 +27,6 @@ utils.Age = utils.Player.AccountAge
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
-if shared.Orion then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
-wait()
-Rayfield:Destroy()
-end
-
 Rayfield:Notify({
     Title = "Welcome to Deem",
     Content = "UI powered by RayField UI Libary, Some scripts are not made by me Credit to the Developer's of them!",
