@@ -1,3 +1,5 @@
+if shared.Ray then
+
 repeat wait() until game:IsLoaded()
 
 game:GetService("Players").LocalPlayer.Idled:Connect(function()
@@ -20,4 +22,8 @@ for i, v in pairs(games) do
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
 		Break()
     end
+end
+
+elseif not shared.Ray then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist"))()
 end
