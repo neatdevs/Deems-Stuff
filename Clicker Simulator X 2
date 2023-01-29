@@ -194,7 +194,7 @@ local CSXButton = GTab:CreateButton({
 local MSButton = GTab:CreateButton({
 	Name = "Teleport to Magnet Sim 2 (re-execute)",
 	Callback = function()
-		ame:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
+		game:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
 	end,
 })
 local JGButton = GTab:CreateButton({
