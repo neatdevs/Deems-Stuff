@@ -1,0 +1,23 @@
+repeat wait() until game:IsLoaded()
+
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+end)
+
+local gh = "https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/"
+
+local games = {
+    [7371240697] = "Giant%20Dancing%20Simulator%202",
+    [8592863835] = "Magnet%20Simulator%202%202",
+	[8070952780] = "Clicker%20Simulator%20X%202",
+	[5100950559] = "Hat%20Giver"
+}
+
+for i, v in pairs(games) do
+    if i == game.PlaceId or i == game.GameId then
+        loadstring(game:HttpGet(gh .. v))()
+	elseif i ~= game.PlaceId or i ~= game.GameId then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
+		Break()
+    end
+end
