@@ -1,0 +1,1321 @@
+if game.PlaceId == 8592863835 then
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local utils = {}
+
+-- // Verison
+utils.Version = '1.0.2'
+
+-- // Services
+utils.Players = game:GetService("Players")
+utils.ReplicatedStorage = game:GetService("ReplicatedStorage")
+utils.RunService = game:GetService("RunService")
+utils.UserInputService = game:GetService("UserInputService")
+utils.TweenService = game:GetService("TweenService")
+
+-- // Variables
+utils.Player = utils.Players.LocalPlayer
+utils.Character = utils.Player.Character
+utils.Humanoid = utils.Character:FindFirstChild("Humanoid")
+utils.HRP = utils.Character:FindFirstChild("HumanoidRootPart")
+utils.Camera = workspace.CurrentCamera
+utils.PlayerCount = tostring(#utils.Players:GetPlayers())
+utils.FOV = utils.Camera.FieldOfView
+utils.Health = utils.Humanoid.Health
+utils.UserId = utils.Player.UserId
+utils.Mouse = utils.Player:GetMouse()
+utils.Displayname = utils.Player.DisplayName
+utils.Name = utils.Player.Name
+utils.Age = utils.Player.AccountAge
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+if shared.Orion then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal%202"))()
+wait()
+Rayfield:Destroy()
+end
+
+Rayfield:Notify({
+    Title = "Welcome to Deem",
+    Content = "UI powered by RayField UI Libary, Some scripts are not made by me Credit to the Developer's of them!",
+    Duration = 6.5,
+    Image = 9445147702,
+})
+
+wait(6.5)
+
+Rayfield:Notify({
+    Title = "Join the Discord?",
+    Content = "By clicking on okay you will be sent a discord invite if you have the app open",
+    Duration = 6.5,
+    Image = 9445147702,
+    Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Okay!",
+            Callback = function()
+                local Settings = {
+                    InviteCode = "su7ycRRJyz"
+                  }
+                  
+                  local HttpService = game:GetService("HttpService")
+                  local RequestFunction
+                  
+                  if syn and syn.request then
+                    RequestFunction = syn.request
+                  elseif request then
+                    RequestFunction = request
+                  elseif http and http.request then
+                    RequestFunction = http.request
+                  elseif http_request then
+                    RequestFunction = http_request
+                  end
+                  
+                  local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
+                  
+                  if not RequestFunction then
+                    return print("Your executor does not support http requests.")
+                  end
+                  
+                  for i = 6453, 6464 do
+                    local DiscordInviteRequest = function()
+                        local Request = RequestFunction({
+                            Url = string.format(DiscordApiUrl, tostring(i)),
+                            Method = "POST",
+                            Body = HttpService:JSONEncode({
+                                nonce = HttpService:GenerateGUID(false),
+                                args = {
+                                    invite = {code = Settings.InviteCode},
+                                    code = Settings.InviteCode
+                                },
+                                cmd = "INVITE_BROWSER"
+                            }),
+                            Headers = {
+                                ["Origin"] = "https://discord.com",
+                                ["Content-Type"] = "application/json"
+                            }
+                        })
+                    end
+                    spawn(DiscordInviteRequest)
+                  end
+            end
+		},
+	},
+})
+
+
+local Window = Rayfield:CreateWindow({
+	Name = "Deem",
+	LoadingTitle = "Deem",
+	LoadingSubtitle = "by UI Vision Innovations",
+	ConfigurationSaving = {
+		Enabled = true,
+		FileName = "Deem Files"
+	},
+	KeySystem = false, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Sirius Hub",
+		Subtitle = "Key System",
+		Note = "Join the discord (discord.gg/sirius)",
+		Key = "ABCDEF"
+	}
+})
+
+local InfoTab = Window:CreateTab("Information", 10765113681)
+local GTab = Window:CreateTab("Games", 12318945590)
+local Buy = Window:CreateTab("Buy stuff", 9561765194) -- Title, Image
+local Misc = Window:CreateTab("Misc", 12318889242) -- Title, Image
+local Auto = Window:CreateTab("Auto Farm", 12318878571) -- Title, Image
+local LPTab = Window:CreateTab("Local Player", 10155080286)
+local SetTab = Window:CreateTab("Settings", 9555766093)
+--Info
+function utils:GetExecutor()
+    local exploit =
+    (syn and syn.protect_gui and not getexecutorname and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+    (getexecutorname and identifyexecutor and gethui and "ScriptWare") or
+    (secure_load and "Sentinel") or
+    (is_sirhurt_closure and "Sirhurt") or
+    (pebc_execute and "ProtoSmasher") or
+    (KRNL_LOADED and "Krnl") or
+    (WrapGlobal and "WeAreDevs") or
+    (isvm and "Proxo") or
+    (shadow_env and "Shadow") or
+    (jit and "EasyExploits") or
+    (getreg()['CalamariLuaEnv'] and "Calamari") or
+    (unit and "Unit") or
+    (IS_VIVA_LOADED and "VIVA") or
+    (IS_COCO_LOADED and "Coco") or
+    (identifyexecutor and "Temple") or
+    ("Undetectable")
+    return exploit
+end
+
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+    v:Disable()
+end
+    
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+    
+local OldNameCall 
+    OldNameCall = hookmetamethod(game, "__namecall", function(...) 
+        local Self, Args = (...), ({select(2, ...)})
+    
+        if getnamecallmethod() == "Kick" and Self == Player then 
+            return
+        end
+    
+        return OldNameCall(...)
+    end)
+
+local Antis = InfoTab:CreateParagraph({Title = "Welcome", Content = "Anti-Afk is always on. Anti-Kick is always on"})
+local Executor = InfoTab:CreateParagraph({Title = "Current Executor:", Content = utils:GetExecutor()})
+local Credits = InfoTab:CreateParagraph({Title = "Credits", Content = "Thanks to Liamriley101 for being a admin for Deem!"})
+local Credits1 = InfoTab:CreateParagraph({Title = "Credits", Content = "Thanks to Troy Lucas for helping develop some themes for Deem!"})
+
+--// Games
+
+local GDSButton = GTab:CreateButton({
+	Name = "Teleport to Giant Dancing Sim (re-execute)",
+	Callback = function()
+        game:GetService("TeleportService"):Teleport(7371240697, LocalPlayer)
+	end,
+})
+local CSXButton = GTab:CreateButton({
+	Name = "Teleport to Clicker Sim X (re-execute)",
+	Callback = function()
+		game:GetService("TeleportService"):Teleport(8070952780, LocalPlayer)
+	end,
+})
+local MSButton = GTab:CreateButton({
+	Name = "Teleport to Magnet Sim 2 (re-execute)",
+	Callback = function()
+		ame:GetService("TeleportService"):Teleport(8592863835, LocalPlayer)
+	end,
+})
+local JGButton = GTab:CreateButton({
+	Name = "Teleport to Just Grass (re-execute)",
+	Callback = function()
+		game:GetService("TeleportService"):Teleport(5100950559, LocalPlayer)
+	end,
+})
+
+--// Buy Shit
+
+local Dropdown = Buy:CreateDropdown({
+    Name = "Egg Selection",
+    Options = {"Rookie Egg", "Common Egg", "Desert Egg", "Jungle Egg", "Aquatic Egg", "Volcanic Egg", "Crystal Egg", "Wild West Egg", "Graveyard Egg", "Frost Egg", "Hell Egg", "Heaven Egg", "Ninja Egg", "Void Egg", "Pirate Egg", "Flower Egg", "Secret Egg", "Dino Egg", "Candy Egg", "Toy Egg", "Lucky Egg", "Toxic Egg"},
+    CurrentOption = "...",
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Option)
+        if Option == "Rookie Egg" then
+		    local args = {
+    [1] = "Rookie Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+	elseif Option == "Common Egg" then
+    local args = {
+    [1] = "Common Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+	elseif Option == "Desert Egg" then
+    local args = {
+    [1] = "Desert Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+    elseif Option == "Jungle Egg" then
+    local args = {
+    [1] = "Jungle Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+    elseif Option == "Aquatic Egg" then
+    local args = {
+    [1] = "Aquatic Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+    elseif Option == "Volcanic Egg" then
+    local args = {
+    [1] = "Volcanic Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Crystal Egg" then
+    local args = {
+    [1] = "Crystal Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Wild West Egg" then
+    local args = {
+    [1] = "Wild West Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+    elseif Option == "Graveyard Egg" then
+    local args = {
+    [1] = "Graveyard Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Frost Egg" then
+    local args = {
+    [1] = "Frost Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Hell Egg" then
+    local args = {
+    [1] = "Hell Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Heaven Egg" then
+    local args = {
+    [1] = "Heaven Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Ninja Egg" then
+    local args = {
+    [1] = "Ninja Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Void Egg" then
+    local args = {
+    [1] = "Void Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Pirate Egg" then
+    local args = {
+    [1] = "Pirate Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Flower Egg" then
+    local args = {
+    [1] = "Flower Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    elseif Option == "Secret Egg" then
+    local args = {
+    [1] = "Secret Egg"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+elseif Option == "Dino Egg" then
+    local args = {
+        [1] = "Dino Egg"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    
+elseif Option == "Candy Egg" then
+    local args = {
+        [1] = "Candy Egg"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+elseif Option == "Toy Egg" then
+    local args = {
+        [1] = "Toy Egg"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+elseif Option == "Lucky Egg" then
+    local args = {
+        [1] = "Lucky Egg"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+elseif Option == "Toxic Egg" then
+    local args = {
+        [1] = "Toxic Egg"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyEgg:FireServer(unpack(args))
+
+    end
+    end,
+ })
+
+ local Dropdown = Buy:CreateDropdown({
+    Name = "Upgrades",
+    Options = {"Leaf Magnet", "Wooden Magnet", "Stone Magnet", "Classic Magnet", "golden Magnet", "Diamond Magnet", "Hydrodip Magnet", "Toxic Magnet", "Lightning Magnet", "Rainbow Magnet", "Dark Matter Magnet", "Sunbeam Magnet", "Omega Plasma Magnet", "Stardust Nebula Magnet", "Explosive Magnet", "Hacker Magnet", "Bling Magnet", "Planetary Magnet", "Electric Magnet", "Corrupted Magnet", "Super Spiral Magnet", "Super Shiny Magnet", "Solar Splash Magnet", "Shattered Beam Magnet", "Solar Eye Magnet", "Void Pulse Magnet", "Vortex Magnet", "Roblox Magnet", "Orion's Quad Tip Magnet"},
+    CurrentOption = "...",
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Option)
+        if Option == "Leaf Magnet" then
+		    local args = {
+    [1] = "Leaf Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		elseif Option == "Wooden Magnet" then
+		    local args = {
+    [1] = "Wooden Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Stone Magnet" then
+		    local args = {
+    [1] = "Stone Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Classic Magnet" then
+		    local args = {
+    [1] = "Classic Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "golden Magnet" then
+		    local args = {
+    [1] = "golden Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Diamond Magnet" then
+		    local args = {
+    [1] = "Diamond Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Hydrodip Magnet" then
+		    local args = {
+    [1] = "Hydrodip Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Toxic Magnet" then
+		    local args = {
+    [1] = "Toxic Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Lightning Magnet" then
+		    local args = {
+    [1] = "Lightning Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Rainbow Magnet" then
+		    local args = {
+    [1] = "Rainbow Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Dark Matter Magnet" then
+		    local args = {
+    [1] = "Dark Matter Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Sunbeam Magnet" then
+		    local args = {
+    [1] = "Sunbeam Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Omega Plasma Magnet" then
+		    local args = {
+    [1] = "Omega Plasma Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Stardust Nebula Magnet" then
+		    local args = {
+    [1] = "Stardust Nebula Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Explosive Magnet" then
+		    local args = {
+    [1] = "Explosive Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Hacker Magnet" then
+		    local args = {
+    [1] = "Hacker Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Bling Magnet" then
+		    local args = {
+    [1] = "Bling Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Planetary Magnet" then
+		    local args = {
+    [1] = "Planetary Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Electric Magnet" then
+		    local args = {
+    [1] = "Electric Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Corrupted Magnet" then
+		    local args = {
+    [1] = "Corrupted Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Super Spiral Magnet" then
+		    local args = {
+    [1] = "Super Spiral Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Super Shiny Magnet" then
+		    local args = {
+    [1] = "Super Shiny Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Solar Splash Magnet" then
+		    local args = {
+    [1] = "Solar Splash Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Shattered Beam Magnet" then
+		    local args = {
+    [1] = "Shattered Beam Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Solar Eye Magnet" then
+		    local args = {
+    [1] = "Solar Eye Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+
+		    elseif Option == "Void Pulse Magnet" then
+		    local args = {
+    [1] = "Void Pulse Magnet"
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+elseif Option == "Vortex Magnet" then
+    local args = {
+        [1] = "Vortex Magnet"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+elseif Option == "Roblox Magnet" then
+    local args = {
+        [1] = "Roblox Magnet"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+elseif Option == "Orion's Quad Tip Magnet" then
+    local args = {
+        [1] = "Orion's Quad Tip Magnet"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.GameEvents.BuyMagnet:FireServer(unpack(args))
+    
+
+		end
+    end,
+ })
+
+ local pm = 0
+ local Button = Buy:CreateButton({
+    Name = "Buy all Speed Upgrades",
+    Callback = function()
+        task.spawn(function()
+        while pm <= 73 do
+            game:GetService("ReplicatedStorage").Events.GameEvents.UpgradeSpeed:FireServer() 
+            pm = pm + 1
+         end
+        end)
+    end,
+ })
+
+ local CBC = 0
+ local Button = Buy:CreateButton({
+    Name = "Buy all Storage Upgrades",
+    Callback = function()
+        task.spawn(function()
+        while CBC <= 63 do
+            game:GetService("ReplicatedStorage").Events.GameEvents.UpgradeStorage:FireServer()
+            CBC = CBC + 1
+         end
+        end)
+    end,
+ })
+
+ --// Misc
+
+
+ local Button = Misc:CreateButton({
+    Name = "Equip Best Pets",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Events.PetEvents.EquipBest:FireServer()
+    end,
+ })
+
+ local Dropdown = Misc:CreateDropdown({
+    Name = "Enchantments",
+    Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"},
+    CurrentOption = "...",
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Option)
+        if Option == "1" then
+		    local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+		elseif Option == "2" then
+	        local args = {
+    [1] = 2
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	    elseif Option == "3" then
+	        local args = {
+    [1] = 3
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	    elseif Option == "4" then
+	        local args = {
+    [1] = 4
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	    elseif Option == "5" then
+	   local args = {
+    [1] = 5
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	    elseif Option == "6" then
+	             local args = {
+    [1] = 6
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	    elseif Option == "7" then
+	        local args = {
+    [1] = 7
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "8" then
+	        local args = {
+    [1] = 8
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "9" then
+	        local args = {
+    [1] = 9
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "10" then
+	        local args = {
+    [1] = 10
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "11" then
+	        local args = {
+    [1] = 11
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "12" then
+	        local args = {
+    [1] = 12
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "13" then
+	        local args = {
+    [1] = 13
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "14" then
+	        local args = {
+    [1] = 14
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "15" then
+	        local args = {
+    [1] = 15
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "16" then
+	        local args = {
+    [1] = 16
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "17" then
+	        local args = {
+    [1] = 17
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "18" then
+	        local args = {
+    [1] = 18
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "19" then
+	        local args = {
+    [1] = 19
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "20" then
+	        local args = {
+    [1] = 20
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "21" then
+	        local args = {
+    [1] = 21
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "22" then
+	        local args = {
+    [1] = 22
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "23" then
+	        local args = {
+    [1] = 23
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "24" then
+	        local args = {
+    [1] = 24
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	        elseif Option == "25" then
+	        local args = {
+    [1] = 25
+}
+
+game:GetService("ReplicatedStorage").Events.GameEvents.UseEnchantment:InvokeServer(unpack(args))
+
+	    end
+    end,
+ })
+
+ local Dropdown = Misc:CreateDropdown({
+    Name = "Teleports",
+    Options = {"Enchantments", "Upgrade Storage", "Magnet Shop", "Upgrade Speed", "Desert", "Jungle", "Coral Reef", "Volcanic Field", "Coarry Mine", "Sell x2", "Sell x3", "Sell x4", "Sell x5", "Sell x6", "Sell x12", "Sell x15", "Sell x18", "Sell x22", "Sell x25", "Sell x30", "Sell x35", "Sell x40", "Sell x45", "Sell x50", "Sell x55", "Sell x60", "Sell x65", "Sell x70"},
+    CurrentOption = "...",
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Option)
+        if Option == "Enchantments" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-878, 14, 419) --Enchantments
+		elseif Option == "Upgrade Storage" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-790, 5, 385) --Upgrade Storage
+
+		elseif Option == "Magnet Shop" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-748, 5, 359) --Magnet Shop
+
+		elseif Option == "Upgrade Speed" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-686, 5, 346) --Upgrade Speed
+
+		elseif Option == "Desert" then
+		       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-315, 4, 426) --Desert
+ 
+		elseif Option == "Jungle" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24, 4, 434) --Jungle
+
+		    elseif Option == "Coral Reef" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(289, 4, 424) --Coral Reef
+
+		    elseif Option == "Volcanic Field" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(595, 4, 412) --Volcanic Field
+
+		    elseif Option == "Coarry Mine" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(874, 4, 414) --Coarry Mine
+
+		    elseif Option == "Sell x2" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-304, 4, 332) --Sell x2
+
+		    elseif Option == "Sell x3" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-91, 4, 516) --Sell x3
+
+		    elseif Option == "Sell x4" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(203, 4, 334) --Sell x4
+
+		    elseif Option == "Sell x5" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(542, 4, 341) --Sell x5
+
+		    elseif Option == "Sell x6" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(815, 4, 483) --Sell x6
+		    elseif Option == "Sell x12" then
+		        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1618, 5, 400) --X12
+
+		    elseif Option == "Sell x15" then
+		        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1887, 5, 537)--x15
+
+		    elseif Option == "Sell x18" then
+	            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2317, 5, 533)--x18
+
+		    elseif Option == "Sell x22" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2514, 5, 427)--x22
+
+		    elseif Option == "Sell x25" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2900, 5, 426)--x25
+
+		    elseif Option == "Sell x30" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6402, 6, 540)--x30
+
+		    elseif Option == "Sell x35" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6759, 5, -386)--x35
+
+		    elseif Option == "Sell x40" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7531, 5, 270)--x40
+
+		    elseif Option == "Sell x45" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5642, 4, -62)--x45
+            elseif Option == "Sell x50" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2834, -68, -8602)--x50
+
+            elseif Option == "Sell x55" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3665, -68, -8769)--x55
+
+            elseif Option == "Sell x60" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3816, -68, -8112)--x60
+
+            elseif Option == "Sell x65" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3314, -68, -7936)--x65
+
+            elseif Option == "Sell x70" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3043, -68, -7978)--x70
+
+	    end
+    end,
+ })
+
+ local Dropdown = Misc:CreateDropdown({
+    Name = "Buy Gates",
+    Options = {"Desert", "Jungle", "Coral Reef", "Volcanic Field", "Quarry Mine", "World 2", "Graveyard", "Frostland", "Hell", "Heaven", "world 3", "Ninjaland", "Void", "Pirateland", "Volcanic Island", "Candyland", "toyland", "Luckyland", "Toxicland"},
+    CurrentOption = "...",
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Option)
+        if Option == "Desert" then
+            local args = {
+                [1] = "Gate1" -- Desert
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Jungle" then
+            local args = {
+                [1] = "Gate2" -- Jungle
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Coral Reef" then
+            local args = {
+                [1] = "Gate3" -- Coral Reef
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+            
+        elseif Option == "Volcanic Field" then
+            local args = {
+                [1] = "Gate4" -- Volcanic Field
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Quarry Mine" then
+            local args = {
+                [1] = "Gate5" -- Quarry Mine
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "World 2" then
+            local args = {
+                [1] = "Portal1" -- World 2
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Graveyard" then
+            local args = {
+                [1] = "Gate6" -- Graveyard
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Frostland" then
+            local args = {
+                [1] = "Gate7" -- Frostland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Hell" then
+            local args = {
+                [1] = "Gate8" -- Hell
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Heaven" then
+            local args = {
+                [1] = "Gate9" -- Heaven
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "world 3" then
+            local args = {
+                [1] = "Portal2" -- world 3
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyPortal:FireServer(unpack(args))
+        elseif Option == "Ninjaland" then
+            local args = {
+                [1] = "Gate10" -- Ninjaland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Void" then
+            local args = {
+                [1] = "Gate11" -- Void
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Pirateland" then
+            local args = {
+                [1] = "Gate12" -- Pirateland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Volcanic Island" then
+            local args = {
+                [1] = "Portal3" -- Volcanic Island
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyPortal:FireServer(unpack(args))
+        elseif Option == "Candyland" then
+            local args = {
+                [1] = "Gate13" -- Candyland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "toyland" then
+            local args = {
+                [1] = "Gate14" -- toyland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        elseif Option == "Luckyland" then
+            local args = {
+                [1] = "Gate15" -- Luckyland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+            
+        elseif Option == "Toxicland" then
+            local args = {
+                [1] = "Gate16" -- Toxicland
+            }
+            
+            game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        end
+    end,
+ })
+
+ local Button = Misc:CreateButton({
+    Name = "Buy all gates",
+    Callback = function()
+        local args = {
+            [1] = "Gate1" -- Desert
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate2" -- Jungle
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate3" -- Coral Reef
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate4" -- Volcanic Field
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate5" -- Quarry Mine
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Portal1" -- World 2
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate6" -- Graveyard
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate7" -- Frostland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate8" -- Hell
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate9" -- Heaven
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Portal2" -- world 3
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyPortal:FireServer(unpack(args))
+        
+        
+        local args = {
+            [1] = "Gate10" -- Ninjaland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate11" -- Void
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate12" -- Pirateland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Portal3" -- Volcanic Island
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyPortal:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate13" -- Candyland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate14" -- toyland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate15" -- Luckyland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+        
+        local args = {
+            [1] = "Gate16" -- Toxicland
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.BuyZone:FireServer(unpack(args))
+    end,
+ })
+
+ local Button = Misc:CreateButton({
+    Name = "Claim all daily rewards",
+    Callback = function()
+        local args = {
+            [1] = "Daily"
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.CollectReward:FireServer(unpack(args))
+        wait()
+        local args = {
+            [1] = "GroupDaily"
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.CollectReward:FireServer(unpack(args))
+        wait()
+        local args = {
+            [1] = "World3_Daily"
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.CollectReward:FireServer(unpack(args))
+        wait()
+        local args = {
+            [1] = "World3_GroupDaily"
+        }
+        
+        game:GetService("ReplicatedStorage").Events.GameEvents.CollectReward:FireServer(unpack(args))
+    end,
+ })
+
+
+ local autoTabRunning = false
+
+ local Toggle = Auto:CreateToggle({
+    Name = "Auto Farm Toxic",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        autoTabRunning = Value
+    end,
+ })
+
+ task.defer(function()
+    while true do
+        task.wait(0.1)
+        
+        
+        if autoTabRunning then
+            local args = {
+                [1] = workspace.CollectibleCoins.Toxic.Toxic_Chest.Toxic_Chest,
+                [2] = "All",
+                [3] = "AddPetToStack"
+            }
+            
+            game:GetService("ReplicatedStorage").Events.PetEvents.Collect:InvokeServer(unpack(args))
+        end   
+end
+end)
+
+--// LP
+local WS = LPTab:CreateSlider({
+	Name = "WalkSpeed",
+	Range = {16, 500},
+	Increment = 1,
+	Suffix = "WS",
+	CurrentValue = 16,
+	Flag = "WS", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end,
+})
+local JP = LPTab:CreateSlider({
+	Name = "JumpPower",
+	Range = {50, 500},
+	Increment = 10,
+	Suffix = "JP",
+	CurrentValue = 10,
+	Flag = "JP", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = Value
+	end,
+})
+local HH = LPTab:CreateSlider({
+	Name = "HipHeight",
+	Range = {1, 100},
+	Increment = 1,
+	Suffix = "HH",
+	CurrentValue = 1,
+	Flag = "HH", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = Value
+	end,
+})
+local FOV = LPTab:CreateSlider({
+	Name = "Fov",
+	Range = {30, 190},
+	Increment = 10,
+	Suffix = "Bananas",
+	CurrentValue = 70,
+	Flag = "FOV", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		local cam = game.Workspace.Camera
+        cam.FieldOfView = Value
+	end,
+})
+
+local NoButton = LPTab:CreateButton({
+	Name = "Noclip, X Toggle (credit to xaxa420)",
+	Callback = function()
+		local nckey = "x";
+		local nclip = false;
+		local lp = game.Players.LocalPlayer
+		local ms = lp:GetMouse()
+		local rm = getrawmetatable(game)
+		local index = rm.__index
+		local bv = Instance.new("BoolOption");
+		bv.Option = false;
+		setreadonly(rm,false)
+		
+		rm.__index = function(self,j)
+		   if tostring(self) == "Part" and tostring(j) == "Anchored" then
+			   return index(bv,"Option")
+		end
+		   return index(self,j)
+		end
+		
+		
+		game:GetService("RunService").Stepped:Connect(function()
+		   if nclip == true then
+			   lp.Character.Head.CanCollide = false
+			   lp.Character.Torso.CanCollide = false
+		   end
+		end);
+		
+		ms.KeyDown:Connect(function(k)
+		   if k == nckey then
+			   nclip = not nclip
+			   if nclip == true then
+				   print("Noclip is on.")
+			   else
+				   print("Noclip if off.")
+			   end
+		   end
+		end)
+		
+		print("Noclip key is X");
+		print("Press X to turn noclip on and off");
+		print("THIS SCRIPT IS NOT MINE CREDIT TO xaxa420 FOR MAKING THIS! note i just refound who made the noclip");
+	end,
+})
+local RJButton = LPTab:CreateButton({
+	Name = "Rejoin",
+	Callback = function()
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+	end,
+})
+local SHButton = LPTab:CreateButton({
+	Name = "ServerHop (Made by IY)",
+	Callback = function()
+		local x = {}
+	for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+		if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+			x[#x + 1] = v.id
+		end
+	end
+	if #x > 0 then
+		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+		end
+	end,
+})
+
+--// Settings
+
+local Destroy = SetTab:CreateButton({
+	Name = "Destroy Deem",
+	Callback = function()
+		Rayfield:Destroy()
+	end,
+})
+
+
+
+
+
+
+
+
+
+end
