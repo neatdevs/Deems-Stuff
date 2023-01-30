@@ -1,6 +1,6 @@
-if shared.Ray == false then
-
 repeat wait() until game:IsLoaded()
+
+if shared.Ray == false then
 
 game:GetService("Players").LocalPlayer.Idled:Connect(function()
     game:GetService("VirtualUser"):ClickButton2(Vector2.new())
