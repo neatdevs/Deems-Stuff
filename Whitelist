@@ -1,4 +1,4 @@
-if not shared.Ray then
+if shared.Ray == false then
 
 repeat wait() until game:IsLoaded()
 
@@ -23,6 +23,6 @@ for i, v in pairs(games) do
 		Break()
     end
 end
-elseif shared.Ray then
+elseif shared.Ray == true then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist2"))()
 end
