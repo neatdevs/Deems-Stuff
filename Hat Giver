@@ -4,8 +4,8 @@ if game.PlaceId == 5100950559 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Updated! 19/01/23",
-        Content = "Added Arsenal Remake R15 and Minecraft R6/R15 to Sukma",
+        Name = "Updated! 17/02/23",
+        Content = "Added the pal hair to all syntax scripts",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -887,19 +887,19 @@ SYP:AddButton({
 SYP:AddButton({
     Name = "Boat",
     Callback  = function()
-        game.Players:Chat("-gh 6098187465, 7496019339, 9424115083")
+        game.Players:Chat("-gh 6098187465, 7496019339, 9424115083, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Gaming Setup",
     Callback  = function()
-        game.Players:Chat("-gh 7671674703, 5622463442, 9729175256, 8527979605")
+        game.Players:Chat("-gh 7671674703, 5622463442, 9729175256, 8527979605, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Treadmill",
     Callback  = function()
-        game.Players:Chat("-gh 4753437569, 8786319854")
+        game.Players:Chat("-gh 4753437569, 8786319854, 63690008")
     end
 })
 SYP:AddButton({
@@ -936,19 +936,19 @@ SYP:AddButton({
 SYP:AddButton({
     Name = "Divinatori R15",
     Callback  = function()
-        game.Players:Chat("-gh 4773932088, 4820152700, 5973840187")
+        game.Players:Chat("-gh 4773932088, 4820152700, 5973840187, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Disparando R15",
     Callback  = function()
-        game.Players:Chat("-gh 4504231783, 4962510729, 5100070995, 5973840187")
+        game.Players:Chat("-gh 4504231783, 4962510729, 5100070995, 5973840187, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Lanturn R15",
     Callback  = function()
-        game.Players:Chat("-gh 5891622817, 5973840187")
+        game.Players:Chat("-gh 5891622817, 5973840187, 63690008")
     end
 })
 SYP:AddButton({
@@ -960,19 +960,19 @@ SYP:AddButton({
 SYP:AddButton({
     Name = "Nights Edge Bot",
     Callback  = function()
-        game.Players:Chat("-gh 4315489767")
+        game.Players:Chat("-gh 4315489767, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Reanimate R6 to R15",
     Callback  = function()
-        game.Players:Chat("-gh 3940375351, 3992084515, 4391384843, 4047554959, 4246228452, 4489239608, 4324158403, 4584042059, 4622081834, 4645400486, ")
+        game.Players:Chat("-gh 3940375351, 3992084515, 4391384843, 4047554959, 4246228452, 4489239608, 4324158403, 4584042059, 4622081834, 4645400486, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Normal Titan",
     Callback  = function()
-        game.Players:Chat("-gh 5063499736, 5355426866, 4739580137, 4878136110, 18015906, 1743941933, 1744219293, 1744235800, 4623723810, 4773270135")
+        game.Players:Chat("-gh 5063499736, 5355426866, 4739580137, 4878136110, 18015906, 1743941933, 1744219293, 1744235800, 4623723810, 4773270135, 63690008")
     end
 })
 SYP:AddButton({
@@ -984,25 +984,25 @@ SYP:AddButton({
 SYP:AddButton({
     Name = "Become a wall",
     Callback  = function()
-        game.Players:Chat("-gh 4602617115, 5858536049, 4602623152, 4623675984, 4753437569, 4611970333, 4602619613, 4904216307, 4602533885")
+        game.Players:Chat("-gh 4602617115, 5858536049, 4602623152, 4623675984, 4753437569, 4611970333, 4602619613, 4904216307, 4602533885, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Rock Throw",
     Callback  = function()
-        game.Players:Chat("-gh 5063499736, 6904899146, 4793958453")
+        game.Players:Chat("-gh 5063499736, 6904899146, 4793958453, 63690008")
     end
 })
 SYP:AddButton({
     Name = "StopSign Banisher",
     Callback  = function()
-        game.Players:Chat("-gh 6904899146, 4800095641, 4800100757, 4684378932, 4878132899, 5063499736, 4504231783, 5134896593")
+        game.Players:Chat("-gh 6904899146, 4800095641, 4800100757, 4684378932, 4878132899, 5063499736, 4504231783, 5134896593, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Gun Titan",
     Callback  = function()
-        game.Players:Chat("-gh 4793985219, 8780532784, 8166607006, 8166633491, 9225069302, 4753144522, 7608269092, 4684378932, 4800087902, 5063499736")
+        game.Players:Chat("-gh 4793985219, 8780532784, 8166607006, 8166633491, 9225069302, 4753144522, 7608269092, 4684378932, 4800087902, 5063499736, 63690008")
     end
 })
 SYP:AddButton({
@@ -1020,7 +1020,7 @@ SYP:AddButton({
 SYP:AddButton({
     Name = "Plane",
     Callback  = function()
-        game.Players:Chat("-gh 4771592966, 191101707")
+        game.Players:Chat("-gh 4771592966, 191101707, 63690008")
     end
 })
 SYP:AddButton({
@@ -1042,69 +1042,71 @@ SYP:AddButton({
 })SYP:AddButton({
     Name = "Railgun",
     Callback  = function()
-        game.Players:Chat("-gh 4504231783, 4623059912, 63690008")
+        game.Players:Chat("-gh 4504231783, 4623059912, 63690008, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Nerd",
     Callback  = function()
-        game.Players:Chat("-gh 9468417713, 5918654338, 9003134104")
+        game.Players:Chat("-gh 9468417713, 5918654338, 9003134104, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Ravaging Claws",
     Callback  = function()
-        game.Players:Chat("-gh 4315489767, 4506945409, 4458601937, 4794315940, 4820152700, 4524991457, 4876469013, 8998968191, 4880921571")
+        game.Players:Chat("-gh 4315489767, 4506945409, 4458601937, 4794315940, 4820152700, 4524991457, 4876469013, 8998968191, 4880921571, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Huge Hammer",
     Callback  = function()
-        game.Players:Chat("-gh 4623732543, 4996175399, 4684378932, 4735116238, 4878132899, 8274093002")
+        game.Players:Chat("-gh 4623732543, 4996175399, 4684378932, 4735116238, 4878132899, 8274093002, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Neptunian V",
     Callback  = function()
-        game.Players:Chat("-gh 4315489767")
+        game.Players:Chat("-gh 4315489767, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Boss Fight",
     Callback  = function()
-        game.Players:Chat("-gh 4611970333, 5063499736, 4602617115, 6202063049")
+        game.Players:Chat("-gh 4611970333, 5063499736, 4602617115, 6202063049, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Uni Glitcher",
     Callback  = function()
-        game.Players:Chat("-gh 4773883146,5268602207,5316479641,5316539421,5316549755,5268720002,5268555719")
+        game.Players:Chat("-gh 4773883146,5268602207,5316479641,5316539421,5316549755,5268720002,5268555719, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Rock Throw Bot",
     Callback  = function()
-        game.Players:Chat("-gh 4793958453")
+        game.Players:Chat("-gh 4793958453, 63690008")
     end
 })
 SYP:AddButton({
     Name = "War Hammer Bot",
     Callback  = function()
-        game.Players:Chat("-gh 4739580137")
+        game.Players:Chat("-gh 4739580137, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Red Mist",
     Callback  = function()
-        game.Players:Chat("-gh 4966333091, 4739580137")
+        game.Players:Chat("-gh 4966333091, 4739580137, 63690008")
     end
 })
 SYP:AddButton({
     Name = "Venom V2",
     Callback  = function()
-        game.Players:Chat("-gh 4878136110, 18015906, 1744235800, 1744219293, 1743941933, 4258963944, 7385623906, 6097718168, 5063499736")
+        game.Players:Chat("-gh 4878136110, 18015906, 1744235800, 1744219293, 1743941933, 4258963944, 7385623906, 6097718168, 5063499736, 63690008")
     end
 })
+
+
 
 --// Sukma Hub \\--
 Sukma:AddButton({
