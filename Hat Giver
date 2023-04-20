@@ -4,8 +4,8 @@ if game.PlaceId == 7154305304 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
     OrionLib:MakeNotification({
-        Name = "Revived!!! 19/04/23",
-        Content = "Added Syntax and Sukma with RCD workaround",
+        Name = "Updated! 21/04/23",
+        Content = "Added Minecraft RCD version to Sukma!",
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -350,6 +350,12 @@ Sukma:AddButton({
     Name = "Glitcher",
     Callback  = function()
         game.Players:Chat("-gh 48474294,48474313,62234425,62724852,63690008,451220849,3398308134,3940375351,4622081834,11263254795")
+    end
+})
+Sukma:AddButton({
+    Name = "Minecraft",
+    Callback  = function()
+        game.Players:Chat("-gh 2620414161, 5732045936, 6115113981, 11459793799, 12077644376, 12483700909, 11449687315, 11449703382, 11159410305, 11263254795")
     end
 })
 
