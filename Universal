@@ -376,20 +376,9 @@ SoundTab:AddToggle({
 	Name = "Loop song?",
 	Default = false,
 	Callback = function(Value)
-		loop = Value
+		sounfer.Looped = Value
 	end    
 })
-
-task.defer(function ()
-	while true do
-		task.wait(0.1)
-
-
-		if loop then
-			sounfer.Looped = loop
-		end
-	end
-end)
 
 SettingsTab:AddColorpicker({
 	Name = "Colorpicker",
