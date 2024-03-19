@@ -110,9 +110,9 @@ local StartTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-StartTab:AddParagraph("Welcome!","Anti-Afk is always on. Anti-Kick is always on")
-StartTab:AddParagraph("Credits"," Thanks to Liamriley101 for being a admin for Deem!")
-StartTab:AddParagraph("Credits"," Thanks to Troy Lucas for helping make custom themes for Deem!")
+StartTab:AddParagraph("Welcome!"," Anti-Afk is always on. Anti-Kick is always on")
+StartTab:AddParagraph("Credits"," Thanks to Liamriley101 for help with coding of Deem!")
+StartTab:AddParagraph("Credits"," Thanks to Toon for permitting me to use some of IY's scripts")
 StartTab:AddParagraph("Current Executor:", utils:GetExecutor())
 
 local MainTab = Window:MakeTab({
