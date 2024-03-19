@@ -249,7 +249,7 @@ LocalPlayerTab:AddSlider({
 	Increment = 1,
 	ValueName = "",
 	Callback = function(Value)
-		ExposureCompensation = Value
+		light.ExposureCompensation = Value
 	end    
 })
 
