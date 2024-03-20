@@ -111,7 +111,7 @@ Rayfield:Notify({
 
 
 local Window = Rayfield:CreateWindow({
-	Name = "Deem",
+	Name = "Deem v1",
 	LoadingTitle = "Deem",
 	LoadingSubtitle = "by UI Vision Innovations",
 	ConfigurationSaving = {
