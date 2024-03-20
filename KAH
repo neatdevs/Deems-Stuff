@@ -1,0 +1,839 @@
+local utils = {}
+
+-- // Verison
+utils.Version = '1.0.2'
+
+-- // Services
+utils.Players = game:GetService("Players")
+utils.ReplicatedStorage = game:GetService("ReplicatedStorage")
+utils.RunService = game:GetService("RunService")
+utils.UserInputService = game:GetService("UserInputService")
+utils.TweenService = game:GetService("TweenService")
+
+-- // Variables
+utils.Player = utils.Players.LocalPlayer
+utils.Character = utils.Player.Character
+utils.Humanoid = utils.Character:FindFirstChild("Humanoid")
+utils.HRP = utils.Character:FindFirstChild("HumanoidRootPart")
+utils.Camera = workspace.CurrentCamera
+utils.PlayerCount = tostring(#utils.Players:GetPlayers())
+utils.FOV = utils.Camera.FieldOfView
+utils.Health = utils.Humanoid.Health
+utils.UserId = utils.Player.UserId
+utils.Mouse = utils.Player:GetMouse()
+utils.Displayname = utils.Player.DisplayName
+utils.Name = utils.Player.Name
+utils.Age = utils.Player.AccountAge
+--\\Local Values\\--
+local sounfer = Instance.new("Sound")
+local loop = false
+local light = game.Lighting
+local chat = game.Chat
+--\\errorpocket by liamriley101
+syn = syn
+jit = jit
+unit = unit
+isvm = isvm
+getreg = getreg
+gethui = gethui
+WrapGlobal = WrapGlobal
+shadow_env = shadow_env
+secure_load = secure_load
+KRNL_LOADED = KRNL_LOADED
+pebc_execute = pebc_execute
+IS_VIVA_LOADED = IS_VIVA_LOADED
+IS_COCO_LOADED = IS_COCO_LOADED
+getexecutorname = getexecutorname
+identifyexecutor = identifyexecutor
+is_sirhurt_closure = is_sirhurt_closure
+getconnections = getconnections
+hookmetamethod = hookmetamethod
+getnamecallmethod = getnamecallmethod
+getrawmetatable = getrawmetatable
+setreadonly = setreadonly
+request = request
+http = http
+http_request = http_request
+--\\
+--\\script\\
+function utils:GetExecutor()
+	local exploit =
+		(syn and syn.protect_gui and not getexecutorname and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+		(getexecutorname and identifyexecutor and gethui and "ScriptWare") or
+		(secure_load and "Sentinel") or
+		(is_sirhurt_closure and "Sirhurt") or
+		(pebc_execute and "ProtoSmasher") or
+		(KRNL_LOADED and "Krnl") or
+		(WrapGlobal and "WeAreDevs") or
+		(isvm and "Proxo") or
+		(shadow_env and "Shadow") or
+		(jit and "EasyExploits") or
+		(getreg()['CalamariLuaEnv'] and "Calamari") or
+		(unit and "Unit") or
+		(IS_VIVA_LOADED and "VIVA") or
+		(IS_COCO_LOADED and "Coco") or
+		(identifyexecutor and "Temple") or
+		("Undetectable")
+	return exploit
+end
+
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+	v:Disable()
+end
+
+local OldNameCall 
+OldNameCall = hookmetamethod(game, "__namecall", function(...) 
+	local Self, Args = (...), ({select(2, ...)})
+
+	if getnamecallmethod() == "Kick" and Self == utils.Player then 
+		return
+	end
+
+	return OldNameCall(...)
+end)
+
+makefolder("Deem Config")
+
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+
+local loop = false
+local loop2 = false
+local loop3 = false
+local loop4 = false
+local loop5 = false
+local loop6 = false
+local loop7 = false
+local loop8 = false
+local loop9 = false
+local loop10 = false
+local loop11 = false
+
+function chat(msg)
+	utils.Players:Chat(msg)
+end
+
+function attachbp()
+	chat("stun me")
+	wait(1)
+	chat("punish me")
+	wait(1)
+	chat("sit me")
+	wait(1)
+	chat("unpunish me")
+end
+
+function fixbp()
+	chat("respawn me")
+	chat("jail me")
+	chat("skydive me me")
+	task.wait(5)
+	attachbp()
+	chat("unskydive me")
+	chat("reset me")
+end
+
+function breakbp()
+	attachbp()
+	wait(1)
+	chat("skydive me me")
+end
+
+function fixcam()
+	utils.Camera:remove()
+	wait(.1)
+	repeat wait() until utils.Character ~= nil 
+	utils.Camera.CameraSubject = utils.Character:FindFirstChildWhichIsA("Humanoid")
+	utils.Camera.CameraType = "Custom"
+	utils.Player.CameraMinZoomDistance = 0.5
+	utils.Player.CameraMaxZoomDistance = 400
+	utils.Player.CameraMode = "Classic"
+	utils.Player.Character.Head.Anchored = false
+end
+
+local win = DiscordLib:Window("Deem v1")
+
+local Main = win:Server("Main Scripts", "")
+local Uni = win:Server("Universal Scripts", "")
+
+local Item = Main:Channel("Item Giver")
+local Abuse = Main:Channel("Abusive")
+local Help = Main:Channel("Helpful")
+local Boss = Main:Channel("Boss Battles")
+local Music = Main:Channel("Music Player")
+
+local StartTab = Uni:Channel("Info")
+local GamesTab = Uni:Channel("Games")
+local LPTab = Uni:Channel("Local Player")
+local SettingsTab = Uni:Channel("Settings")
+local SoundTab = Uni:Channel("Client Sided Audio Player")
+
+local drop = Item:Dropdown("Gear Selector",{"Rainbow Periastron Omega", "Luger Pistol", "Gravity Coil", "Rainbow Magic Carpet", "Bloxy Cola","Body Swap Potion","Ban Hammer","Red Hyperlaser Gun","The General's .45","Ultimate Drive Speedster","Subspace Tripmine","Speed Coil"}, function(bool)
+	if bool == "Rainbow Periastron Omega" then
+		chat("gear me 159229806")
+	elseif bool == "Luger Pistol" then
+		chat("gear me 95354288")
+	elseif bool == "Gravity Coil" then
+		chat("gear me 16688968")
+	elseif bool == "Rainbow Magic Carpet" then
+		chat("gear me 225921000")
+	elseif bool == "Bloxy Cola" then
+		chat("gear me 10472779")
+	elseif bool == "Body Swap Potion" then
+		chat("gear me 78730532")
+	elseif bool == "Ban Hammer" then
+		chat("gear me 10468797")
+	elseif bool == "Red Hyperlaser Gun" then
+		chat("gear me 212296936")
+	elseif bool == "The General's .45" then
+		chat("gear me 97885508")
+	elseif bool == "Ultimate Drive Speedster" then
+		chat("gear me 253519495")
+	elseif bool == "Subspace Tripmine" then
+		chat("gear me 11999247")
+	elseif bool == "Speed Coil" then
+		chat("gear me 99119158")
+	end
+end)
+
+Item:Textbox("Dupe Amount", "Input Value here!", true, function(dupe)
+	Damount = dupe
+end)
+
+function dupeboombox()
+	local damount = tonumber(Damount)
+
+	for i = damount, 0, -1 do
+		task.wait()
+		chat("gear me 212641536")
+	end
+end
+
+Item:Button("Dupe Boombox", function()
+	dupeboombox()
+end)
+
+Abuse:Toggle("Spam FF",false, function(bool)
+	if bool then
+		loop = true
+		utils.RenderStepped:Connect(function()
+			if loop then
+				task.wait()
+				chat("ff others ff others ff others ff others ff others ff others ")
+			else
+				loop = false
+			end
+		end)
+	elseif not bool then
+		loop = false
+	end
+end)
+
+Abuse:Toggle("Spam shield",false, function(bool)
+
+	if bool then
+		loop2 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop2 then
+				task.wait()
+				chat("shield/others")
+			else
+				loop2 = false
+			end
+		end)
+	elseif not bool then
+		loop2 = false
+	end
+end)
+
+Abuse:Toggle("Spam Sparkles",false, function(bool)
+
+	if bool then
+		loop3 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop3 then
+				task.wait()
+				chat("sparkles/others")
+			else
+				loop3 = false
+			end
+		end)
+	elseif not bool then
+		loop3 = false
+	end
+end)
+
+Abuse:Toggle("Spam Fire",false, function(bool)
+
+	if bool then
+		loop4 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop4 then
+				task.wait()
+				chat("bonfire others")
+			else
+				loop4 = false
+			end
+		end)
+	elseif not bool then
+		loop4 = false
+	end
+end)
+
+Abuse:Toggle("Spam reset",false, function(bool)
+
+	if bool then
+		loop5 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop5 then
+				task.wait()
+				chat("reset others")
+			else
+				loop5 = false
+			end
+		end)
+	elseif not bool then
+		loop5 = false
+	end
+end)
+
+Abuse:Toggle("Spam explode",false, function(bool)
+
+	if bool then
+		loop6 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop6 then
+				task.wait()
+				chat("ff others")
+				wait(0.1)
+				chat("explode others")
+			else
+				loop6 = false
+			end
+		end)
+	elseif not bool then
+		loop6 = false
+	end
+end)
+
+Abuse:Toggle("Annoy",false, function(bool)
+
+	if bool then
+		loop7 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop7 then
+				task.wait()
+				chat("unchar others")
+			else
+				loop7 = false
+			end
+		end)
+	elseif not bool then
+		loop7 = false
+	end
+end)
+
+Abuse:Toggle("Spam small Parts",false, function(bool)
+	if bool then
+		loop11 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop11 then
+				task.wait()
+				chat("part/1/1/1")
+			else
+				loop11 = false
+			end
+		end)
+	elseif not bool then
+		loop11 = false
+	end
+end)
+
+Abuse:Toggle("Spam big Parts",false, function(bool)
+	if bool then
+		loop9 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop9 then
+				task.wait()
+				chat("part/10/10/10")
+			else
+				loop9 = false
+			end
+		end)
+	elseif not bool then
+		loop9 = false
+	end
+end)
+
+Abuse:Button("Attach BasePlate", function()
+	DiscordLib:Notification("WARNING", "DO NOT MOVE", "Okay!")
+	attachbp()
+end)
+
+
+Abuse:Button("Break BasePlate", function()
+	DiscordLib:Notification("WARNING", "DO NOT MOVE", "Okay!")
+	breakbp()
+end)
+
+Help:Button("Fix BasePlate", function()
+	DiscordLib:Notification("WARNING", "DO NOT MOVE", "Okay!")
+	fixbp()
+end)
+
+Help:Button("Fix Camera", function()
+	fixcam()
+end)
+
+Help:Button("Trip BasePlate", function()
+	DiscordLib:Notification("WARNING", "DO NOT MOVE", "Okay!")
+	chat("respawn me")
+	attachbp()
+	wait(0.3)
+	chat("trip me")
+	wait(0.3)
+	chat("respawn me")
+end)
+
+local bosschat = "BOSS FIGHT! DONT USE CMDS PLS THATS CHEATING, ONLY USE THE GEARS THAT U HAVE"
+
+Boss:Button("Fix Heros", function()
+	chat("gear others 49929767")
+	chat("gear others 49929776")
+	chat("gear others 223785473")
+	chat("health others 5000")
+end)
+
+Boss:Button("Boss is dead", function()
+	chat("m The Boss Has Been Defeated thanks to the heros!")
+	chat("unchar me")
+	chat("reset all")
+	chat("music")
+end)
+
+Boss:Seperator()
+
+Boss:Button("Xester", function()
+	chat("music")
+	wait(2)
+	chat("h Loading Boss Fight")
+	wait(3)
+	chat("char me 5136590382")
+	wait(3)
+	chat("health me 3000")
+	wait(3)
+	chat("health others 1000")
+	wait(3)
+	chat("name me Jester MaxHP: 3k")
+	wait(3)
+	fixcam()
+	wait(3)
+	chat("ungear all")
+	wait(3)
+	chat("h Still Loading the Boss Fight")
+	wait(3)
+	chat("gear me 409745306")
+	chat("gear me 31314966")
+	chat("gear me 16979083")
+	chat("gear others 49929767")
+	chat("gear others 49929776")
+	chat("gear others 223785473")
+	task.wait()
+	chat("m Jester: " .. bosschat)
+	task.wait()
+	chat("music 1843358057")
+end)
+
+Boss:Button("Xester Phase 2", function()
+	chat("music")
+	wait(2)
+	chat("h Loading Boss Fight")
+	wait(3)
+	chat("char me 5136590382")
+	wait(3)
+	chat("sethealth me 6000")
+	wait(3)
+	chat("health me 6000")
+	wait(3)
+	chat("size me 1.5")
+	wait(3)
+	chat("sethealth others 2000")
+	wait(3)
+	chat("health others 2000")
+	wait(3)
+	chat("name me Corrupted Jester Max HP: 6k")
+	wait(3)
+	fixcam()
+	wait(3)
+	chat("ungear all")
+	wait(3)
+	chat("h Still Loading the Boss Fight")
+	wait(3)
+	chat("gear me 16895215")
+	chat("gear me 31314966")
+	chat("gear me 16979083")
+	chat("gear others 49929767")
+	chat("gear others 49929776")
+	chat("gear others 223785473")
+	chat("m Corrupted Jester: " .. bosschat)
+	wait(2)
+	chat("music 1843358057")
+end)
+
+Boss:Button("Void Xester", function()
+	chat("music")
+	wait(2)
+	chat("h Loading Boss Battle")
+	wait(3)
+	chat("char me 5136590382")
+	wait(3)
+	chat("health me 10000")
+	wait(3)
+	chat("size me 2")
+	wait(3)
+	chat("health others 5000")
+	wait(3)
+	chat("name me Void Jester Max HP: 10k")
+	wait(3)
+	fixcam()
+	wait(3)
+	chat("ungear all")
+	wait(3)
+	chat("h Still Loading the Boss Fight")
+	wait(3)
+	chat("gear me 108149175")
+	chat("gear me 31314966")
+	chat("gear me 16979083")
+	chat("gear others 49929767")
+	chat("gear others 49929776")
+	chat("gear others 223785473")
+	wait(3)
+	chat("m Void Jester: " .. bosschat)
+	wait(2)
+	chat("music 45819151")
+	wait(math.random(5, 40))
+	chat("m FIGHT ME HEROS OF KAH")
+	wait(math.random(5, 40))
+	chat("m SURELY THAT'S NOT ALL THE HEROS CAN DO")
+end)
+
+Boss:Seperator()
+
+Boss:Button("Necromancer", function()
+	chat("music")
+	chat("m Loading Boss Battle")
+	chat("unhat me")
+	chat("paint me black")
+	wait(2)
+	chat("health me 7500")
+	wait(2)
+	chat("health others 5000")
+	wait(3)
+	chat("hat me 12929738820")
+	chat("hat me 12463726648")
+	chat("shirt me 1293140626")
+	chat("pants me 1293147521")
+	wait(2)
+	chat("name me Necromancer Max HP: 7.5k")
+	wait(2)
+	fixcam()
+	wait(2)
+	chat("ungear all")
+	wait(2)
+	chat("m Still Loading the Boss Battle")
+	wait(2)
+	chat("gear me 94794774")
+	chat("gear me 26421972")
+	chat("gear me 304721834")
+	chat("gear others 49929767")
+	chat("gear others 49929776")
+	chat("gear others 223785473")
+	wait(2)
+	chat("m Necromancer: " .. bosschat)
+	wait(2)
+	chat("music 6703926669")
+end)
+
+Boss:Seperator()
+
+Boss:Button("Purple Guy", function()
+	chat("music")
+	chat("m Loading Boss Battle")
+	chat("music 6189662330")
+	wait(27)
+	chat("music")
+	chat("unhat me")
+	chat("unshirt me")
+	chat("unpants me")
+	chat("paint me Royal Purple")
+	chat("health me 2000")
+	wait(2)
+	chat("shirt me 11354421656")
+	chat("pants me 4445410180")
+	wait(2)
+	chat("name me Purple Guy: Max HP 2000")
+	wait(2)
+	fixcam()
+	wait(2)
+	chat("ungear all")
+	chat("sword me")
+	chat("gear others 121946387")
+	wait(2)
+	chat("m Purple Guy: ".. bosschat)
+	wait(2)
+	chat("music 6913550990")
+end)
+
+local function getAudioName(id: number): string
+	local success, output = pcall(function()
+	   -- return the product's info
+	   return game:GetService("MarketplaceService"):GetProductInfo(id)
+	end)
+ 
+	if success then
+		return output.Name -- returns the item's name in the marketplace
+	else
+		warn(output) -- if there was an issue, this sends it to the console so you can see what the problem is
+	end
+ 
+	return "[ unknown ]" -- default name if the actual name can't be fetched
+ end
+
+ local play = "h Now Playing: "
+ local start = "music 000000000000000000000000000000000000000000000000000000000000000000"
+
+ local drop = Music:Dropdown("Pick me!",{"Saw You at the Party","MonsterMash","No Sleep","YOU TAKE SOME CHOCOLATE AND SOME LOBSTER ZO B)","Mood Enhancer", "Gangstas Paradise", "EPIC", "PLAY", "SAD NIGA HOURS", "Paint It, Black", "Train Horn LOUD", "Gmod Collide sound", "I am just a freak", "Snazzy", "The Final Fight", "Deja Vu", "Broadway", "ILY", "Some tiktok loop", "Script kiddie song", "Meow", "That's a thot", "Purple Guy", "Yeah?", "Vibe", "BloodPop"}, function(bool)
+	if bool == "Saw You at the Party" then
+		chat(start .. "7006487793")
+		chat(play .. getAudioName(7006487793))
+	elseif bool == "MonsterMash" then
+		chat(start .. "35930009")
+		chat(play .. getAudioName(35930009))
+	elseif bool == "No Sleep" then
+		chat(start .. "7029011778")
+		chat(play .. getAudioName(7029011778))
+	elseif bool == "YOU TAKE SOME CHOCOLATE AND SOME LOBSTER ZO B)" then
+		chat(start .. "8361838923")
+		chat(play .. getAudioName(8361838923))
+	elseif bool == "Mood Enhancer" then
+		chat(start .. "1838549060")
+		chat(play .. getAudioName(1838549060))
+	elseif bool == "Gangstas Paradise" then
+		chat(start .. "6070263388")
+		chat(play .. getAudioName(6070263388))
+	elseif bool == "EPIC" then
+		chat(start .. "5410085694")
+		chat(play .. getAudioName(5410085694))
+	elseif bool == "PLAY" then
+		chat(start .. "5410085763")
+		chat(play .. getAudioName(5410085763))
+	elseif bool == "SAD NIGA HOURS" then
+		chat(start .. "6806140478")
+		chat(play .. getAudioName(6806140478))
+	elseif bool == "Paint It, Black" then
+		chat(start .. "6828176320")
+		chat(play .. getAudioName(6828176320))
+	elseif bool == "Train Horn LOUD" then
+		chat(start .. "3900067524")
+		chat(play .. getAudioName(3900067524))
+	elseif bool == "Gmod Collide sound" then
+		chat(start .. "5260200541")
+		chat(play .. getAudioName(5260200541))
+	elseif bool == "I am just a freak" then
+		chat(start .. "6703926669")
+		chat(play .. getAudioName(6703926669))
+	elseif bool == "Snazzy" then
+		chat(start .. "1836759260")
+		chat(play .. getAudioName(1836759260))
+	elseif bool == "The Final Fight" then
+		chat(start .. "45819151")
+		chat(play .. getAudioName(45819151))
+	elseif bool == "Deja Vu" then
+		chat(start .. "6781116057")
+		chat(play .. getAudioName(6781116057))
+	elseif bool == "Broadway" then
+		chat(start .. "6897686359")
+		chat(play .. getAudioName(6897686359))
+	elseif bool == "ILY" then
+		chat(start .. "15689455422")
+		chat(play .. getAudioName(15689455422))
+	elseif bool == "Some tiktok song" then
+		chat(start .. "8997664593")
+		chat(play .. getAudioName(8997664593))
+	elseif bool == "Script kiddie song" then
+		chat(start .. "7014573768")
+		chat(play .. getAudioName(7014573768))
+	elseif bool == "moew" then
+		chat(start .. "6680495507")
+		chat(play .. getAudioName(6680495507))
+	elseif bool == "That's a thot" then
+		chat(start .. "6772846771")
+		chat(play .. getAudioName(6772846771))
+	elseif bool == "Purple Guy" then
+		chat(start .. "6913550990")
+		chat(play .. getAudioName(6913550990))
+	elseif bool == "Yeah?" then
+		chat(start .. "6695430066")
+		chat(play .. getAudioName(6695430066))
+	elseif bool == "Vibe" then
+		chat(start .. "6872126938")
+		chat(play .. getAudioName(6872126938))
+	elseif bool == "BloodPop" then
+		chat(start .. "6783714255")
+		chat(play .. getAudioName(6783714255))
+	end
+end)
+
+
+Music:Textbox("Music IDs", "Input Value here!", true, function(ID)
+	IDS = ID
+end)
+
+Music:Button("Play IDs", function()
+	local MID = tonumber(IDS)
+
+	chat(start .. MID)
+	chat(play .. getAudioName(MID))
+end)
+
+
+StartTab:Label("Welcome!"," Anti-Afk is always on. Anti-Kick is always on")
+StartTab:Label("Credits"," Thanks to Liamriley101 for help with coding of Deem!")
+StartTab:Label("Credits"," Thanks to Toon for permitting me to use some of IY's scripts")
+StartTab:Label("Current Executor:", utils:GetExecutor())
+
+GamesTab:Label("Supported Games")
+LPTab:Label("Local Player Scripts")
+SettingsTab:Label("Settings")
+
+GamesTab:Button("Teleport to Giant Dancing Simulator (re-execute)", function()
+	game:GetService("TeleportService"):Teleport(7371240697, utils.Player)
+end)
+
+GamesTab:Button("Teleport to Clicker Sim X (re-execute)", function()
+	game:GetService("TeleportService"):Teleport(8070952780, utils.Player)
+end)
+
+GamesTab:Button("Teleport to Magnet Sim (re-execute)", function()
+	game:GetService("TeleportService"):Teleport(8592863835, utils.Player)
+end)
+
+LPTab:Slider("Walkspeed", 0, 1000, 16, function(t)
+	utils.Humanoid.WalkSpeed = t
+end)
+
+LPTab:Slider("Jumppower", 0, 1000, 50, function(t)
+	utils.Humanoid.JumpPower = t
+end)
+
+LPTab:Slider("Fov Changer", 30, 190, 70, function(t)
+	utils.FOV = t
+end)
+
+LPTab:Slider("Time of day", 0, 23, 14, function(t)
+	light.TimeOfDay = t
+end)
+
+LPTab:Slider("Brightness", 0, 100, 2, function(t)
+	light.Brightness = t
+end)
+
+LPTab:Slider("Exposure Compensation", 0, 10, 1, function(t)
+	light.ExposureCompensation = t
+end)
+
+LPTab:Button("Noclip, X Toggle (Credit to xaxa420)", function()
+	local nckey = "x";
+	local nclip = false;
+	local ms = lp:GetMouse()
+	local rm = getrawmetatable(game)
+	local index = rm.__index
+	local bv = Instance.new("BoolValue");
+	bv.Value = false;
+	setreadonly(rm,false)
+
+	rm.__index = function(self,j)
+		if tostring(self) == "Part" and tostring(j) == "Anchored" then
+			return index(bv,"Value")
+		end
+		return index(self,j)
+	end
+
+
+	utils.RunService.Stepped:Connect(function()
+		if nclip == true then
+			utils.Character.Head.CanCollide = false
+			utils.Character.Torso.CanCollide = false
+		end
+	end);
+
+	ms.KeyDown:Connect(function(k)
+		if k == nckey then
+			nclip = not nclip
+			if nclip == true then
+				print("Noclip is on.")
+			else
+				print("Noclip if off.")
+			end
+		end
+	end)
+
+	print("Noclip key is X");
+	print("Press X to turn noclip on and off");
+	print("THIS SCRIPT IS NOT MINE CREDIT TO xaxa420 FOR MAKING THIS! note i just refound who made the noclip");
+end)
+
+LPTab:Button("Rejoin", function()
+	game:GetService("TeleportService"):Teleport(game.PlaceId, utils.Player)
+end)
+
+LPTab:Button("ServerHop (IY)", function()
+	local x = {}
+		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+			if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+				x[#x + 1] = v.id
+			end
+		end
+		if #x > 0 then
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+		end
+end)
+
+SoundTab:Textbox("Input Sound", "ID here", true, function(sounf)
+	Songs = sounf
+end)
+
+SoundTab:Button("Play Sound", function()
+	sounfer.Name = "Sound"
+	sounfer.SoundId = "rbxassetid://"..Songs
+	sounfer.Parent = game.Workspace
+
+	sounfer:PLay()
+end)
+
+SoundTab:Slider("Volume Slider", 0.1, 10, 1, function(t)
+	sounfer.Volume = f
+end)
+
+SoundTab:Toggle("Loop Audio?",false, function(bool)
+	sounfer.Looped = bool
+end)
+
+SettingsTab:Button("Copy Invite Link", function()
+	setclipboard("https://discord.gg/su7ycRRJyz")
+end)
+
+--[[
+	attach methods:
+	stun me, punish me, sit me, unpunish me
+	stun me, unpunish me --works with building blocks and the floor in the house
+	punish me, stun me, freeze me, unstun me? unfreeze me unpunish me --possible way to move the admin pads
+	sit me, punish me, unpunish me
+	jail me, tp me me, punish me, unpunish me --maybe only works with reset pads
+
+	HOW TO DELETE ADMIN PADS
+	line up on the wall in first person with your back facing it
+	walk in a straight line to the admin pad of the one you want to delete
+	jail me and tp me me outside of the jail
+	walk up against the jail and slide into the admin pad
+	run unpunish me if you see your camera move even in the slightest use skydive me or try to jump
+]]--
