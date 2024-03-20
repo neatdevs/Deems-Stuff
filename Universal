@@ -84,7 +84,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "Deem"})
+local Window = OrionLib:MakeWindow({Name = "Deem v1"})
 
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
 	v:Disable()
