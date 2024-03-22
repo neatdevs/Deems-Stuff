@@ -96,7 +96,7 @@ makefolder("Deem Config")
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-local loop = false
+local loop1 = false
 local loop2 = false
 local loop3 = false
 local loop4 = false
@@ -138,16 +138,19 @@ function breakbp()
 	chat("skydive me me")
 end
 
+local workspace = game.Workspace
+local player = game.Players.LocalPlayer
+
 function fixcam()
-	utils.Camera:remove()
+	workspace.CurrentCamera:remove()
 	wait(.1)
-	repeat wait() until utils.Character ~= nil 
-	utils.Camera.CameraSubject = utils.Character:FindFirstChildWhichIsA("Humanoid")
-	utils.Camera.CameraType = "Custom"
-	utils.Player.CameraMinZoomDistance = 0.5
-	utils.Player.CameraMaxZoomDistance = 400
-	utils.Player.CameraMode = "Classic"
-	utils.Player.Character.Head.Anchored = false
+	repeat wait() until player.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = player.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	player.CameraMinZoomDistance = 0.5
+	player.CameraMaxZoomDistance = 400
+	player.CameraMode = "Classic"
+	player.Character.Head.Anchored = false
 end
 
 local win = DiscordLib:Window("Deem v1")
@@ -164,8 +167,8 @@ local Music = Main:Channel("Music Player")
 local StartTab = Uni:Channel("Info")
 local GamesTab = Uni:Channel("Games")
 local LPTab = Uni:Channel("Local Player")
+local SoundTab = Uni:Channel("Audio Player")
 local SettingsTab = Uni:Channel("Settings")
-local SoundTab = Uni:Channel("Client Sided Audio Player")
 
 local drop = Item:Dropdown("Gear Selector",{"Rainbow Periastron Omega", "Luger Pistol", "Gravity Coil", "Rainbow Magic Carpet", "Bloxy Cola","Body Swap Potion","Ban Hammer","Red Hyperlaser Gun","The General's .45","Ultimate Drive Speedster","Subspace Tripmine","Speed Coil"}, function(bool)
 	if bool == "Rainbow Periastron Omega" then
@@ -214,17 +217,17 @@ end)
 
 Abuse:Toggle("Spam FF",false, function(bool)
 	if bool then
-		loop = true
+		loop1 = true
 		utils.RenderStepped:Connect(function()
-			if loop then
+			if loop1 then
 				task.wait()
 				chat("ff others ff others ff others ff others ff others ff others ")
 			else
-				loop = false
+				loop1 = false
 			end
 		end)
 	elseif not bool then
-		loop = false
+		loop1 = false
 	end
 end)
 
@@ -404,7 +407,7 @@ Boss:Button("Fix Heros", function()
 end)
 
 Boss:Button("Boss is dead", function()
-	chat("m The Boss Has Been Defeated thanks to the heros!")
+	chat(":m The Boss Has Been Defeated thanks to the heros!")
 	chat("unchar me")
 	chat("reset all")
 	chat("music")
@@ -434,11 +437,11 @@ Boss:Button("Xester", function()
 	chat("gear me 409745306")
 	chat("gear me 31314966")
 	chat("gear me 16979083")
-	chat("gear others 49929767")
+	chat("gear others 49929767")	
 	chat("gear others 49929776")
 	chat("gear others 223785473")
 	task.wait()
-	chat("m Jester: " .. bosschat)
+	chat(":m Jester: " .. bosschat)
 	task.wait()
 	chat("music 1843358057")
 end)
@@ -460,7 +463,7 @@ Boss:Button("Xester Phase 2", function()
 	wait(3)
 	chat("health others 2000")
 	wait(3)
-	chat("name me Corrupted Jester Max HP: 6k")
+	chat("name me Corrupted Jester MHP: 6k")
 	wait(3)
 	fixcam()
 	wait(3)
@@ -474,7 +477,7 @@ Boss:Button("Xester Phase 2", function()
 	chat("gear others 49929767")
 	chat("gear others 49929776")
 	chat("gear others 223785473")
-	chat("m Corrupted Jester: " .. bosschat)
+	chat(":m Corrupted Jester: " .. bosschat)
 	wait(2)
 	chat("music 1843358057")
 end)
@@ -507,20 +510,20 @@ Boss:Button("Void Xester", function()
 	chat("gear others 49929776")
 	chat("gear others 223785473")
 	wait(3)
-	chat("m Void Jester: " .. bosschat)
+	chat(":m Void Jester: " .. bosschat)
 	wait(2)
 	chat("music 45819151")
 	wait(math.random(5, 40))
-	chat("m FIGHT ME HEROS OF KAH")
+	chat(":m FIGHT ME HEROS OF KAH")
 	wait(math.random(5, 40))
-	chat("m SURELY THAT'S NOT ALL THE HEROS CAN DO")
+	chat(":m SURELY THAT'S NOT ALL THE HEROS CAN DO")
 end)
 
 Boss:Seperator()
 
 Boss:Button("Necromancer", function()
 	chat("music")
-	chat("m Loading Boss Battle")
+	chat(":m Loading Boss Battle")
 	chat("unhat me")
 	chat("paint me black")
 	wait(2)
@@ -539,7 +542,7 @@ Boss:Button("Necromancer", function()
 	wait(2)
 	chat("ungear all")
 	wait(2)
-	chat("m Still Loading the Boss Battle")
+	chat(":m Still Loading the Boss Battle")
 	wait(2)
 	chat("gear me 94794774")
 	chat("gear me 26421972")
@@ -548,7 +551,7 @@ Boss:Button("Necromancer", function()
 	chat("gear others 49929776")
 	chat("gear others 223785473")
 	wait(2)
-	chat("m Necromancer: " .. bosschat)
+	chat(":m Necromancer: " .. bosschat)
 	wait(2)
 	chat("music 6703926669")
 end)
@@ -557,7 +560,7 @@ Boss:Seperator()
 
 Boss:Button("Purple Guy", function()
 	chat("music")
-	chat("m Loading Boss Battle")
+	chat(":m Loading Boss Battle")
 	chat("music 6189662330")
 	wait(27)
 	chat("music")
@@ -570,7 +573,7 @@ Boss:Button("Purple Guy", function()
 	chat("shirt me 11354421656")
 	chat("pants me 4445410180")
 	wait(2)
-	chat("name me Purple Guy: Max HP 2000")
+	chat("name me Purple Guy MHP: 2000")
 	wait(2)
 	fixcam()
 	wait(2)
@@ -578,7 +581,9 @@ Boss:Button("Purple Guy", function()
 	chat("sword me")
 	chat("gear others 121946387")
 	wait(2)
-	chat("m Purple Guy: ".. bosschat)
+	chat(":m Purple Guy: ".. bosschat)
+	chat("fogend 500")
+	chat("fogcolor 119 70 180")
 	wait(2)
 	chat("music 6913550990")
 end)
@@ -598,7 +603,7 @@ local function getAudioName(id: number): string
 	return "[ unknown ]" -- default name if the actual name can't be fetched
  end
 
- local play = "h Now Playing: "
+ local play = ":h Now Playing: "
  local start = "music 000000000000000000000000000000000000000000000000000000000000000000"
 
  local drop = Music:Dropdown("Pick me!",{"Saw You at the Party","MonsterMash","No Sleep","YOU TAKE SOME CHOCOLATE AND SOME LOBSTER ZO B)","Mood Enhancer", "Gangstas Paradise", "EPIC", "PLAY", "SAD NIGA HOURS", "Paint It, Black", "Train Horn LOUD", "Gmod Collide sound", "I am just a freak", "Snazzy", "The Final Fight", "Deja Vu", "Broadway", "ILY", "Some tiktok loop", "Script kiddie song", "Meow", "That's a thot", "Purple Guy", "Yeah?", "Vibe", "BloodPop"}, function(bool)
@@ -696,10 +701,9 @@ Music:Button("Play IDs", function()
 end)
 
 
-StartTab:Label("Welcome!"," Anti-Afk is always on. Anti-Kick is always on")
-StartTab:Label("Credits"," Thanks to Liamriley101 for help with coding of Deem!")
-StartTab:Label("Credits"," Thanks to Toon for permitting me to use some of IY's scripts")
-StartTab:Label("Current Executor:", utils:GetExecutor())
+StartTab:Label("Welcome! Anti-Afk is always on. Anti-Kick is always on")
+StartTab:Label("Credits Thanks to Liamriley101 for help with coding of Deem!")
+StartTab:Label("Credits Thanks to Toon for permitting me to use some of IY's scripts")
 
 GamesTab:Label("Supported Games")
 LPTab:Label("Local Player Scripts")
@@ -735,10 +739,6 @@ end)
 
 LPTab:Slider("Brightness", 0, 100, 2, function(t)
 	light.Brightness = t
-end)
-
-LPTab:Slider("Exposure Compensation", 0, 10, 1, function(t)
-	light.ExposureCompensation = t
 end)
 
 LPTab:Button("Noclip, X Toggle (Credit to xaxa420)", function()
