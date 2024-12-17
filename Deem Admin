@@ -1,0 +1,229 @@
+-- Game Loaded Check
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+-- Locals
+local HttpService = game:GetService("HttpService")
+local Lighting = game:GetService("Lighting")
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local RunService = game:GetService("RunService")
+local StarterGui = game:GetService("StarterGui")
+
+local Player = Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local Humanoid = Character:WaitForChild("Humanoid")
+local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+
+local CommandsDirectory = "Deem_commands"
+local ChatPrefix = "!"
+local Commands = {}
+
+local plr = Players.LocalPlayer
+
+-- Message
+local function sendChatFeedback(message)
+	StarterGui:SetCore("ChatMakeSystemMessage", {
+		Text = "[Situation Admin]: " .. message,
+		Color = Color3.new(1, 1, 1),
+		Font = Enum.Font.SourceSansBold,
+		FontSize = Enum.FontSize.Size18,
+	})
+end
+
+sendChatFeedback("Welcome to Deem Admin (Beta)!\nType '!help' for a list of commands.")
+
+local function split(str, sep)
+	local tokens = {}
+	for token in str:gmatch("([^" .. sep .. "]+)") do
+		table.insert(tokens, token)
+	end
+	return tokens
+end
+
+local function loadCommands()
+	if not isfolder(CommandsDirectory) then
+		makefolder(CommandsDirectory)
+	end
+
+	for _, filePath in ipairs(listfiles(CommandsDirectory)) do
+		if filePath:match("%.lua$") or filePath:match("%.txt$") then
+			local commandName = filePath:match("([^/\\]+)%.%w+$")
+			local commandFunction = loadstring(readfile(filePath))
+
+			if commandFunction then
+				Commands[commandName] = commandFunction
+			end
+		end
+	end
+end
+
+Commands.help = function()
+	local helpMessage = "Available Commands:\n"
+	local i = 1
+
+	for commandName in pairs(Commands) do
+		helpMessage = helpMessage .. string.format("%d.) %s\n", i, commandName)
+		i += 1
+	end
+
+	sendChatFeedback(helpMessage)
+end
+
+Commands.getremote = function(...)
+	for i, v in pairs(game:GetDescendants()) do
+		if string.match(v.ClassName, "RemoteEvent") then
+			sendChatFeedback("\nRemoteEvent found!  \nLocation: " .. v:GetFullName() .. "  \nMethod  FireServer\n")
+		elseif string.match(v.ClassName, "RemoteFunction") then
+			sendChatFeedback("\nRemoteFunction found! \nLocation: " .. v:GetFullName() .. "  \nMethod | InvokeServer\n")
+		else
+
+		end
+	end
+end
+
+Commands.getremoteevents = function(...)
+	for i, v in pairs(game:GetDescendants()) do
+		if string.match(v.ClassName, "RemoteEvent") then
+			sendChatFeedback("\nRemoteEvent found!  \nLocation: " .. v:GetFullName() .. "  \nMethod  FireServer\n")
+		else
+
+		end
+	end
+end
+
+Commands.getremotefunctions = function(...)
+	for i, v in pairs(game:GetDescendants()) do
+		if string.match(v.ClassName, "RemoteFunction") then
+			sendChatFeedback("\nRemoteFunction found! \nLocation: " .. v:GetFullName() .. "  \nMethod | InvokeServer\n")
+		else
+
+		end
+	end
+end
+
+Commands.noclip = function(...)
+	for i, v in pairs(plr.Character:GetChildren()) do
+		if v:IsA("BasePart") then
+			v.CanCollide = false
+		end
+	end
+end
+
+Commands.clip = function(...)
+    for i, v in pairs(plr.Character:GetChildren()) do
+        if v:IsA("BasePart") then
+            v.CanCollide = true
+        end
+    end
+end
+
+Commands.fireclickdetectors = function(...)
+	for i, v in pairs(workspace:GetDescendants()) do
+		if v:IsA("ClickDetector") then
+			fireclickdetector(v)
+		end
+	end
+end
+
+Commands.supportserver = function(...)
+	sendChatFeedback("discord.gg/su7ycRRJyz\n Server link has been copied to your clipboard.\n")
+	setclipboard("discord.gg/su7ycRRJyz")
+end
+
+Commands.noproximitycooldown = function(...)
+	while task.wait() do
+		game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(fireproximityprompt)
+	end
+end
+
+Commands.spoofmemory = function(...)
+	hookfunction((gcinfo or collectgarbage), function(...)
+		return math.random(200, 350)
+	end)
+	
+	local gamemt = getrawmetatable(game)
+
+	setreadonly(gamemt, false)
+
+	local nc = gamemt.__namecall
+
+	gamemt.__namecall = newcclosure(function(...)
+		if getnamecallmethod() == "GetTotalMemoryUsageMb" then
+			return math.random(395, 405)
+		end
+
+		return nc(...)
+	end)
+
+	hookfunction(game.Stats.GetTotalMemoryUsageMb, function()
+		return math.random(395, 405)
+	end)
+
+	sendChatFeedback("Memory Spoofed!\n")
+end
+
+Commands.teleport = function(...)
+	for i, plr in ipairs(Players:GetPlayers()) do
+		sendChatFeedback(i .. ".) " .. plr.Name .. "\n")
+	end
+
+	sendChatFeedback("Choice: ")
+
+	local playerNum = tonumber(sendChatFeedback())
+	local players = Players:GetPlayers()
+
+	if playerNum ~= nil and playerNum > 0 and playerNum <= #players then
+		local plrchar = players[playerNum].Character
+
+		getroot(character).CFrame = getroot(plrchar).CFrame
+	else
+		sendChatFeedback("Player chosen is invalid!\n")
+	end
+end
+
+Commands.antiafk = function(...)
+	for i, v in pairs(getconnections(Players.LocalPlayer.Idled)) do
+		v:Disable()
+	end
+end
+
+Commands.fullbright = function(...)
+    Lighting.Brightness = 2
+    Lighting.ClockTime = 14
+    Lighting.FogEnd = 100000
+    Lighting.GlobalShadows = false
+    Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+end
+
+Commands.noproximitycooldown = function(...)
+    while task.wait() do
+        game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(fireproximityprompt)
+    end
+end
+
+-- Chat Command Runner
+local function processChatMessage(message)
+	if message:sub(1, #ChatPrefix) == ChatPrefix then
+		local args = split(message:sub(#ChatPrefix + 1), " ")
+		local commandName = table.remove(args, 1):lower()
+
+		if Commands[commandName] then
+			local success, err = pcall(function()
+				Commands[commandName](table.unpack(args))
+			end)
+
+			if success then
+				sendChatFeedback("Executed '" .. commandName .. "' successfully!")
+			else
+				sendChatFeedback("Error executing '" .. commandName .. "': " .. tostring(err))
+			end
+		else
+			sendChatFeedback("Unknown command: " .. commandName)
+		end
+	end
+end
+
+Player.Chatted:Connect(processChatMessage)
+RunService.Heartbeat:Connect(loadCommands)
