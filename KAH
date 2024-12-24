@@ -96,17 +96,7 @@ makefolder("Deem Config")
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-local loop1 = false
-local loop2 = false
-local loop3 = false
-local loop4 = false
-local loop5 = false
-local loop6 = false
-local loop7 = false
-local loop8 = false
-local loop9 = false
-local loop10 = false
-local loop11 = false
+_G.loop = false
 
 function chat(msg)
 	utils.Players:Chat(msg)
@@ -140,18 +130,6 @@ end
 
 local workspace = game.Workspace
 local player = game.Players.LocalPlayer
-
-function fixcam()
-	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until player.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = player.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	player.CameraMinZoomDistance = 0.5
-	player.CameraMaxZoomDistance = 400
-	player.CameraMode = "Classic"
-	player.Character.Head.Anchored = false
-end
 
 local win = DiscordLib:Window("Deem v1")
 
@@ -216,154 +194,91 @@ Item:Button("Dupe Boombox", function()
 end)
 
 Abuse:Toggle("Spam FF",false, function(bool)
-	if bool then
-		loop1 = true
+	if bool == true then
 		utils.RenderStepped:Connect(function()
-			if loop1 then
-				task.wait()
-				chat("ff others ff others ff others ff others ff others ff others ")
-			else
-				loop1 = false
-			end
+			chat("ff others ff others ff others ff others ff others ff others ")
+			task.wait()
 		end)
-	elseif not bool then
-		loop1 = false
 	end
 end)
 
 Abuse:Toggle("Spam shield",false, function(bool)
 
-	if bool then
-		loop2 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop2 then
-				task.wait()
-				chat("shield/others")
-			else
-				loop2 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			chat("shield/others")
+			task.wait()
 		end)
-	elseif not bool then
-		loop2 = false
 	end
 end)
 
 Abuse:Toggle("Spam Sparkles",false, function(bool)
 
-	if bool then
-		loop3 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop3 then
-				task.wait()
-				chat("sparkles/others")
-			else
-				loop3 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("sparkles/others")
 		end)
-	elseif not bool then
-		loop3 = false
 	end
 end)
 
 Abuse:Toggle("Spam Fire",false, function(bool)
 
-	if bool then
-		loop4 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop4 then
-				task.wait()
-				chat("bonfire others")
-			else
-				loop4 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("bonfire others")
 		end)
-	elseif not bool then
-		loop4 = false
 	end
 end)
 
 Abuse:Toggle("Spam reset",false, function(bool)
 
-	if bool then
-		loop5 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop5 then
-				task.wait()
-				chat("reset others")
-			else
-				loop5 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("reset others")
 		end)
-	elseif not bool then
-		loop5 = false
 	end
 end)
 
 Abuse:Toggle("Spam explode",false, function(bool)
 
-	if bool then
-		loop6 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop6 then
-				task.wait()
-				chat("ff others")
-				wait(0.1)
-				chat("explode others")
-			else
-				loop6 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("ff others")
+			wait(0.1)
+			chat("explode others")
 		end)
-	elseif not bool then
-		loop6 = false
 	end
 end)
 
 Abuse:Toggle("Annoy",false, function(bool)
 
-	if bool then
-		loop7 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop7 then
-				task.wait()
-				chat("unchar others")
-			else
-				loop7 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("unchar others")
 		end)
-	elseif not bool then
-		loop7 = false
 	end
 end)
 
 Abuse:Toggle("Spam small Parts",false, function(bool)
-	if bool then
-		loop11 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop11 then
-				task.wait()
-				chat("part/1/1/1")
-			else
-				loop11 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("part/1/1/1")
 		end)
-	elseif not bool then
-		loop11 = false
 	end
 end)
 
 Abuse:Toggle("Spam big Parts",false, function(bool)
-	if bool then
-		loop9 = true
-		utils.RunService.RenderStepped:Connect(function()
-			if loop9 then
-				task.wait()
-				chat("part/10/10/10")
-			else
-				loop9 = false
-			end
+	if bool == true then
+		utils.RenderStepped:Connect(function()
+			task.wait()
+			chat("part/10/10/10")
 		end)
-	elseif not bool then
-		loop9 = false
 	end
 end)
 
@@ -383,10 +298,6 @@ Help:Button("Fix BasePlate", function()
 	fixbp()
 end)
 
-Help:Button("Fix Camera", function()
-	fixcam()
-end)
-
 Help:Button("Trip BasePlate", function()
 	DiscordLib:Notification("WARNING", "DO NOT MOVE", "Okay!")
 	chat("respawn me")
@@ -397,49 +308,43 @@ Help:Button("Trip BasePlate", function()
 	chat("respawn me")
 end)
 
-local bosschat = "BOSS FIGHT! DONT USE CMDS PLS THATS CHEATING, ONLY USE THE GEARS THAT U HAVE"
+local bosschat = "BOSS FIGHT! DONT USE CMDS PLS THATS CHEATING, ONLY USE THE GEARS THAT U HAVE OR USE THE SWORD COMMAND"
+
+function herogear()
+    chat("gear others 97885508")
+    chat("gear others 11999235") --sword
+    chat("gear others 225921000")
+end
 
 Boss:Button("Fix Heros", function()
-	chat("gear others 49929767")
-	chat("gear others 49929776")
-	chat("gear others 223785473")
+	herogear()
 	chat("health others 5000")
 end)
 
 Boss:Button("Boss is dead", function()
 	chat(":m The Boss Has Been Defeated thanks to the heros!")
 	chat("unchar me")
-	chat("reset all")
+	chat("reset me")
+    chat("fix")
 	chat("music")
+    chat("ungear all")
+    chat("health all 100")
 end)
 
 Boss:Seperator()
 
 Boss:Button("Xester", function()
 	chat("music")
-	wait(2)
 	chat("h Loading Boss Fight")
-	wait(3)
 	chat("char me 5136590382")
-	wait(3)
 	chat("health me 3000")
-	wait(3)
 	chat("health others 1000")
-	wait(3)
-	chat("name me Jester MaxHP: 3k")
-	wait(3)
-	fixcam()
-	wait(3)
+	chat("name me Jester MHP: 3k")
 	chat("ungear all")
-	wait(3)
-	chat("h Still Loading the Boss Fight")
-	wait(3)
 	chat("gear me 409745306")
 	chat("gear me 31314966")
 	chat("gear me 16979083")
-	chat("gear others 49929767")	
-	chat("gear others 49929776")
-	chat("gear others 223785473")
+	herogear()
 	task.wait()
 	chat(":m Jester: " .. bosschat)
 	task.wait()
@@ -448,75 +353,38 @@ end)
 
 Boss:Button("Xester Phase 2", function()
 	chat("music")
-	wait(2)
 	chat("h Loading Boss Fight")
-	wait(3)
 	chat("char me 5136590382")
-	wait(3)
-	chat("sethealth me 6000")
-	wait(3)
-	chat("health me 6000")
-	wait(3)
+	chat("sethealth me 4000")
+	chat("health me 4000")
 	chat("size me 1.5")
-	wait(3)
 	chat("sethealth others 2000")
-	wait(3)
 	chat("health others 2000")
-	wait(3)
-	chat("name me Corrupted Jester MHP: 6k")
-	wait(3)
-	fixcam()
-	wait(3)
+	chat("name me Corrupted Jester MHP: 4k")
 	chat("ungear all")
-	wait(3)
-	chat("h Still Loading the Boss Fight")
-	wait(3)
 	chat("gear me 16895215")
 	chat("gear me 31314966")
 	chat("gear me 16979083")
-	chat("gear others 49929767")
-	chat("gear others 49929776")
-	chat("gear others 223785473")
+	herogear()
 	chat(":m Corrupted Jester: " .. bosschat)
-	wait(2)
 	chat("music 1843358057")
 end)
 
 Boss:Button("Void Xester", function()
 	chat("music")
-	wait(2)
 	chat("h Loading Boss Battle")
-	wait(3)
 	chat("char me 5136590382")
-	wait(3)
-	chat("health me 10000")
-	wait(3)
+	chat("health me 6000")
 	chat("size me 2")
-	wait(3)
 	chat("health others 5000")
-	wait(3)
-	chat("name me Void Jester Max HP: 10k")
-	wait(3)
-	fixcam()
-	wait(3)
+	chat("name me Void Jester Max HP: 6k")
 	chat("ungear all")
-	wait(3)
-	chat("h Still Loading the Boss Fight")
-	wait(3)
 	chat("gear me 108149175")
 	chat("gear me 31314966")
 	chat("gear me 16979083")
-	chat("gear others 49929767")
-	chat("gear others 49929776")
-	chat("gear others 223785473")
-	wait(3)
+	herogear()
 	chat(":m Void Jester: " .. bosschat)
-	wait(2)
 	chat("music 45819151")
-	wait(math.random(5, 40))
-	chat(":m FIGHT ME HEROS OF KAH")
-	wait(math.random(5, 40))
-	chat(":m SURELY THAT'S NOT ALL THE HEROS CAN DO")
 end)
 
 Boss:Seperator()
@@ -526,66 +394,45 @@ Boss:Button("Necromancer", function()
 	chat(":m Loading Boss Battle")
 	chat("unhat me")
 	chat("paint me black")
-	wait(2)
-	chat("health me 7500")
-	wait(2)
+	chat("health me 2500")
 	chat("health others 5000")
-	wait(3)
 	chat("hat me 12929738820")
 	chat("hat me 12463726648")
 	chat("shirt me 1293140626")
 	chat("pants me 1293147521")
-	wait(2)
-	chat("name me Necromancer Max HP: 7.5k")
-	wait(2)
-	fixcam()
-	wait(2)
+	chat("name me Necromancer MHP: 2.5k")
 	chat("ungear all")
-	wait(2)
-	chat(":m Still Loading the Boss Battle")
-	wait(2)
 	chat("gear me 94794774")
 	chat("gear me 26421972")
 	chat("gear me 304721834")
-	chat("gear others 49929767")
-	chat("gear others 49929776")
-	chat("gear others 223785473")
-	wait(2)
+	herogear()
 	chat(":m Necromancer: " .. bosschat)
-	wait(2)
-	chat("music 6703926669")
+	chat("music 1835949514")
 end)
 
 Boss:Seperator()
 
 Boss:Button("Purple Guy", function()
 	chat("music")
-	chat(":m Loading Boss Battle")
 	chat("music 6189662330")
-	wait(27)
 	chat("music")
 	chat("unhat me")
 	chat("unshirt me")
 	chat("unpants me")
 	chat("paint me Royal Purple")
-	chat("health me 2000")
-	wait(2)
+	chat("health me 500")
 	chat("shirt me 11354421656")
 	chat("pants me 4445410180")
-	wait(2)
-	chat("name me Purple Guy MHP: 2000")
-	wait(2)
-	fixcam()
-	wait(2)
+	chat("name me Purple Guy MHP: 500")
 	chat("ungear all")
 	chat("sword me")
 	chat("gear others 121946387")
-	wait(2)
+	chat("sethealth others 300")
+	chat("health others 300")
 	chat(":m Purple Guy: ".. bosschat)
 	chat("fogend 500")
 	chat("fogcolor 119 70 180")
-	wait(2)
-	chat("music 6913550990")
+	chat("music 1846999567")
 end)
 
 local function getAudioName(id: number): string
@@ -821,19 +668,3 @@ end)
 SettingsTab:Button("Copy Invite Link", function()
 	setclipboard("https://discord.gg/su7ycRRJyz")
 end)
-
---[[
-	attach methods:
-	stun me, punish me, sit me, unpunish me
-	stun me, unpunish me --works with building blocks and the floor in the house
-	punish me, stun me, freeze me, unstun me? unfreeze me unpunish me --possible way to move the admin pads
-	sit me, punish me, unpunish me
-	jail me, tp me me, punish me, unpunish me --maybe only works with reset pads
-
-	HOW TO DELETE ADMIN PADS
-	line up on the wall in first person with your back facing it
-	walk in a straight line to the admin pad of the one you want to delete
-	jail me and tp me me outside of the jail
-	walk up against the jail and slide into the admin pad
-	run unpunish me if you see your camera move even in the slightest use skydive me or try to jump
-]]--
