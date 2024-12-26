@@ -24,58 +24,13 @@ utils.Mouse = utils.Player:GetMouse()
 utils.Displayname = utils.Player.DisplayName
 utils.Name = utils.Player.Name
 utils.Age = utils.Player.AccountAge
+
+utils.RenderStepped = utils.RunService.RenderStepped
 --\\Local Values\\--
 local sounfer = Instance.new("Sound")
 local loop = false
 local light = game.Lighting
 local chat = game.Chat
---\\errorpocket by liamriley101
-syn = syn
-jit = jit
-unit = unit
-isvm = isvm
-getreg = getreg
-gethui = gethui
-WrapGlobal = WrapGlobal
-shadow_env = shadow_env
-secure_load = secure_load
-KRNL_LOADED = KRNL_LOADED
-pebc_execute = pebc_execute
-IS_VIVA_LOADED = IS_VIVA_LOADED
-IS_COCO_LOADED = IS_COCO_LOADED
-getexecutorname = getexecutorname
-identifyexecutor = identifyexecutor
-is_sirhurt_closure = is_sirhurt_closure
-getconnections = getconnections
-hookmetamethod = hookmetamethod
-getnamecallmethod = getnamecallmethod
-getrawmetatable = getrawmetatable
-setreadonly = setreadonly
-request = request
-http = http
-http_request = http_request
---\\
---\\script\\
-function utils:GetExecutor()
-	local exploit =
-		(syn and syn.protect_gui and not getexecutorname and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
-		(getexecutorname and identifyexecutor and gethui and "ScriptWare") or
-		(secure_load and "Sentinel") or
-		(is_sirhurt_closure and "Sirhurt") or
-		(pebc_execute and "ProtoSmasher") or
-		(KRNL_LOADED and "Krnl") or
-		(WrapGlobal and "WeAreDevs") or
-		(isvm and "Proxo") or
-		(shadow_env and "Shadow") or
-		(jit and "EasyExploits") or
-		(getreg()['CalamariLuaEnv'] and "Calamari") or
-		(unit and "Unit") or
-		(IS_VIVA_LOADED and "VIVA") or
-		(IS_COCO_LOADED and "Coco") or
-		(identifyexecutor and "Temple") or
-		("Undetectable")
-	return exploit
-end
 
 for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
 	v:Disable()
@@ -126,6 +81,21 @@ function breakbp()
 	attachbp()
 	wait(1)
 	chat("skydive me me")
+end
+
+do --Needed for now ig
+	local loop = false
+local loop2 = false
+local loop3 = false
+local loop4 = false
+local loop5 = false
+local loop6 = false
+local loop7 = false
+local loop8 = false
+local loop9 = false
+local loop10 = false
+local loop11 = false
+
 end
 
 local workspace = game.Workspace
@@ -194,91 +164,154 @@ Item:Button("Dupe Boombox", function()
 end)
 
 Abuse:Toggle("Spam FF",false, function(bool)
-	if bool == true then
+	if bool then
+		loop = true
 		utils.RenderStepped:Connect(function()
-			chat("ff others ff others ff others ff others ff others ff others ")
-			task.wait()
+			if loop then
+				task.wait()
+				chat("ff others ff others ff others ff others ff others ff others ")
+			else
+				loop = false
+			end
 		end)
+	elseif not bool then
+		loop = false
 	end
 end)
 
 Abuse:Toggle("Spam shield",false, function(bool)
 
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			chat("shield/others")
-			task.wait()
+	if bool then
+		loop2 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop2 then
+				task.wait()
+				chat("shield/others")
+			else
+				loop2 = false
+			end
 		end)
+	elseif not bool then
+		loop2 = false
 	end
 end)
 
 Abuse:Toggle("Spam Sparkles",false, function(bool)
 
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("sparkles/others")
+	if bool then
+		loop3 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop3 then
+				task.wait()
+				chat("sparkles/others")
+			else
+				loop3 = false
+			end
 		end)
+	elseif not bool then
+		loop3 = false
 	end
 end)
 
 Abuse:Toggle("Spam Fire",false, function(bool)
 
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("bonfire others")
+	if bool then
+		loop4 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop4 then
+				task.wait()
+				chat("bonfire others")
+			else
+				loop4 = false
+			end
 		end)
+	elseif not bool then
+		loop4 = false
 	end
 end)
 
 Abuse:Toggle("Spam reset",false, function(bool)
 
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("reset others")
+	if bool then
+		loop5 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop5 then
+				task.wait()
+				chat("reset others")
+			else
+				loop5 = false
+			end
 		end)
+	elseif not bool then
+		loop5 = false
 	end
 end)
 
 Abuse:Toggle("Spam explode",false, function(bool)
 
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("ff others")
-			wait(0.1)
-			chat("explode others")
+	if bool then
+		loop6 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop6 then
+				task.wait()
+				chat("ff others")
+				wait(0.1)
+				chat("explode others")
+			else
+				loop6 = false
+			end
 		end)
+	elseif not bool then
+		loop6 = false
 	end
 end)
 
 Abuse:Toggle("Annoy",false, function(bool)
 
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("unchar others")
+	if bool then
+		loop7 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop7 then
+				task.wait()
+				chat("unchar others")
+			else
+				loop7 = false
+			end
 		end)
+	elseif not bool then
+		loop7 = false
 	end
 end)
 
 Abuse:Toggle("Spam small Parts",false, function(bool)
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("part/1/1/1")
+	if bool then
+		loop11 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop11 then
+				task.wait()
+				chat("part/1/1/1")
+			else
+				loop11 = false
+			end
 		end)
+	elseif not bool then
+		loop11 = false
 	end
 end)
 
 Abuse:Toggle("Spam big Parts",false, function(bool)
-	if bool == true then
-		utils.RenderStepped:Connect(function()
-			task.wait()
-			chat("part/10/10/10")
+	if bool then
+		loop9 = true
+		utils.RunService.RenderStepped:Connect(function()
+			if loop9 then
+				task.wait()
+				chat("part/10/10/10")
+			else
+				loop9 = false
+			end
 		end)
+	elseif not bool then
+		loop9 = false
 	end
 end)
 
