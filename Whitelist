@@ -16,8 +16,9 @@
 	[5100950559] = "Hat%20Giver",
 	[112420803] = "KAH"
 	}
-	fixorionlib()
-	
+	if is_sirhurt_closure() then
+		fixorionlib()
+	end
 	for i, v in pairs(games) do
 	if i == game.PlaceId or i == game.GameId then
 	loadstring(game:HttpGet(gh .. v))()
