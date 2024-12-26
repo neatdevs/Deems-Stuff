@@ -1,29 +1,32 @@
-repeat wait() until game:IsLoaded()
+ if not game:IsLoaded() then
+	game.Loaded:Wait()
 
-if shared.Ray == false then
-
-game:GetService("Players").LocalPlayer.Idled:Connect(function()
-    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-end)
-
-local gh = "https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/"
-
-local games = {
-    [7371240697] = "Giant%20Dancing%20Simulator",
-    [8592863835] = "Magnet%20Simulator%202",
-    [8070952780] = "Clicker%20Simulator%20X",
-    [5100950559] = "Hat%20Giver",
-    [112420803] = "KAH"
-}
-
-for i, v in pairs(games) do
-    if i == game.PlaceId or i == game.GameId then
-        loadstring(game:HttpGet(gh .. v))()
+	if shared.Ray == false then
+	
+	game:GetService("Players").LocalPlayer.Idled:Connect(function()
+	game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+	end)
+	
+	local gh = "https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/"
+	
+	local games = {
+	[7371240697] = "Giant%20Dancing%20Simulator",
+	[8592863835] = "Magnet%20Simulator%202",
+	[8070952780] = "Clicker%20Simulator%20X",
+	[5100950559] = "Hat%20Giver",
+	[112420803] = "KAH"
+	}
+	fixorionlib()
+	
+	for i, v in pairs(games) do
+	if i == game.PlaceId or i == game.GameId then
+	loadstring(game:HttpGet(gh .. v))()
 	elseif i ~= game.PlaceId or i ~= game.GameId then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Universal"))()
 		Break()
-    end
-elseif shared.Ray == true then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist2"))()
-end
+	end
+	elseif shared.Ray == true then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/neatdevs/Deems-Stuff/main/Whitelist2"))()
+	end
+	end
 end
