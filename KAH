@@ -341,131 +341,206 @@ Help:Button("Trip BasePlate", function()
 	chat("respawn me")
 end)
 
-local bosschat = "BOSS FIGHT! DONT USE CMDS PLS THATS CHEATING, ONLY USE THE GEARS THAT U HAVE OR USE THE SWORD COMMAND"
+local isBoss = false
+local bossHealth = 0
+local bosschat = "BOSS FIGHT! DONT USE CMDS PLS THATS CHEATING, ONLY USE THE GEARS THAT U HAVE."
 
 function herogear()
-    chat("gear others 97885508")
-    chat("gear others 11999235") --sword
-    chat("gear others 225921000")
+    chat("gear others 95354304")
+    chat("gear others 11999235") -- sword
 end
 
 Boss:Button("Fix Heros", function()
-	herogear()
-	chat("health others 5000")
-end)
-
-Boss:Button("Boss is dead", function()
-	chat(":m The Boss Has Been Defeated thanks to the heros!")
-	chat("unchar me")
-	chat("reset me")
-    chat("fix")
-	chat("music")
-    chat("ungear all")
-    chat("health all 100")
+    herogear()
 end)
 
 Boss:Seperator()
 
-Boss:Button("Xester", function()
-	chat("music")
-	chat("h Loading Boss Fight")
-	chat("char me 5136590382")
-	chat("health me 3000")
-	chat("health others 1000")
-	chat("name me Jester MHP: 3k")
-	chat("ungear all")
-	chat("gear me 409745306")
-	chat("gear me 31314966")
-	chat("gear me 16979083")
-	herogear()
-	task.wait()
-	chat(":m Jester: " .. bosschat)
-	task.wait()
-	chat("music 1843358057")
-end)
+--[[
+local function monitorBossHealth()
+    utils.Humanoid.HealthChanged:Connect(function(currentHealth)
+        bossHealth = currentHealth -- Update the boss's health
+        if isBoss and bossHealth <= 0 then
+            chat(":m The Boss Has Been Defeated Thanks To The Heroes!")
+            chat("unchar me")
+            chat("fix")
+            chat("music")
+            isBoss = false
+            chat("reset all")
+        end
+    end)
+end
+]]--
 
-Boss:Button("Xester Phase 2", function()
-	chat("music")
-	chat("h Loading Boss Fight")
-	chat("char me 5136590382")
-	chat("sethealth me 4000")
-	chat("health me 4000")
-	chat("size me 1.5")
-	chat("sethealth others 2000")
-	chat("health others 2000")
-	chat("name me Corrupted Jester MHP: 4k")
-	chat("ungear all")
-	chat("gear me 16895215")
-	chat("gear me 31314966")
-	chat("gear me 16979083")
-	herogear()
-	chat(":m Corrupted Jester: " .. bosschat)
-	chat("music 1843358057")
-end)
+local function startBossFight(bossName, health, musicId, appearanceCommands)
+    isBoss = true
+    bossHealth = health
+    chat("music " .. musicId)
+    for _, cmd in ipairs(appearanceCommands) do
+        chat(cmd)
+    end
+    chat(":m " .. bossName .. ": " .. bosschat)
+	monitorBossHealth()
+end
 
-Boss:Button("Void Xester", function()
-	chat("music")
-	chat("h Loading Boss Battle")
-	chat("char me 5136590382")
-	chat("health me 6000")
-	chat("size me 2")
-	chat("health others 5000")
-	chat("name me Void Jester Max HP: 6k")
-	chat("ungear all")
-	chat("gear me 108149175")
-	chat("gear me 31314966")
-	chat("gear me 16979083")
+Boss:Button("Purple Guy", function()
+    startBossFight("Purple Guy", 500, "1846999567", {
+        "unhat me",
+        "paint me Royal Purple",
+        "health me 500",
+        "hat me 5063657446",
+        "hat me 14269390605",
+        "hat me 12491655218",
+        "hat me 15681887235",
+        "shirt me 11354421656",
+        "pants me 14282886513",
+        "name me Purple Guy MHP: 500",
+        "ungear all",
+        "gear all 121946387",
+        "sethealth others 300",
+        "health others 300",
+        "fogend 500",
+        "fogcolor 119 70 180"
+    })
 	herogear()
-	chat(":m Void Jester: " .. bosschat)
-	chat("music 45819151")
 end)
 
 Boss:Seperator()
 
 Boss:Button("Necromancer", function()
-	chat("music")
-	chat(":m Loading Boss Battle")
-	chat("unhat me")
-	chat("paint me black")
-	chat("health me 2500")
-	chat("health others 5000")
-	chat("hat me 12929738820")
-	chat("hat me 12463726648")
-	chat("shirt me 1293140626")
-	chat("pants me 1293147521")
-	chat("name me Necromancer MHP: 2.5k")
-	chat("ungear all")
-	chat("gear me 94794774")
-	chat("gear me 26421972")
-	chat("gear me 304721834")
-	herogear()
-	chat(":m Necromancer: " .. bosschat)
-	chat("music 1835949514")
+    startBossFight("Necromancer", 2500, "1835949514", {
+        "unhat me",
+        "paint me black",
+        "health me 2500",
+        "health others 1000",
+        "hat me 15288967733",
+        "hat me 12982306991",
+        "hat me 17730307130",
+		"hat me 122436745779244",
+        "shirt me 16879974806",
+        "pants me 11238638555",
+        "name me Necromancer MHP: 2.5k",
+        "ungear all",
+        "gear me 77443491",
+        "gear me 26421972",
+        "gear me 304721834",
+        "time -",
+		"health others 1000"
+    })
+    herogear()
 end)
 
 Boss:Seperator()
 
-Boss:Button("Purple Guy", function()
-	chat("music")
-	chat("music 6189662330")
-	chat("music")
-	chat("unhat me")
-	chat("unshirt me")
-	chat("unpants me")
-	chat("paint me Royal Purple")
-	chat("health me 500")
-	chat("shirt me 11354421656")
-	chat("pants me 4445410180")
-	chat("name me Purple Guy MHP: 500")
-	chat("ungear all")
-	chat("sword me")
-	chat("gear others 121946387")
-	chat("sethealth others 300")
-	chat("health others 300")
-	chat(":m Purple Guy: ".. bosschat)
-	chat("fogend 500")
-	chat("fogcolor 119 70 180")
-	chat("music 1846999567")
+Boss:Button("Xester", function()
+	startBossFight("Xester", 3000, "1843358057", {
+		"unhat me",
+		"paint me white",
+		"hat me 11723208482",
+		"hat me 5829882544",
+		"hat me 12709197108",
+		"shirt me 12600849888",
+		"pants me 5058477289",
+		"health me 3000",
+		"health others 1250",
+		"ungear all",
+		"gear me 409745306",
+		"gear me 31314966",
+		"gear me 16979083",
+		"name me Xester MHP: 3k"
+	})
+	herogear()
+end)
+
+Boss:Button("Reaper Xester", function()
+	startBossFight("Reaper Xester", 4000, "1843358057", {
+		"unhat me",
+		"paint me white",
+		"shirt me 13039035498",
+		"pants me 11760797573",
+		"hat me 5829882544",
+		"hat me 16647109289",
+		"hat me 13894899644",
+		"hat me 11122075000",
+		"sethealth me 4000",
+		"health me 4000",
+		"sethealth others 500",
+		"health others 500",
+		"ungear all",
+		"gear me 16895215",
+		"gear me 31314966",
+		"gear me 16979083",
+		"speed me 40",
+		"name me Reaper Xester MHP: 4k"
+	})
+	herogear()
+end)
+
+Boss:Button("Death Xester", function()
+	startBossFight("Death Xester", 6000, "45819151", {
+		"outdoorambient/25/25/25",
+		"fogend 100",
+		"fogcolor 18 18 18",
+		"time -",
+		"unhat me",
+		"paint me black",
+		"shirt me 16576364501",
+		"pants me 16576365911",
+		"hat me 18614331528",
+		"hat me 101132480562605",
+		"hat me 18633325405",
+		"health me 6000",
+		"health others 1750",
+		"name me Death Xester Max HP: 6k",
+		"ungear all",
+		"gear me 108149175",
+		"gear me 31314966",
+		"gear me 115377964",
+		"speed me 30"
+	})
+end)
+
+_G.loop = true
+
+task.spawn(function()
+	while _G.loop == true do
+		task.wait(1)
+		local function onCharacterAdded(character)
+			local player = utils.Player
+		
+			local humanoid = character:WaitForChild("Humanoid", 5)
+			if not humanoid then
+				return
+			end
+		
+			humanoid.Died:Connect(function()
+				if isBoss == true then
+					chat("m The Boss Has Been Defeated Thanks To The Heroes!")
+					chat("unchar me")
+					chat("fix")
+					chat("music")
+					isBoss = false
+					chat("reset all")
+					_G.loop = false
+				end
+			end)
+		end
+		
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+	end
+end)
+
+task.spawn(function()
+	while isBoss == true do
+		local function onPlayerChatted(message)
+			local command = string.lower(message)
+			if string.sub(command, 1, 4) == "gear " or  string.sub(command, 1, 4) == "sword " then
+				chat("ungear all")
+				task.wait()
+				herogear()
+			end
+		end
+	end
 end)
 
 local function getAudioName(id: number): string
@@ -484,7 +559,7 @@ local function getAudioName(id: number): string
  end
 
  local play = ":h Now Playing: "
- local start = "music 000000000000000000000000000000000000000000000000000000000000000000"
+ local start = "music 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 
  local drop = Music:Dropdown("Pick me!",{"Saw You at the Party","MonsterMash","No Sleep","YOU TAKE SOME CHOCOLATE AND SOME LOBSTER ZO B)","Mood Enhancer", "Gangstas Paradise", "EPIC", "PLAY", "SAD NIGA HOURS", "Paint It, Black", "Train Horn LOUD", "Gmod Collide sound", "I am just a freak", "Snazzy", "The Final Fight", "Deja Vu", "Broadway", "ILY", "Some tiktok loop", "Script kiddie song", "Meow", "That's a thot", "Purple Guy", "Yeah?", "Vibe", "BloodPop"}, function(bool)
 	if bool == "Saw You at the Party" then
