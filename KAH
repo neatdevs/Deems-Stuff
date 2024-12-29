@@ -530,19 +530,6 @@ task.spawn(function()
 	end
 end)
 
-task.spawn(function()
-	while isBoss == true do
-		local function onPlayerChatted(message)
-			local command = string.lower(message)
-			if string.sub(command, 1, 4) == "gear " or  string.sub(command, 1, 4) == "sword " then
-				chat("ungear all")
-				task.wait()
-				herogear()
-			end
-		end
-	end
-end)
-
 local function getAudioName(id: number): string
 	local success, output = pcall(function()
 	   -- return the product's info
