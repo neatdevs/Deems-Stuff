@@ -498,6 +498,7 @@ Boss:Button("Death Xester", function()
 		"gear me 115377964",
 		"speed me 30"
 	})
+	herogear()
 end)
 
 _G.loop = true
